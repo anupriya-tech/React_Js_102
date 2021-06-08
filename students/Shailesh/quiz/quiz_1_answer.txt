@@ -1,4 +1,4 @@
 1) Link question?
-answer : Output will be 4 becaouse of prevent default.
+answer : the second link not open because return false prevent default action.
 
 
