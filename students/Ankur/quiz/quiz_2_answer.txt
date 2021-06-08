@@ -1,0 +1,14 @@
+JavaScript Quiz-2: 
+code: 
+
+	let x = 10;		// LOC 1
+	let y = x % 4;		// LOC 2
+	let z = y / 2;		// LOC 3
+	let c = x * z;		// LOC 4
+
+	alert(x);		// LOC 5
+	
+
+Answer : 
+	Output: 10.
+	Description: as in the question the variable 'x' is decalared and initialized at line 1 of the code with 10, and used further in the code to evaluate other variables but is not being over written or re-initialized so the value of 'x' remains 10 in the whole program, that's why the output is 10.

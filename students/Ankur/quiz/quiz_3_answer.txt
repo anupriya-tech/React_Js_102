@@ -1,0 +1,27 @@
+JavaScript Quiz:3
+code: 
+	var a = 21			// LOC 1
+	var b = function(){		// LOC 2
+	  console.log(a);		// LOC 3
+	  var a=20;			// LOC 4
+	}				// LOC 5
+	b();				// LOC 6
+	
+
+Answer : 
+	Output: undefined.
+	Description: The given question is a perfect example for hiosting. In JavaScript all the variable declarations are hoited to the top of the block. but as only the declaration is hoisted no the intialization, this is because the output is undefined. 
+	Also there in the code the variable a is initialized above the function block but the value is not used because of the variable scope. the all lines of code inside a block or function are aware of the variable declarations due to hoisting, so at LOC 3 it is known that variable a is declared for this block so it will not go for the varible a declared outside the block, but inside the variable a is not initialized before the print statement so it prints the value of 'a' as undefined.
+	
+	After hiosting the code will be as under:
+	
+	var a = 21			// LOC 1
+	var b = function(){		// LOC 2
+	  var a;			//  variable declaration hiosted to the top.
+	  console.log(a);		// LOC 3
+	  var a=20;			// LOC 4
+	}				// LOC 5
+	b();				// LOC 6
+	
+	
+	
