@@ -1,0 +1,19 @@
+//default function declaration
+function rectangle(w, h){
+    return w * h;
+}
+
+//function expression
+const rectangle = function(w, h){
+    return w * h;
+}
+
+//function Arrow expression
+const rectangle = (w, h) => {
+    return w * h;
+}
+
+//shorthand arrow function
+const rectangle = (w, h) => w * h;
+
+answer: Output will be shown as "rectangle has alreadt been declared" since Line 7 i.e  function expression as well redefines function rectangle itself.
