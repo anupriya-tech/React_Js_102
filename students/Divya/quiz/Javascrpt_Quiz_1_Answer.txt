@@ -1,0 +1,55 @@
+1) var a = 21;
+   var b = function(){
+    console.log(a);
+    var a=20;
+   };
+   b();
+
+   Ans: The answer will be 'undefined' Because the function expression in javascript are not hoisted.Therefore, you can't use function expressions before                 defining them.so here console.log(a) can't use before var a=20;
+
+2) const magic = 42;
+
+   const theAnswer = magic;
+
+   const everything = new Set([magic, theAnswer]);
+
+   console.log(everything.size);
+
+   Ans: The answer will be '1' Because of the value equality,That means each value in the Set has to be unique, the value equality will be checked.               'everything.size' will returns the number of values in the Set object.
+
+3) let x = 10;
+   
+let y = x % 4;
+   
+let z = y / 2;
+   
+let c = x * 2;
+   
+alert(x);
+
+   Ans: The answer will be '10' Because x is assigned with value 10 and which is not changing anywhere,variable x is only using for different operations.
+
+4)a] function rectangle(w,h){
+       return w*h;
+
+     }
+     
+     Ans: This is the 'default function declaration',which defines a function with specified parameters. 
+  b] const rectangle = function(w,h){
+       return w*h
+     }
+
+
+     Ans: Function expression has similar siyntax as default function declaration
+          the main difference is the function name .which can be omitted in function expressions to create anonymous fuctions. Function expression can be used            as immediate ivoked Function expression which runs as soon as it is                  defined.
+  c] const rectangle = (w,h) =>{
+       return w*h;
+     }
+
+     Ans: Arrow functions can have either a 'concise body' or 'block body'.In block body use an explicit return statement.
+  d] const rectangle = (w,h) => w*h;
+
+     Ans: Arrow functions can have either a 'concise body' or 'block body'. concise body an expression is specified so wich is implicit return value.
+      
+
+   
