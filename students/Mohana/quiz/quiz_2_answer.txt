@@ -1,0 +1,8 @@
+// Javascript quiz -2
+let x = 10;
+let y = x % 4;
+let z = y / 2;
+let C = X * Z;
+alert(x);
+
+ANS: alert box with 10 because var x value 10
