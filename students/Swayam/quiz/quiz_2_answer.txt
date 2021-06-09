@@ -5,7 +5,7 @@ Code:
 <a href="https://www.google.com" onClick="console.log('link clicked'); return false">Link Two</a>
 Output: Link One
 Description: Link One will be working. Link Two does not work as return false stops the browser execution process.
-
+ 
 
 2) Quiz 2
 Code:
