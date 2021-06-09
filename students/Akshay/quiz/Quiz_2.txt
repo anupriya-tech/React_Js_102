@@ -1,0 +1,52 @@
+ ----Quiz-101---
+Que1) Which link will open 'google' and why?
+
+   <a href="https://www.google.com/" onclick="console.log('clicked');">Link One</a>
+   <a href="https://www.google.com/" onclick="console.log('clicked'); return false">Link two</a> 
+   
+   Answer: The first link
+ will open google browser Because using return false The return false will return false to the click-event. That tells the browser to stop following events, like follow a link.
+
+
+---- Quiz-102---
+Que2) var student = {
+     name: "John",
+     getName: function()
+     {
+         console.log("student " + this.name);
+     }
+   }
+   var employee = {
+     name: "Tom",
+     getName: function()
+     {
+         console.log("employee " + this.name);
+     }
+   }
+   var run = student.getName.bind(employee);
+   run();
+  
+
+Answer: output 'student Tom'  that allow a function to be invoked as if it were a method of another object.
+
+---- Quiz-103---
+Que3)x = 10;
+    function foo(x){
+      x = 20;
+      delete x;
+      return x;
+    }
+    console.log(foo(5));
+
+
+ Answer: The output will be SyntaxError
+
+---- Quiz-104---
+Que4)function foo(x){
+      var a;
+      console.log(a);
+      a = 10;
+    }
+    foo();
+ 
+ Answer: value is not of the expected type

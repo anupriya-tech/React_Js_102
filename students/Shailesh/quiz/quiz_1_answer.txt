@@ -1,4 +1,4 @@
-1) which link open on Goole and why ?
+1) which link open on Google and why ?
 
 <a href="#" onClick="run();">link-one</a>
 <a href="https://www.google.com/" onClick="console.log('link clicked'); return false">link-two</a>
@@ -33,7 +33,6 @@ answer: student Tom.
    return x;
   }
   console.log(foo(5));
-
 
 answer : 20, because x is initialized again ih function foo().
 
