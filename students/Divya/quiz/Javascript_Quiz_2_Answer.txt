@@ -6,7 +6,7 @@
    <a href="https://www.google.com/" onclick="console.log('clicked'); return false">
       Link two
    </a>
-   
+       
    Ans: The first link will open google. Because using return false in an onclick event stops the browser from processing the rest of the execution, means adding return false stops the href from working.
 
 
