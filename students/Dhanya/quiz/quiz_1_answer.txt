@@ -1,4 +1,11 @@
-1) Link question?
-answer : Output will be 4 becaouse of prevent default.
+1) Javascript quiz - 3
+var a = 21;
+var b = function(){
+    console.log(a);
+    var a = 20;
+};
+
+b();
+answer : Output will be undefined since the variable a is not being assigned value before printing on the console.
 
 

@@ -1,4 +1,25 @@
-1) Link question?
-answer : Output will be 4 becaouse of prevent default.
 
+2)  which object return name?
+answer: second object employee ans answer is Tom.
 
+3) what is output of foo function?
+answer : 20, due to variable hoisting.
+
+4) what is the output of foo function?
+answer : undefiend, because due to variable hoisting and
+only variable declaration part is hoisted not initialiazation part and
+the initialization is written after console.log function.
+
+5) what is the output of evenodd function?
+answer : not sure.
+
+6) what is output of sor-compare function?
+answer : true but listing is diffrent.
+
+7) what is the output of?
+answer : console.log(a)= apple 
+and console.log(b) = ['banana' , 'orange'];
+
+8) what is the output?
+answer : first console.log message "hello from function" and 
+the second console.log function showing uncaught because printmeto cannot access before initialization. 

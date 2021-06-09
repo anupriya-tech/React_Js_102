@@ -1,0 +1,8 @@
+2)//Javascript quiz - 2
+let x = 10;
+let y = x % 4;
+let z = y / 2;
+let c = x * z;
+
+alert(x);
+answer: alert() is not defined will be displayed as output since alert() is a window object and not Javascript inbuilt function.
