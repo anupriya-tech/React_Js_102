@@ -1,0 +1,12 @@
+2)
+let x = 10;
+let y = x % 4;
+let z = y/2;
+let c = x * z;
+alert(x);
+
+answer : 10
+
+Because x value show in alert box
+
+

@@ -1,4 +1,12 @@
-1) Link question?
-answer : Output will be 4 becaouse of prevent default.
+1) var a = 21; 
+var b = function() {
+  console.log(a);
+  var a = 20;
+
+};
+b();
+answer : undefined 
+
+Because a is defined befor console log inside of function 
 
 
