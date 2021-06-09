@@ -1,11 +1,53 @@
+1) which link open on Goole and why ?
 
-2)  which object return name?
-answer: second object employee ans answer is Tom.
+<a href="#" onClick="run();">link-one</a>
+<a href="https://www.google.com/" onClick="console.log('link clicked'); return false">link-two</a>
 
-3) what is output of foo function?
-answer : 20, due to variable hoisting.
+answer : link first open on Google because in second link the return false prevent the default action of the link.
+
+2) what is the output of this code?
+
+var student = {
+    name : "John",
+    getName : function(){
+        console.log("student " + this.name);
+    }
+};
+var employee = {
+    name : "Tom",
+    getName : function(){
+        console.log("employee " + this.name);
+    }
+}
+var run = student.getName.bind(employee);
+
+run();
+
+answer: student Tom.
+
+3) what is output of foo() function?
+ var x = 10;
+  function foo(x){
+   x= 20;
+   delete x ;
+   return x;
+  }
+  console.log(foo(5));
+
+
+answer : 20, because x is initialized again ih function foo().
 
 4) what is the output of foo function?
+
+function foo(){
+   var x;
+   console.log(x);
+   x =10;
+
+   };
+   
+ foo();  
+   
 answer : undefiend, because due to variable hoisting and
 only variable declaration part is hoisted not initialiazation part and
 the initialization is written after console.log function.
@@ -13,16 +55,47 @@ the initialization is written after console.log function.
 5) what is the output of evenodd function?
 answer : not sure.
 
-6) what is output of sor-compare function?
+6) what is output of sort-compare function?
+
+var myArray = ['80', '90', '100'];
+ function compare(a, b){
+   return a-b;
+ }
+ var a = myArray.sort();
+ var b = myArray.sort(compare);
+ console.log(a === b);
+ 
 answer : true but listing is diffrent.
 
-7) what is the output of?
-answer : console.log(a)= apple 
-and console.log(b) = ['banana' , 'orange'];
+7) what is the output of this ?
 
-8) what is the output?
-answer : first console.log message "hello from function" and 
-the second console.log function showing uncaught because printmeto cannot access before initialization. 
+myfruits = ['apple', ' banana', 'mango'];
+const [a, ...b] = myfruits;
+
+console.log(a);
+console.log(b)
+
+answer : console.log(a)= apple and console.log(b) = ['banana' , 'orange'];
+
+8) what is the output ?
+
+printme();
+
+function printme(){
+    console.log("hello from function")
+}
+
+var obj = new printMeTo();
+obj.printme();
+
+class printMeTo {
+    printme() {
+        console.log("hello from class");
+    };
+}
+
+answer : "hello from function" and 
+printmeto cannot access before initialization. 
 
 9) const magic = 42;
    const theAnswer = magic;
