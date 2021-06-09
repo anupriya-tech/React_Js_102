@@ -1,0 +1,6 @@
+3) const magic = 42;
+const theAnswer = magic;
+const everything = new Set([magic, theAnswer]);
+console.log(everything.size);
+
+answer: output will be shown as 1 since the Set() constructor considers only unique values and both variables magic and theAnswer contains same value 42.
