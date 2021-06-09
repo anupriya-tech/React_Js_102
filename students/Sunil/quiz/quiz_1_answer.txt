@@ -1,0 +1,58 @@
+Question 1:
+let x = 10;
+				let y = x % 4;
+				let z = y / 2;
+				let c = x * z;
+				alert(x);
+
+Output: 10 
+Description: redeclaring of a variablce with let is not allowed.
+
+Question 2:
+var a = 21;
+
+				var b = function(){
+        console.log(a);
+				var a = 20;
+				};
+				
+				b();
+
+Output : undefined  
+Description: In the block scope, console.log(a), 'a' is used and then a is initialized(var a=20). 
+But in javascript declared variable(var a;) is hoisted at top but not initialized variable. So it returns undefined.
+
+
+Question 3: 
+				const magic = 42;
+				const theAnswer = magic;
+				const everything = new Set([magic,theAnswer]);
+				console.log(everything.size);
+Output: 1
+Description: Only 1 value is stored in set object(set[42,42] which is not allowed) because Set object holds unique values.
+
+Question 4: 
+			//Default function declaration
+function rectangle(w, h){
+  return w * h;
+}
+
+//Function Expression
+const rectangle = function (w,h){
+  return w * h;
+}
+
+//Function Arrow Expression
+const rectangle = (w, h) => {
+  return w * h;
+}
+
+//Shorthand Arrow Function
+ const rectangle = (w, h) =>  w * h;
+
+Output: SyntaxError: Identifier 'rectangle' has already been declared 
+Description: identifier recatangle is already been declared as function 
+and it can't be redeclared as const type again.
+
+
+

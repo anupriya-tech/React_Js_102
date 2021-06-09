@@ -1,4 +1,21 @@
-1) Link question?
-answer : Output will be 4 becaouse of prevent default.
+1)     <a href="https://www.google.com" onclick="console.log('link Clicked');">Link One</a> 
+       <a href="https://www.google.com" onclick="console.log('link Clicked'); return false ">Link One</a>
+answer : The first link will be open because it is directly console.log on click.
+         The second  link is not redirecting the google link because it is prevent redirect due to return false.
 
+
+2) The output will be studentTom because Bind method is refering by there object with object value.
+
+3) The output will be 20 because in the first x assigned with 10 which is global so when its coming to function code then
+ x is assigned by 20 . so 20 will reassigned to the global x then its return x as a output.
+
+ 4) The output will be undefined because variable declared but not assigned the value and its console.log before assigned we cannot do console
+
+ 5) The output will be 1,3,5 because here filter method is returning the variable of index of array element.
+
+ 6) 
+
+ 7)
+
+ 8) The output will be hello from function. because first function is calling  here
 
