@@ -41,4 +41,12 @@ Que3)x = 10;
 
  Answer: The output will be SyntaxError
 
-
+---- Quiz-104---
+Que4)function foo(x){
+      var a;
+      console.log(a);
+      a = 10;
+    }
+    foo();
+ 
+ Answer: value is not of the expected type
