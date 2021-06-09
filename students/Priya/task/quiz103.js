@@ -7,5 +7,5 @@ function foo(x){
    return x;
 }
 
-console,log(foo(5));
+console.log(foo(5));
 
