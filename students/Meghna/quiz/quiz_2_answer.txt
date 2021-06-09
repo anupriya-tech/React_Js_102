@@ -105,3 +105,6 @@ class PrintMeToo{
 console.log("hello from class.")
   }
 }
+
+Answer: will be geeting the error when calling the class method using object,
+because we created object before the class defanation.
