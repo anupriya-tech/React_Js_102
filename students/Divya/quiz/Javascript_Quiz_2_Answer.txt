@@ -2,7 +2,7 @@
 
    <a href="https://www.google.com/" onclick="console.log('clicked');">
      Link One
-   </a>
+   </a>   
    <a href="https://www.google.com/" onclick="console.log('clicked'); return false">
       Link two
    </a>
