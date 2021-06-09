@@ -1,0 +1,9 @@
+// Javascript quiz -3
+var a =21;
+var b = function() {
+console.log(a);
+var a =20;
+};
+b();
+
+ANS: undefined because of print before declaration & two declarations of a
