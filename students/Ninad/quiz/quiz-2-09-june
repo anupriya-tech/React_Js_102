@@ -1,0 +1,100 @@
+// quiz 101
+<a href="https://www.google.com" onclick="console.log('link clicked');">Link one</a>
+<a href="https://www.google.com" onclick="console.log('link clicked'); return false">Link two</a>
+
+ans : link one
+
+// quiz 102
+var student = {
+  name : 'John',
+  getName : function() {
+    console.log("student " + this.name);
+  }
+}
+var employee = {
+  name : 'Tom',
+  getName : function() {
+    console.log("student " + this.name);
+  }
+}
+var run = student.getName.bind(employee);
+run();
+
+ans : student Tom
+
+//quiz 103
+x = 10;
+function foo(x) {
+  x = 20;
+  delete x;
+  return x;
+}
+
+console.log(foo(5));
+
+ans : 20
+
+//quiz 104
+function foo(x) {
+  var a;
+  console.log(a);
+  a = 10;  
+}
+
+foo();
+
+ans : undefined
+
+//quiz 105
+function evenodd(n) {
+  return n%2 !== 0;
+}
+
+myarray = [1, 2, 3, 4, 5];
+console.log(myarray.filter(evenodd));
+
+ans : [1, 3, 5]
+
+//quiz 106
+var myArray = [80, 90, 100];
+
+function compare (a, b) {
+  return a - b;
+}
+
+var a = myArray.sort();
+var b = myArray.sort(compare);
+
+console.log(a == b);
+
+ans : true
+
+//quiz 107
+myFruits = ['apple', 'banana', 'orange'];
+
+const [a, ...b] = myFruits;
+
+console.log(a);
+console.log(b);
+
+ans : apple
+[ 'banana', 'orange' ]
+
+//quiz 108
+printMe();
+
+function printMe() {
+  console.log('hello from function');
+}
+
+var obj = new PrintMeToo();
+obj.printMe();
+
+class PrintMeToo {
+  printMe() {
+    console.log('hello from class');
+  }
+}
+
+ans : ReferenceError: Cannot access 'PrintMeToo' before initialization at /script.js:7:11
+hello from function
