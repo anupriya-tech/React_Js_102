@@ -1,4 +1,154 @@
-1) Link question?
-answer : Output will be 4 becaouse of prevent default.
+Quiz 1. 
+
+<a href="https://www.google.com" onClick="console.log('link clicked');">Link One</a> 
+<a href="https://www.google.com" onClick="console.log('link clicked'); return false" >Link Two</a> 
+
+Answer : Link One will open google because the second link is returning false.
 
 
+
+
+
+Quiz 2. 
+
+var student = { 
+  name: "John", 
+getName: function(){console.log("student "+this.name);} 
+}
+
+var employee = { name: "Tom", 
+getName: function(){console.log("employee "+this.name);} 
+}
+
+var run = student.getName.bind(employee); run(); 
+
+
+Answer : Second object As employee and the output will be student Tom.
+
+
+
+
+
+
+Quiz 3.
+
+ x = 10; 
+ function foo(x){ 
+		 x = 20; 
+		 delete x; 
+		 return x; 
+	} 
+console.log(foo(5));  
+
+Answer : As x is defined 20 in variable hosting so the output will be 20.
+
+
+
+
+
+Quiz 4. 
+
+ function foo(){ 
+		 var a; 
+     console.log(a);
+		 a = 10; 
+	} 
+foo();
+
+
+Answer : it will give undefined, due to variable hosting. initilizing the value is written after console.
+
+
+
+
+
+Quiz 5.
+
+//What does a filter do? 
+function evenodd(n){ 
+  return n % 2 === 0;
+  }
+
+ myarray = [1,2,3,4,5]; 
+console.log(myarray.filter(evenodd)); 
+//contributed by Necodrweb 
+
+Answer : [2, 4] filtering all the even values from the given array.
+
+
+
+
+
+
+
+
+Quiz 6.
+
+//What is output and why? 
+var myArray = ['80', '90', 100]; 
+function compare(a, b) { 
+  return a - b;
+}
+
+var a = myArray.sort();
+ var b = myArray.sort(compare);
+  console.log(a === b); 
+//contributed by @wecodrweb 
+
+Answer : return the true value.
+
+
+
+
+
+
+
+
+
+
+Quiz 7. 
+
+//What will be output and why? 
+myFruits = [ 'apple','banana','orange']; 
+const [a, ... b] = myFruits; 
+console.log(a); 
+console.log(b); 
+//contributed by gwecodrweb 
+
+Answer:  Due to this Spread Syntax or Spread Operator. Te output will be 
+console.log(a) = apple
+console.log(b) = [ 'banana', 'orange' ] (This allows an iterable)
+
+
+
+
+
+
+
+
+
+
+
+
+
+Quiz 8 : 
+//What is output and why?
+printMe(); 
+function printMe()
+{ 
+  console.log("hello from function.") 
+} 
+
+var obj = new PrintMeToo();
+ obj.printMe(); 
+ 
+class PrintMeToof{
+   printMe(){ 
+     console.log("hello from class.")
+      } 
+}
+
+//contributed by Necodrweb 
+
+
+Answer : hello from function. because we are calling this printMe() only.
