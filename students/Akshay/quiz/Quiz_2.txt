@@ -29,3 +29,16 @@ Que2) var student = {
 
 Answer: output 'student Tom'  that allow a function to be invoked as if it were a method of another object.
 
+---- Quiz-103---
+Que3)x = 10;
+    function foo(x){
+      x = 20;
+      delete x;
+      return x;
+    }
+    console.log(foo(5));
+
+
+ Answer: The output will be SyntaxError
+
+
