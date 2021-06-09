@@ -1,4 +1,77 @@
-1) Link question?
-answer : Output will be 4 becaouse of prevent default.
+@@-- Quiz-1 --@@
+
+let x = 10;
+let y = x % 4;
+let z = y / 2;
+let c = x * z;
+alert(x);
+
+Output: 10
+
+Descryption :
+ > In the code value of x is 10, and we has not assigned another value of X. 
 
 
+
+@@-- Quiz-2 --@@
+
+const magic = 42;
+const theAnswer = magic;
+const everything = new Set([magic,theAnswer]);
+console.log(everything.size);
+
+Output: 1
+
+Descryption :
+ > The Set object always store unique elements.
+ > In the .size print is an integer representing how many entries the Set object has.
+ > Here we are inserting only 1 element.
+
+
+@@-- Quiz-3 --@@
+
+
+
+//Default function declaration
+function rectangle(w, h){
+  return w * h;
+}
+
+//Function Expression
+const rectangle = function (w,h){
+  return w * h;
+}
+
+//Function Arrow Expression
+const rectangle = (w, h) => {
+  return w * h;
+}
+
+//Shorthand Arrow Function
+ const rectangle = (w, h) =>  w * h;
+
+console.log(rectangle(10,10));
+
+
+Output: SyntaxError: Identifier 'rectangle'
+
+Descryption :
+> i'm not understand this code.
+
+
+
+@@-- Quiz-4 --@@
+
+var a = 21;
+var b = function(){
+console.log(a);
+ var a = 20;
+};
+b(); 
+
+
+
+Output: undefined
+
+Descryption :
+> we are a is declear as a globle scpoe in this code.
