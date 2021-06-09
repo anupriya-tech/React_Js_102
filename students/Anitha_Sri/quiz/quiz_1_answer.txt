@@ -112,5 +112,59 @@ Sample 108
 ouput:Hello I am from function
 Why: The concept here is hoisting the function will be hoisted and can be called before defining it.But Class cannot be hoisted so we cant call the method using object referernces before the class
 
+Sample109
+---------
+ const magic=42;
+        const theAnswer="magic"
+        const everything =new Set([magic,theAnswer])
+        console.log(everything.size)
+Output: The output is 2
+Why: A constant variable is reassigned as a string and using an object print the size of the array. So we get the size as 2
+
+Sample 110
+-----------
+   let x=10;
+    let y=x%4
+    let z=y/2
+    let c=x*z
+    alert(x)
+
+Ouput:10
+Why:alert function calls only x value
+
+
+
+Sample111
+----------
+function rectangle(w,h){
+            return w*h
+        }
+        const rectangle=function(w,h){
+            return w*h
+        }
+
+        const rectangle=(w,h)=>{
+            return w*h
+
+        }
+
+        const rectangle=(w,h)=>w*h;
+        console.log(rectangle)
+
+Output: Will give an error Uncaught SyntaxError: Identifier 'rectangle' has already been declared
+why: rectangle is duplicate variable name.
+
+Sample 112
+----------
+    var a=21;
+        var b=function(){
+            console.log(a)
+            var a=20
+        }
+        b()
+
+
+Output:undefined
+Why: a is been called before initialisation.When calling the function b a would be already declared as undefined.In b function the console.log is before initialization so the output is undefined.
 
 
