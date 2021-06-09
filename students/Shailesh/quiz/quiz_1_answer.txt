@@ -49,5 +49,4 @@ answer : 1, because in Set where each value is occure only once.
     var a = 20;
 };
 b();
-
 answer : undefined
