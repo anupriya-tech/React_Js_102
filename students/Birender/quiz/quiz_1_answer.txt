@@ -1,4 +1,51 @@
-1) Link question?
-answer : Output will be 4 becaouse of prevent default.
 
+
+
+
+
+
+Question 1	:
+				var a = 21;
+
+				var b = function(){
+				console.log(a);
+				 var a = 20;
+				};
+				
+				b(); 
+			
+Output		:	undefined
+				
+Description	:	variable a inside the function scope is used before its been declared that is why the value of a is undefined.
+
+
+
+
+
+
+Question 2	:
+				const magic = 42;
+				const theAnswer = magic;
+				const everything = new Set([magic,theAnswer]);
+				console.log(everything.size);
+			
+Output		:	1
+				
+Description	:	Because each value in the Set has to be unique. 
+
+
+
+
+
+
+Question 3	:
+				let x = 10;
+				let y = x % 4;
+				let z = y / 2;
+				let c = x * z;
+				alert(x); 
+			
+Output		:	10
+				
+Description	:	The value of x is not changed once its declared.
 
