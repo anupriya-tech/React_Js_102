@@ -1,0 +1,47 @@
+1) Javascript quiz - 3
+var a = 21;
+var b = function(){
+    console.log(a);
+    var a = 20;
+};
+
+b();
+answer : Output will be undefined since the variable a is not being assigned value before printing on the console.
+
+2)//Javascript quiz - 2
+let x = 10;
+let y = x % 4;
+let z = y / 2;
+let c = x * z;
+
+alert(x);
+answer: alert() is not defined will be displayed as output since alert() is a window object and not Javascript inbuilt function.
+
+3) const magic = 42;
+const theAnswer = magic;
+const everything = new Set([magic, theAnswer]);
+console.log(everything.size);
+
+answer: output will be shown as 1 since the Set() constructor considers only unique values and both variables magic and theAnswer contains same value 42.
+
+4)//default function declaration
+function rectangle(w, h){
+    return w * h;
+}
+
+//function expression
+const rectangle = function(w, h){
+    return w * h;
+}
+
+//function Arrow expression
+const rectangle = (w, h) => {
+    return w * h;
+}
+
+//shorthand arrow function
+const rectangle = (w, h) => w * h;
+
+answer: Output will be shown as "rectangle has alreadt been declared" since Line 7 i.e  function expression as well redefines function rectangle itself.
+
+
