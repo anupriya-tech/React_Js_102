@@ -1,8 +1,52 @@
 1) Javascript Quiz_1
-answer : Output will be 21 becaouse of when function b is executing, at that time value of a is 21. so after console a value is reasigned.
+Code :
+var a = 21;
+var b = function(){ 
+console.log(a);
+    var a = 20;
+};
+b();
+Output : 21 
+Description: when function b is executing, at that time value of a is 21. so after console a value is reasigned.
 
 2) Javascript Quiz_2
-answer : Output - 10 bcoz the value of x remain same till end.
+Code: 
+let x = 10;
+let y = x % 4;
+let z = y / 2;
+let c = x * z;
+alert(x); 
+Output :  10
+Description: The value of x remain unchanged till end.
 
 3) Javascript Quiz_3
-answer : Output - 1 bcoz Set object store different values and size return the number values.
+Code:
+const magic = 42;
+const theAnswer = magic;
+const everything = new Set([magic,theAnswer]);
+console.log(everything.size);
+Output : 1 
+Description: Set object store different values and size return the number of different values.
+
+4)Javascript Quiz_4
+Code:
+//Default function declaration
+function rectangle(w,h){
+    return w*h;
+}
+
+//function expression
+const rectangle = function(w,h){
+    return w*h;
+}
+
+//arrow functions
+const rectangle = (w,h) => {
+    return w*h;
+}
+
+//Shorthand arrow functions
+const rectangle = (w,h) =>  w*h;
+
+Ouput: SyntaxError: Identifier 'rectangle' has already been declared
+Description: 

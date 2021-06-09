@@ -1,4 +1,56 @@
-1) Link question?
-answer : Output will be 4 becaouse of prevent default.
+Ques 1 : 
 
+let x = 10;
+let y = x%4;
+let z = y / 2;
+let c = x*z;
+
+alert(x);
+
+output : 10
+
+explanation: we gave x in alert box so its showing x value in alert as 10.
+
+Ques 2 : 
+
+const magic = 42;
+const theAnswer = magic;
+const everything = new Set([magic, theAnswer]);
+console.log(everything.size);
+
+output : 1
+
+explanation : Size detects duplicates, it will return the number of unique values
+
+
+Ques 3 :
+
+var a = 21;
+var b = function(){
+ 
+  var a = 20;
+   console.log(a);
+};
+
+b();
+
+output : undefined
+
+explanation:initialization is not hoisted, when the function is executed, it checks that there’s a local a variable present 
+but doesn’t yet declare it, so it won’t look for global one.
+
+ques 4 :
+
+function rectangle(w,h){
+  return w*h;
+}
+const rectangle = function(w,h){
+  return w*h;
+}
+const rectangle = (w,h) => {
+  return w*h;
+}
+const rectangle = (w,h) => w*h;
+
+Explanation
 
