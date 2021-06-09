@@ -1,0 +1,65 @@
+<!--Whatapp javascripy quiz -1 -->
+
+1)  const magic = 42;
+    const theAnswer = magic;
+
+    const everything = new Set ([magic, theAnswer]);
+    console.log(everything.size);
+
+The output is 1 because its return the index lenght as magic value is in new variable theAnswer and 
+returning the index value as in array element in variable everything.
+
+<!--Whatapp javascripy quiz -2 -->
+
+2) let x = 10;
+let y = x % 4;
+let z = y / 2;
+let c = x * x;
+
+alert (x);
+
+The output is 10 because x is assigned with 10 value so it alert as a pop up box.
+
+<!--Whatapp javascripy quiz -3 -->
+
+var a = 21;
+var b = function (){
+ console.log(a);
+ var a = 20 ;
+};
+
+b();
+
+Not understanding, because here var b have the function  and b invoking as the function calling.
+
+
+<!--Whatapp javascripy quiz -4 -->
+
+4 ) // Default function declaration 
+
+function rectangle(w,h){
+    return w * h;
+}
+
+// function Expression 
+
+const rectangle = function (w,h){
+    return w * h;
+}
+
+
+// Function Arrow Expression 
+const rectangle = (w,h) => {
+    return w * h;
+}
+
+// Shorthand Arrow Expression
+
+const rectangle = (w,h) =>  return w * h;
+
+The output is nothing becasue here is the error of variable declaration.
+
+
+
+
+
