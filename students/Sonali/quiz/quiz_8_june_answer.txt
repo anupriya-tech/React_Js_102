@@ -1,0 +1,64 @@
+
+quiz-1
+code :
+let x = 10;
+let y = x % 4;
+let z = y / 2;
+let c = x * z;
+alert(x);
+
+answer : 10
+
+description : The value of the variable x is 10 and alert printing x value.
+
+************************************************************************
+quiz-2
+code:
+const magic = 42;
+const theAnswer = magic;
+const everthing = new Set([magic, theAnswer]);
+console.log(everthing.size);
+
+answer: 1
+
+description:  Each value in the set is unique it check the equality so the size of everything is unique.
+
+************************************************************************
+quiz-3
+code: 
+function rectangle(w, h){
+return w * h;
+}
+//function expression
+const rectangle = function(w, h){
+  return w * h;
+}
+//function arrow expression
+const rectangle = (w, h) => {
+return w * h;
+}
+//shorthand arrow function
+const rectangle = (w, h) => w * h;
+
+
+answer:
+error occurred
+
+description:
+multiple rectangle function  declaration methods hence ouput not show.
+**********************************************************************
+
+quiz-4
+code:
+var a = 21;
+var b = function(){
+  console.log(a);
+  var a = 20;
+};
+b();
+
+answer:
+undefined
+
+description: the b function does not access the value of var a because of the local scope and the value print of the a variable before its declaration hence output is undefined.
+

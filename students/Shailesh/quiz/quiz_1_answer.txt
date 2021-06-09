@@ -1,6 +1,3 @@
-1) Link question?
-answer : first link will open in google because the 
-second link has return false and return false prevents the default action.
 
 2)  which object return name?
 answer: second object employee ans answer is Tom.
@@ -26,3 +23,30 @@ and console.log(b) = ['banana' , 'orange'];
 8) what is the output?
 answer : first console.log message "hello from function" and 
 the second console.log function showing uncaught because printmeto cannot access before initialization. 
+
+9) const magic = 42;
+   const theAnswer = magic;
+   const theQa = good;
+   const everything = new Set([magic, theAnswer]);
+
+   console.log(everything.size);
+
+answer : 1, because in Set where each value is occure only once. 
+
+10) let x = 10;
+    let y = x%4;
+    let z = y/2;
+    let c = x * z;
+    
+    alert(x);
+
+    answer : 10;
+
+11) var a = 21;
+
+    var b = function() {
+    console.log(a);
+    var a = 20;
+};
+b();
+answer : undefined

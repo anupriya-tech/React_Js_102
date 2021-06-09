@@ -1,4 +1,56 @@
-1) Link question?
-answer : Output will be 4 becaouse of prevent default.
+//quiz 1
+var a = 21;
 
+var b = function() {
+    console.log(a);
+    var a = 20;
+}
 
+b();
+
+//Ans : undefined
+
+/*******************************************************/
+
+//quiz 2
+let x = 10;
+let y = x % 4;
+let z = y / 2;
+let c = x * z;
+
+alert(x);
+
+//Ans : 10
+
+/*******************************************************/
+
+// quiz 3
+const magic = 42;
+const theAnswer = magic;
+
+const everything = new Set([magic, theAnswer]);
+
+console.log(everything.size);
+
+//Ans = 1
+
+/*******************************************************/
+
+// quiz 4
+//default function declaration
+function rectangle(w, h){
+    return w * h;
+}
+
+//function expression
+const rectangle = function(w, h){
+    return w * h;
+}
+
+//function Arrow expression
+const rectangle = (w, h) => {
+    return w * h;
+}
+
+//shorthand arrow function
+const rectangle = (w, h) => w * h;
