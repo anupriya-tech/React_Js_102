@@ -1,4 +1,12 @@
-1) Link question?
-answer : Output will be 4 becaouse of prevent default.
+1) 
+const magic = 42;
+const theAnswer = magic;
+const everything = new Set ([magic, theAnswer]);   // Set {42}
+console.log(everything. size); 
+// ??
 
+
+answer : Output will be 1.
+Set object store unique values
+size – returns the number of elements in the Set.
 

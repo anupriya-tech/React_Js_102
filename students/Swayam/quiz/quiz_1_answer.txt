@@ -1,4 +1,8 @@
-1) Link question?
-answer : Output will be 4 becaouse of prevent default.
+1) Javascript Quiz_1
+answer : Output will be 21 becaouse of when function b is executing, at that time value of a is 21. so after console a value is reasigned.
 
+2) Javascript Quiz_2
+answer : Output - 10 bcoz the value of x remain same till end.
 
+3) Javascript Quiz_3
+answer : Output - 1 bcoz Set object store different values and size return the number values.

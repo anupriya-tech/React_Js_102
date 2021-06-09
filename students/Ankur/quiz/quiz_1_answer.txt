@@ -1,4 +1,16 @@
-1) Link question?
-answer : Output will be 4 becaouse of prevent default.
+JavaScript Quiz-1: 
+code: 
+
+	const magic = 42;					// LOC : 1
+	const theanswer = magic;				// LOC : 2
+	const everything = new Set([magic,theanswer]);	// LOC : 3
+	console.log(everything.size);				// LOC : 4
+	
+
+Answer : 
+	Output: 1.
+	Description: at line 3 of the code, a constant set object is created, the set objecy store only unique values of the array passed in as argument. so as we are passing two parameters i.e. magic & theanswer but value of both is 42, so only the value 42 is stored in the set object 'everything' only once.
+	
+	Now in Line 4 of the code where we are printing 'everthing.size', the size is a prototype of set object which returns the number of elements stored in the object(i.e. in our example 1) so the output is 1
 
 

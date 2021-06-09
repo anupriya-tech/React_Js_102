@@ -1,4 +1,52 @@
-1) Link question?
-answer : Output will be 4 becaouse of prevent default.
+1)var a=10;
+var b = function(){
+  console.log(a);
+  var a=20;
+};
+b();
+
+Ans:Undeffined.
+explanation: In javascript variables are hoisted to the top of local closure.
+so the local variable "a" declaration moves to the top of function "b()" when we call console.log(a)
+"a" is declared but not assigned a value that's we getting "undefined"
 
 
+2)let x=10;
+let y=x%4;
+let z=y/2;
+let c=x*z;
+console.log(x*z);
+
+Ans:10
+explanation: "%" operator gives us the remainder,so when 
+    y=x%4 => y=10%4 => y=2
+"/" operator gives us the quotient,so when
+    z=y/2 =>z=2/2 => z=1
+c = x*z => 10*1 =>c = 10
+
+3)const magic = 42;
+const theAnswer = magic;
+const evrythng = new Set([magic,theAnswer]);
+console.log(evrythng.size)
+
+Ans:1
+explanation: creating a variable "magic" and assigning magic value to "theAnswer".Creating a set adding the values of both variables as one array to the set.so the size of set will be "1". 
+
+4)
+//Default function declaration
+function rectangle(w,h){
+    return w*h;
+}
+
+//function expression
+const rectangle = function(w,h){
+    return w*h;
+}
+
+//arrow functions
+const rectangle = (w,h) => {
+    return w*h;
+}
+
+//Shorthand arrow functions
+const rectangle = (w,h) =>  w*h;
