@@ -1,0 +1,6 @@
+1. Which link will open 'google' and why?
+
+   <a href="https://www.google.com/" onclick="console.log('clicked');">Link One</a>
+   <a href="https://www.google.com/" onclick="console.log('clicked'); return false">Link two</a> 
+   
+   Ans: The first link will open google browser Because using return false The return false will return false to the click-event. That tells the browser to stop following events, like follow a link.
