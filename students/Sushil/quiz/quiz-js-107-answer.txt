@@ -1,0 +1,6 @@
+my Fruits=['apple','banana','orange'];
+const[a, ...b]=myFruits;
+console.log(a);
+console.log(b);
+
+quiz-js-107-output:Uncaught SyntaxError: Unexpected identifier
