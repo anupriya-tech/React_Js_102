@@ -1,0 +1,38 @@
+----Quiz 3---
+
+Que-1)  function aaa() {
+
+    return
+      {
+
+        test: 1
+    
+      };
+
+    }
+    
+alert(typeof aaa());
+
+ Answer:undefined 
+    
+    function aaa is invoked and seems to return an object. But JS is sly and likes to help out by inserting semicolons where you may have missed them.
+    When JS inserts semi-colons 
+    
+    function aaa() {
+    return;
+    {
+        test: 1
+    };
+}
+alert(typeof aaa());
+
+Que-2) document.getElementById("title"); 
+        [or]
+        $("#title"); 
+        
+ Answer:  
+ 
+ Que-3)
+ 
+        
+    

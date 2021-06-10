@@ -1,0 +1,6 @@
+let x=10;
+let y=x%4;
+let z=y/2;
+letc=x*z;
+alert(x);
+output:10

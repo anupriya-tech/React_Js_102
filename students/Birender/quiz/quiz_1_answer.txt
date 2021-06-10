@@ -49,3 +49,41 @@ Output		:	10
 				
 Description	:	The value of x is not changed once its declared.
 
+
+
+
+
+
+Question 4	:
+				//Default function declaration
+				function rectangle(w, h){
+				  return w * h;
+				}
+
+				//Function Expression
+				const rectangle = function (w,h){
+				  return w * h;
+				}
+
+				//Function Arrow Expression
+				const rectangle = (w, h) => {
+				  return w * h;
+				}
+
+				//Shorthand Arrow Function
+				 const rectangle = (w, h) =>  w * h;
+
+				console.log(rectangle(10,10));
+				
+				
+Output		:	SyntaxError: Identifier 'rectangle' has already been declared
+				
+Description	:	Question 4 doesnt seems like a question.. and it is actually the syntax for the different functions. 
+				Default function declaration, Function Expression, Function Arrow Expression, Shorthand Arrow Function.
+				Even if we run this program, we get the error SyntaxError: Identifier 'rectangle' has already been declared
+				as the value of constant cant be changed.
+				
+				
+				
+				
+				
