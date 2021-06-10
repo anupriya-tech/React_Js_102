@@ -20,7 +20,6 @@ getName: function()
 {console.log("employee "+ this.name);}
 }
 var run= student.getName.bind(employee);
-
 run();
 
 ANS: student Tom
@@ -83,6 +82,7 @@ console.log(a=b);
 
 ANS: true
 DES: 
+
 
 107)
 //What will be output and why?
