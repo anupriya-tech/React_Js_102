@@ -1,0 +1,62 @@
+1) what is the output?
+function aaa() {
+return {
+test : 1
+};
+}
+alert(typeof aaa());
+
+answer : Object, because when we call function its return object.
+
+2)  what is 
+document.getElementById("title");
+
+[or]
+
+$("#title");
+
+answer : both are fetching same;
+
+3) what is output?
+console.log((10).toString());
+
+// var c = (a).toString(2)
+
+console.log((10).toString(2));
+
+answer : both are return same. 
+
+4) what is the output ?
+const times = ["Morning", "Afternoon", "Evening"];
+
+times.map(t => `Good ${t}!`).forEach(s => console.log(s));
+
+Answer : Good Morning
+Good Afternoon
+Good Evening
+
+5) what is the output ans why ?
+
+const apple =3;
+
+const basket = {
+apple : 2,
+bag : {
+apple :1,
+plastic : function(){
+return this.apple;
+}
+}
+}
+
+const plastic = basket.bag.plastic;
+
+console.log(plastic());
+console.log(basket.bag.plastic());
+
+answer : first console is undefined.and
+:second console is 1,
+
+because in basket object has another bag object and 
+in bag the value of apple is 1 so return 1 and 
+plastic store a function so when we want call plastic without () then return function model only not given 1 value 
