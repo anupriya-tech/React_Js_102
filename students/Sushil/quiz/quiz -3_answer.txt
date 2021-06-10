@@ -1,0 +1,18 @@
+function rectangle(w,h)
+{
+return w*h;
+}
+ 
+const reactangle = function(w,h)
+{
+return w*h;
+}
+
+const rectangle =(w,h)=>
+{
+return w*h;
+}
+
+const rectangle = (w,h)=>w*h;
+
+output:undefined,undefined,undefined,undefined

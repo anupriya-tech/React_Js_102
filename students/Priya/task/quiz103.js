@@ -1,16 +1,11 @@
-var student = {
-    name: "John",
-    getName: function(){
-        console.log("student" + this.name);
-    }
+
+x = 10;
+
+function foo(x){
+   x=20;
+   delete x;
+   return x;
 }
 
-var employee = {
-    name: "Tom",
-    getName: function(){
-        console.log("employee" + this.name);
-    }
-}
+console.log(foo(5));
 
-var run = student.getName.bind(employee);
-run();
