@@ -1,0 +1,75 @@
+code:1
+----------------
+document.getElementById("title");-------declared in javascript
+or
+$("#title"); -----declared in jquery
+------------
+output: nothing
+
+-------------------------------------------------------------
+
+code: 2
+-------------
+function aaa(){
+  return 
+  {
+    test:1
+  };
+}
+alert(typeof aaa()); 
+----------------
+output :undefined
+    will not pass any value in aaa object
+---------------------------------------------------
+
+
+code :3 
+----------------
+(10).toString()
+(10).toString(2)
+--------------
+output: .tostring is not a function
+
+--------------------------------------------------
+
+code: 4
+-----------------
+const int=26;
+const hex=0x1A;
+const octal=0o32;
+const binary=0b11010;
+(0b11010 | 0b00001)==0b11011
+-------------------
+output: will not get anything
+-------------------------------------------------
+
+
+code:5
+-----------
+const apple=3;
+const basket={
+  apple:2,
+  bag: {
+    apple:1,
+    plastic: function(){
+      return this.apple;
+    }
+  }
+}
+const plastic=basket.bag.plastic;
+console.log(plastic());
+console.log(basket.bag.plastic());
+-------------
+output: undefined
+        1
+    -----------------------------------
+
+  code:6
+  -----
+  const times=["Morning","Afternoon","Evening"];
+  times.map (t=>'Good ${t}!')
+  .forEach(s =>console.log(s))  ;
+------
+output: Good ${t}!
+        Good ${t}!
+        Good ${t}!
