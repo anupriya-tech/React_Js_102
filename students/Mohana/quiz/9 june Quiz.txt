@@ -38,7 +38,8 @@ console.log(foo(5));
 // contributed by awecodrweb
 
 ANS: 5
-DES: 
+DES: delete operator removes a property from an object. It cannot remove a variable. 
+So the answer to the question depends on how the global variable or property is defined.
 
 104)
 //What's output and why?
@@ -51,13 +52,13 @@ foo();
 // contributed by awecodrweb
 
 ANS: undefined
-DES: 
+DES: before initialization we display a
 
 
 105)
 //What does a filter do?
 function evenodd(n){
-return n%2 = 0;
+return n%2 != 0;
 }
 myarray =
 [1,2,3,4,5];
@@ -65,7 +66,9 @@ console.log(myarray.filter(evenodd));
 // contributed by awecodrweb
 
 ANS: [ 1, 3, 5 ]
-DES: 
+DES: returns odd value
+filter() method creates an array filled with all 
+array elements that pass a test (provided as a function).
 
 
 106)
@@ -80,8 +83,9 @@ var b = myArray.sort(compare);
 console.log(a=b);
 //contributed by awecodrweb
 
-ANS: true
-DES: 
+ANS:[ 100, '80', '90' ]
+ true
+DES: sort() function sorts values as strings.
 
 
 107)
@@ -94,7 +98,7 @@ console.log(b);
 
 ANS: apple
 [ 'banana', 'orange' ]
-DES: 
+DES: apple assigned to var a
 
 
 108)
