@@ -1,0 +1,128 @@
+@@-- Quiz-1 --@@
+
+
+function aaa() {
+return
+{
+test: 1
+};
+}
+alert (typeof aaa());
+
+Output: undefined
+
+Descryption :
+ > No line terminator is allowed between the return keyword and the expression. thats why we got undefined output.
+
+
+@@-- Quiz-2 --@@
+
+
+
+document.getElementById("title");
+
+[or]
+
+$("#title");
+
+output: $ is not defined
+    
+
+Descryption :
+> we did not defined $. That means we are not importing the Jquery lib 
+
+
+
+@@-- Quiz-3 --@@
+
+
+
+(10).toString()
+
+// "10"
+
+(10).toString(2)
+
+//???
+
+Output: 10.toString(...) is not a function
+
+Descryption : 
+> In this code we are not defind the function. 
+
+
+
+@@-- Quiz-104 --@@
+
+
+const int = 26;
+
+const hex = 0x1A;
+
+const octal = 0o32;
+
+const binary = 0b11010;
+
+(0b11010 | 0b00001) == 0b11011
+
+
+
+Output: True
+
+Descryption: 
+> The output will be true. because The number 26 decimal value in same in hexadecimal, octal, binary. 
+
+        
+
+
+@@-- Quiz-105 --@@
+
+const times = ["Morning", "Afternoon", "Evening"];
+
+times.map(t => 'Good ${t}!')
+.forEach (s => console.log(s));
+
+// Have a great weekend!
+
+
+output: Good ${t}!
+        Good ${t}!
+        Good ${t}!
+
+Descryption: 
+> 
+
+
+
+@@-- Quiz-106 --@@
+
+
+//what's value ? why?
+
+const apple = 3;
+
+const basket = {
+apple: 2,
+bag: {
+
+  apple: 1,
+  plastic: function() {
+    return this.apple;
+  }
+ }
+}
+
+const plastic = basket.bag.plastic;
+
+console.log(plastic());
+console.log(basket.bag.plastic());
+
+
+output: undefined
+        1
+
+Descryption:
+> function plastic() can't read property 'apple',so we get undefiend error.
+> When We  calling the function basket.bag.plastic() we got the output 1 because we assigned the value of apple as 1.
+
+
