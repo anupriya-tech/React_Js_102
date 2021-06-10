@@ -1,0 +1,116 @@
+1.  function aaa() {
+
+    return
+      {
+
+        test: 1
+    
+      };
+
+    }
+    
+alert(typeof aaa());
+
+    Ans: The output will be 'undefined'. Because here the function aaa() is invoked so, it seems to return an object.
+         But Javascript inserting semicolon in the line break after the return statement.so the function will call as return;
+         if you want the output as 'object' run as code below,
+           
+           function aaa() {
+
+           return{
+
+             test: 1
+    
+            };
+
+           }
+    
+       alert(typeof aaa());
+
+
+
+
+2.  document.getElementById("title");  //returns a HTML DOM Object
+    [or]
+    $("#title");   //returns a jQuery Object
+  
+    Ans: The document.getElementById("title"); is faster because its direct call to JavaScript engine. 
+         jquery is a wrapper that normalizes DOM manipulation in a way that works consistently in every major browser.
+         jquery has to parse the selector, since jQuery can find things by class, attribute, ancestor, etc. 
+         whereas document.getElementById only finds elements by their ID. 
+         The jQuery object is not a native object, so is slower to create, and it also has much more potential.
+         To find elements that do not have an Id, we can use the querySelector() method. 
+
+
+
+         
+3.  const int = 26;
+    
+const hex = 0x1A;
+
+    const octal = 0o32;
+    
+const binary = 0b11010;
+
+    (0b11010 | 0b00001) == 0b11011
+    
+    Ans: The output will be 'true'. because,
+         const int = 26;         // The number 26, in decimal
+         
+const hex = 0x1A;       // The number 26, in hexadecimal (0x1a = 16^1 * 1 + 16^0 * 10 = 16 + 10 = 26)
+         const octal = 0o32;     // The number 26, in octal (032 = 8^1 * 3 + 8^0 * 2 = 24 + 2 = 26)
+         byte binary = 0b11010;  // The number 26, in binary (0b11010 = 2^4 * 1 + 2^3 * 1 + 2^2 * 0 + 2^1 * 1 + 2^0 * 0 = 16 + 8 + 0 + 2 + 0 = 26)
+
+
+
+
+4.   (10).toString()
+
+     (10).toString(2)
+
+     Ans: The output will be,
+          (10).toString()  //10
+          (10).toString(2)  //1010 which will print the binary value of 10.
+
+
+
+
+5.  const times = ["Morning", "Afternoon", "Evening"];
+
+    times.map(t => 'Good ${t}!').forEach(s => console.log(s));
+
+    Ans: The output will be,
+         Good ${t}!
+         Good ${t}!
+         Good ${t}!
+         The map method receives a function as a parameter. 
+         Then it applies it on each element and returns an entirely new array populated with the results of calling the provided function.
+         times.map(t => 'Good ${t}!') will result an array like ["Good ${t}!", "Good ${t}!", "Good ${t}!"].
+         The forEach() method executes a provided function once for each array element.
+         so here,forEach() will print, 
+         Good ${t}!
+         Good ${t}!
+         Good ${t}!
+
+
+
+
+6. const apple = 3;
+   const basket ={
+      apple: 2,
+      bag: {
+          apple: 1,
+          plastic: function(){
+              return this.apple;
+          }
+      }
+   }
+
+   const plastic = basket.bag.plastic;
+   console.log(plastic());
+   console.log(basket.bag.plastic());
+
+   Ans: The output will be 'undefined' '1' , Because when calling the function plastic() directly js cannot read property 'apple',so that a TypeError will occur.
+        When calling the function basket.bag.plastic() the value of apple is assigned as 1 ,so output will be 1.
+        when calling basket.bag.plastic()
+ 
