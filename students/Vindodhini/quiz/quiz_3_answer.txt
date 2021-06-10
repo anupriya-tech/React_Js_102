@@ -1,0 +1,97 @@
+quiz_3_answer
+
+ques 1 : 
+
+
+(10).toString()
+//10
+(10).toString(2);
+
+output : 1010
+
+
+explanation : 
+
+a radix of 2 would mean the number should be returned as a string representation of a Binary number.8 means octal,..
+ toString() method returns a string representation of a number
+
+ques 2 :
+
+const apple = 3;
+const basket = {
+  apple : 2,
+  bag : {
+    apple: 1,
+    plastic: function(){
+      return this.apple;
+    }
+  }
+}
+const plastic = basket.bag.plastic;
+console.log(plastic());
+console.log(basket.bag.plastic());
+
+output : undefined
+1
+
+explanation: 
+
+ques 3: 
+
+function aaa(){
+  return
+  {
+    test : 1
+  };
+}
+alert(typeof aaa());
+
+output : undefined
+
+explanation : there's no return value
+
+ques 4 :
+
+document.getElementById("title");
+//or
+
+$("#title");
+
+explanation: getelement by id javascript syntax
+$-jquery syntax
+
+
+ques 5:
+
+
+const times = ["Morning","Afternoon","Evening" ];
+times.map(t => `good ${t}!`)
+.forEach(s => console.log(s));
+
+
+output: good Morning!
+good Afternoon!
+good Evening!
+
+
+explanation :  creates a new array with the results of a called function for every array element
+
+
+ques 6 :
+
+const int = 26;
+
+const hex = 0x1A;
+
+const octal = 0o32;
+
+const binary = 0b11010;
+
+(0b11010 | 0b00001) = 0b11011
+
+
+output : SyntaxError: Invalid left-hand side in assignment
+    at /script.js:51:1
+
+explanation : 26 | 1 = 26
+but here 26|1 =27(output false)

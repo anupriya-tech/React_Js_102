@@ -59,6 +59,4 @@ b();
 
 answer:
 undefined
-
 description: the b function does not access the value of var a because of the local scope and the value print of the a variable before its declaration hence output is undefined.
-

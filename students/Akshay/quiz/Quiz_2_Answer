@@ -1,0 +1,114 @@
+ ----Quiz-101---
+Que1) Which link will open 'google' and why?
+
+   <a href="https://www.google.com/" onclick="console.log('clicked');">Link One</a>
+   <a href="https://www.google.com/" onclick="console.log('clicked'); return false">Link two</a> 
+   
+   Answer: The first link
+ will open google browser Because using return false The return false will return false to the click-event. That tells the browser to stop following events, like follow a link.
+
+
+---- Quiz-102---
+Que2) var student = {
+     name: "John",
+     getName: function()
+     {
+         console.log("student " + this.name);
+     }
+   }
+   var employee = {
+     name: "Tom",
+     getName: function()
+     {
+         console.log("employee " + this.name);
+     }
+   }
+   var run = student.getName.bind(employee);
+   run();
+  
+
+Answer: output 'student Tom'  that allow a function to be invoked as if it were a method of another object.
+
+---- Quiz-103---
+Que3)x = 10;
+    function foo(x){
+      x = 20;
+      delete x;
+      return x;
+    }
+    console.log(foo(5));
+
+
+ Answer: The output will be SyntaxError
+
+---- Quiz-104---
+Que4)function foo(x){
+      var a;
+      console.log(a);
+      a = 10;
+    }
+    foo();
+ 
+ Answer:undefined,  value is not of the expected type
+
+----Quiz-105---
+Que5) function evenodd(n)
+    {
+      return n%2 !== 0 ;
+    }
+    myarray = [1,2,3,4,5];
+    console.log(myarray.filter(evenodd));
+
+    Answer: [1, 3, 5]
+
+The filter() method creates an array filled with all array elements that pass a test (provided as a function).
+filter() does not execute the function for array elements without values.
+filter() does not change the original array.
+
+----Quiz-106---
+Que6) var myArray = ['80','90',100];
+    function compare(a, b)
+     {
+       return a - b;
+     } 
+    var a = myArray.sort();
+    var b = myArray.sort(compare);
+    console.log(a==b);
+
+Answer:true
+
+The sort() method sorts an array alphabetically
+By default, the sort() function sorts values as strings.
+This works well for strings ("A" comes before "B").
+Because of this, the sort() method will produce incorrect result when sorting numbers.
+we can fix this by providing a compare function:
+
+----Quiz-107---
+Que7) myFruits = ['apple', 'banana', 'orange'];
+const [a, ...b] = myFruits;
+console.log(a);
+console.log(b);
+
+
+Answer: "apple"
+        Array ["banana", "orange"]
+
+Spread syntax (...) allows an iterable such as an array expression or string to be expanded 
+
+----Quiz-108---
+Que8) printMe();
+   function printMe(){
+      console.log("hello from function");
+   }
+
+   var obj = new PrintMeToo();
+   obj.printMe();
+
+   class PrintMeToo{
+      printMe()
+       {
+         console.log("hello from class");
+       }   
+   }
+
+Answer:Error: Cannot access 'PrintMeToo' before initialization
