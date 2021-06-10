@@ -1,0 +1,78 @@
+1. function aaa() {
+    return
+      {
+        test: 1
+      };
+    }
+    
+alert(typeof aaa());
+
+Ans:"undefined"
+Explanation : we are Returning object inside of function,But we have line break after rerurn that's y we getting output undefined.
+
+
+2. document.getElementById("title"); 
+    [or]
+    $("#title");  
+
+    Ans:"document.getelementbyid" is faster than jquery $("#title");
+
+3. const int = 26;
+const hex = 0x1A;
+const octal = 0o32;
+const binary = 0b11010;
+
+(0b11010 | 0b00001) == 0b11011
+
+Ans:"true"
+
+Explanation: 0x1A is 26 in hex
+0o32 is 26 in octal
+0b11010 is 26 in binary
+
+when we perform or operation  (0b11010 | 0b00001) => 0b11011 == 0b11011 as both are same ans is true.
+
+
+4.(10).toString()
+
+  (10).toString(2)
+
+Ans:(10).toString() method returns "10" as string value i,e. typeof(10) is string
+(10).toString(2) returns "binary value" of "10".
+The "tostring" method converts value into string type by default.
+if we  pass radix from 2-36 converts the the number based on radix. 
+
+
+5.const times = ["Morning", "Afternoon", "Evening"];
+times.map(t => 'Good ${t}!').forEach(s => console.log(s));
+
+Ans:Good ${t}!
+Good ${t}!
+Good ${t}!
+
+Explanation:Here frist map function returns a new array with the results excuted by function on each element,
+For each loop will run the function on each element.
+So in map function we are returning  "Good ${t}" three times as we 3 array elements,
+and printing each "Good ${t}!" in for each loop using console.log
+
+
+6)const apple = 3;
+   const basket ={
+      apple: 2,
+      bag: {
+          apple: 1,
+          plastic: function(){
+              return this.apple;
+          }
+      }
+   }
+
+ const plastic = basket.bag.plastic;
+ console.log(plastic());
+ onsole.log(basket.bag.plastic());
+
+ Ans:"undefined"
+      "1"
+ Explanation: i think we are storing a function in varible so that this.apple is not avilable that's y we are getiing "undefined".
+  console.log(basket.bag.plastic()); Here we are calling function of oject so apple will be avilable 
+  and the current value is 1,so this.apple is "1"  

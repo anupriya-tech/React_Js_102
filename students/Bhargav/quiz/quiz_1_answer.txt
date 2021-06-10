@@ -1,4 +1,59 @@
-1) Link question?
-answer : Output will be 4 becaouse of prevent default.
+Q1. var a = 21;
+
+    Var b = function() {
+
+    console.log(a);
+
+    var a = 20; 
+    };
+
+    b();
+
+ans. the output is undefined Because Variable a is being used before it is declared And the value
+     of 'a' is undefined. var a =21; is not a global variable so it cannot access in the method  
+
+Q2.     const magic = 42; 
+	const theAnswer = magic;
+	const everything = new Set([magic,theAnswer]); 
+	console.log(everything.size);
+
+ans. Creating a variable magic and assigning  the value to the answer.
+     Now with set we are adding both values are one array.so the size of it is 1
+
+Q3.             let x = 10;
+		let y = x % 4;
+		let z = y / 2;
+		let c = x * z;
+		alert(x); 
+
+ans.     here the x is using as a different operater but there is no change in 
+         the value of x as there are no operation being performed on it so it remains same as 10  
+
+Q4a. function rectangle(w,h) {
+
+          return w*h;
+
+
+
+ans: it is default function declaration  with specified parameters  
+
+ 4
+b. const rectangle = function(w,h){ 
+
+      return w*h 
+
+      }   
+
+ans. It is similar to function declaration with parameters. However the difference 
+     is here the function name can be omitted as the variable is defined  
+4c.   const rectangle = (w,h) =>{
+      return  w*h;
+      }
+ans       
+
+4d.  const rectangle =(w,h)=>w*h;
+ans  
+
+
 
 

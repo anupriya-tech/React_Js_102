@@ -1,0 +1,96 @@
+Q-1
+<a href="https://www.google.com" onclick="console.log('Linked Clicked');">Link One</a>    
+<a href="https://www.google.com" onclick="console.log('Linked Clicked'); return false">Link two</a>
+Ans-
+Putting return false onclick attribute prevents the default behavior from occuring.Cli
+cking "Link Two" returns false amd does't follow the link.clicking "Link One" the link is followed.
+
+Q-2
+var student={
+name:"john",
+getName:function(){console.log("student "+this.name);}
+}
+
+var employee={
+name:"Tom",
+getName:function(){console.log("employee "+this.name);}
+}
+
+var run=student.getName.bind(employee);
+run();
+Ans-
+The bind() method allows an object to borrow a method from another object without making a copy of that method.
+o/p-student Tom
+
+Q-3 
+x=10
+function foo(x){
+x=20;
+delete x;
+return x;
+}
+console.log(foo(5));
+
+Ans-
+Any variable declared with var can't be deleted from global scope or from a function's scope.but if you declare a variable without var,it can be deleted.here x=1- can be deleted but function takes also x parameter and override its value by 20 so it can't be deleted finally it return 20.
+o/p-20
+
+Q-4
+function foo(){
+var a;
+console.log(a);
+a=10;
+} 
+foo();
+Ans- when we declare a variable without assigning a value if we try to use it then it will be undefined.
+o/p-undefined
+
+Q-5
+function evenodd(n){
+return n%2!=0
+}
+myarray=[1,2,3,4,5]
+console.log(myarray.filter(evenodd));
+Ans-
+filter function filter the arrayelement based on provided callback function.
+o/p-[ 1, 3, 5 ]
+
+Q-6
+var myArray=['80','90',100]
+function compare(a,b){
+return a-b;
+}
+var a=myArray.sort();
+var b=myArray.sort(compare);
+console.log(a===b);
+Ans-
+when we use sort function for numeric value it can't give excepted result.we can resolve it by passing compare function to sort function to get excepted result.finally sort function return a sorted array so in both case we will get array that's why it returns true.
+o/p-true
+
+Q-7
+myFruits=['apple','banana','orange'];
+const[a, ...b]=myFruits;
+console.log(a);
+console.log(b);
+Ans-
+here we are using spread operator so a becomes apple and remaining elements of myFruits array become b.
+o/p-apple
+   [ 'banana', 'orange' ] 
+Q-8
+printMe();
+function printMe(){
+console.log("hello from function.")
+}
+var obj=new PrintMeToo();
+obj.printMe();
+
+class PrintMeToo{
+printMe(){
+console.log("hello from class.")
+}
+}
+Ans
+In javascript if you call the function before defining then it not cause problem it will invoke so it will produce output as hello from function.but we can't create object before defining class if we try then it cause problem and produce error as ReferenceError: Cannot access 'PrintMeToo' before initialization.
+o/p-ReferenceError: Cannot access 'PrintMeToo' before initialization
+    at /script.js:5:9
+hello from function.
