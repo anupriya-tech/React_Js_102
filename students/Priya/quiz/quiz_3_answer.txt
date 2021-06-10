@@ -1,0 +1,56 @@
+1)
+
+function aaa(){
+    return{
+        test:1
+    };
+}
+alert(typeof aaa()); 
+
+The output is object in the alert box because typeof always return the data type.
+
+2)
+
+const apple = 3;
+const basket = {
+    apple : 2 ,
+    bag: {
+        apple :1 ,
+        plastic: function (){
+            return this.apple;
+        }
+    }
+}
+
+const plastic = basket.bag.plastic;
+
+console.log(plastic());
+console.log(basket.bag.plastic());
+
+Don't understanding
+
+3) const times = ["Morning" , "Afternoon" , "Evening"];
+times.map (t => `Good ${t}!`).forEach(s => console.log(s));
+
+Don't understanding
+
+4) (10).toString();
+   (10).toString(2);
+
+   The output is "10" and "1010" because in parameter passing 2 which is refering a binary number 1 or 0
+
+5) document.getElementById("title");
+   [or]
+   &("#title");
+
+   Both are right method to access the id
+
+6) const init = 26 ;
+   const hex = 0x1A ;
+   const octal = 0o32;
+   const binary = 0b11010;
+
+   (0b11010 | 0b00001) === 0b11010
+
+   The output will be false .
+
