@@ -1,0 +1,129 @@
+101)
+//Which Link will open "Google" and why?
+<a href="https://ww.google.com" onClick="console.log('link clicked');">Link One</a>
+
+<a href="https://ww.google.com"
+onClick="console.log('link clicked'); return false">Link Two</a>
+
+ANS: Link One
+DES: Returning false from an event handler will prevent the default action associated with an event;
+
+102)
+var student={
+name: "John",
+getName: function()
+{ console.log("student "+ this.name);
+}}
+var employee = {
+name: "Tom",
+getName: function()
+{console.log("employee "+ this.name);}
+}
+var run= student.getName.bind(employee);
+run();
+
+ANS: student Tom
+DES: call bind() method of the student.getName() method and pass in the employee object as the argument
+bind() method allows an object to borrow a method from another object without making a copy of that method
+
+103)
+//What is output and why?
+x = 10;
+function foo(x){
+x = 20;
+delete x;
+return x;
+}
+console.log(foo(5));
+// contributed by awecodrweb
+
+ANS: 20
+DES: delete operator removes a property from an object. It cannot remove a variable. 
+So the answer to the question depends on how the global variable or property is defined.
+
+104)
+//What's output and why?
+function foo(){
+var a;
+console.log(a);
+a = 10;
+}
+foo();
+// contributed by awecodrweb
+
+ANS: undefined
+DES: before initialization we display a
+
+
+105)
+//What does a filter do?
+function evenodd(n){
+return n%2 != 0;
+}
+myarray =
+[1,2,3,4,5];
+console.log(myarray.filter(evenodd));
+// contributed by awecodrweb
+
+ANS: [ 1, 3, 5 ]
+DES: returns odd value
+filter() method creates an array filled with all 
+array elements that pass a test (provided as a function).
+
+
+106)
+//What is output and why?
+var myArray =
+['80', '90', 100);
+function compare(a, b) {
+return a - b;
+}
+var a = myArray.sort();  // [ 100, '80', '90' ]
+var b = myArray.sort(compare);  //[ '80', '90', 100 ]
+console.log(a===b);
+//contributed by awecodrweb
+
+ANS:true
+DES: sort() function sorts values as strings.
+
+
+107)
+//What will be output and why?
+myFruits = ['apple','banana','orange'];
+const [a, ... b] = myFruits;
+console.log(a);
+console.log(b);
+//contributed by awecodrweb
+
+ANS: apple
+[ 'banana', 'orange' ]
+DES: apple assigned to var a others assigned to var b using spread operator that 
+consists of three dots (...)
+
+
+108)
+//What is output and why?
+printMe();
+function printMe(){
+console.log("hello from function.")
+}
+var obj = new PrintMeToo();
+obj.printMe();
+class PrintMeToo{
+printMe() {
+console.log("hello from class.")
+}
+}
+//contributed by awecodrweb
+
+ANS: ReferenceError: Cannot access 'PrintMeToo' before initialization
+hello from function.
+DES: Correct code:
+
+class PrintMeToo{
+printMe() {
+console.log("hello from class.")
+}
+}
+var obj = new PrintMeToo();
+obj.printMe();

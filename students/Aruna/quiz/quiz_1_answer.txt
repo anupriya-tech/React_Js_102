@@ -42,3 +42,19 @@ Output: 1
 2) and also Set can store any type of values
 
 
+-----code 4----
+function rectanglea(w,h){
+  return w*h; 
+}
+
+const rectangle=function(w,h){
+  return w*h; 
+}
+
+const rectangle=(w,h) ==> {
+  return w*h; 
+}
+
+const rectangle=(w,h) ==>  w*h; 
+---------
+output: SyntaxError: Identifier 'rectangle' has already been declared
