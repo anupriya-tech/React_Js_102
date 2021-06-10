@@ -1,0 +1,75 @@
+1)//Javascript Quiz 5
+document.getElementById("title");
+[or]
+$("#title");
+
+Output: Both statements will select the HTML element with id as "title" and operate on the element. First statement is javascript statement and second statement is jquery style.
+
+2)
+const times = ["Morning", "Afternoon", "Evening"];
+times.map(t => `Good ${t}!`)
+	.forEach(s => console.log(s));
+	
+Output:Good Morning!
+Good Afternoon!
+Good Evening!
+
+Description: The code will display each of the element prefixed with "Good". The map() function will iterate through each element of the tconst imes array and affix "Good" before the element while displaying in console.
+
+3)
+function aaa(){
+	return {
+		test:1
+	};
+}
+alert(typeof aaa());
+
+Output:alert is not defined
+
+Description: alert() is not defined will be displayed as output since alert() is a window object and not Javascript inbuilt function.
+
+4)
+const int = 26;
+const hex = 0x1A;
+const octal = 0o32;
+const binary = 0b11010;
+
+(0b11010 | 0b00001) === 0b11011;
+
+Output: true will be displayed if the value of the expression will be given inside console.log() statement.
+
+Description: The output shown will be true if the value of the expression will be given inside console.log() statement because the both the expressions on left and right sides of the or operator(|) is binary type and the expression with which the binary values are compared is of same type i.e binary hence the value will be true.
+
+5)
+/*
+What's value ? Why?
+*/
+const apple = 3;
+
+const basket = {
+	apple:2,
+	bag:{
+		apple: 1, 
+		plastic: function(){
+			return this.apple;
+		}
+	}
+};
+
+const plastic = basket.bag.plastic;
+
+console.log(plastic());
+console.log(basket.bag.plastic());
+
+Output:undefined
+1
+
+Description: The first statement will return undefined since the plastic() function is one of the method of the bag property of the basket object. While the second statement will return answer as 1 since we are properly accessing the plastic() of the bag property of the bag object.
+
+6)
+(10).toString();
+
+(10).toString(2);
+
+Output: The output will be "10" and "1010" since the radix given for the toString() in the first statement is 0 and second statement is 2 so the 10 decimal number will be converted to binary with 0s and 1s base 2.
+
