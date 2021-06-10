@@ -124,10 +124,11 @@ Question 6	:
 			
 Output		:	true
 				
-Description	:	Optional. A function that defines an alternative sort order. The function should return a negative, zero, or positive value, 
-				depending on the arguments, like:
-				function(a, b){return a-b}
-				When the sort() method compares two values, it sends the values to the compare function, and sorts the values according to the returned (negative, zero, positive) value.
+Description	:	a and b are storing the same reference of myArray. 
+				a and b are storing the reference of the array not value of array.
+				Any reference will be the myArray will be same for both.
+				
+				When the sort() method compares two values, it sends the values to the compare function, and sorts the values according to the returned (negative, zero, positive) value.  //w3schools.com
 
 
 
