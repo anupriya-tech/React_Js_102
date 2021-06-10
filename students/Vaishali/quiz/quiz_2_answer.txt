@@ -1,0 +1,163 @@
+@@-- Quiz-101 --@@
+
+//which link will open "Google" and why?
+
+<a href="https://www.google.com" onclick="console.log('link clicked');">Link One</a>
+<a href="http://www.google.com"
+onclick="console.log('link clicked'); return false">Link Two</a>
+
+
+Output: Link One Line two 
+        in console :-  link clicked
+
+Descryption :
+ > Frist one will open because second is returing false by deafault retruns true.
+
+
+
+@@-- Quiz-102 --@@
+
+var student ={
+name: "john",
+getName: function(){ console.log("student "+this.name);
+}
+}
+
+var employee ={
+name: "Tom",
+getName: function(){ console.log("employee "+this.name);
+}
+
+}
+
+var run = student.getName.bind(employee);
+run();
+
+output: student Tom
+
+Descryption :
+> bind method takes an employee object as argument and createds new function, 
+ getName bounds with employee object so employee class name (Tom) will print
+
+
+
+@@-- Quiz-103 --@@
+
+//what is output and why?
+x = 10;
+function foo(x){
+x= 20;
+delete x;
+return x;
+}
+console.log(foo(5));
+
+Output: 20
+
+Descryption : 
+> x is local variable in function which has highest priority. delete operator deletes property of object. 
+
+
+
+@@-- Quiz-104 --@@
+
+function foo(){
+var a;
+console.log(a);
+a = 10;
+}
+foo();
+
+Output: undefined
+
+Descryption: 
+> declaration only does't defind the type of the variable, it will be defined only after you set the value.
+
+        
+
+
+@@-- Quiz-105 --@@
+
+//what does a filter do?
+
+function evenodd(n){
+return n%2 !== 0;
+}
+myarray = [1,2,3,4,5];
+console.log(myarray.filter(evenodd));
+
+output: [ 1, 3, 5 ]
+
+Descryption: 
+> In this function will take array element and we are gaven condition to evenodd fuction.
+> Speified condition in evenodd function accordingly it will returning element.
+
+
+
+@@-- Quiz-106 --@@
+
+//what is output and why?
+
+var myArray = ['80', '90', 100];
+function compare(a,b){
+ return a - b;
+}
+
+var a = myArray.sort();
+var b = myArray.sort(compare);
+console.log(a==b);
+
+output: true
+
+Descryption:
+> 
+
+
+
+@@-- Quiz-107 --@@
+
+//what is output and why?
+
+myFruits = ['apple','banana','orange'];
+const [a, ...b] = myFruits;
+
+console.log(a);
+console.log(b);
+
+Output: 
+apple
+[ 'banana', 'orange' ]
+
+Descryption:
+> We gave array of varriable to assign to the array of fruits.
+> Apple goto A and ... b meaning it  could contaon n number of element.
+
+
+@@-- Quiz-108 --@@
+
+//what is output and why?
+
+printMe();
+
+function printMe(){
+console.log("hello from function.")
+}
+
+var obj = new PrintMeToo();
+obj.printMe();
+
+class PrintMeToo{
+printMe(){
+console.log("hello from class.")
+}
+
+}
+
+
+Output: ReferenceError: Cannot access 'PrintMeToo' before initialization
+    at /script.js:9:11
+hello from function.
+
+Descryption:
+> we got a error Cannot access 'PrintMeToo' before initialization because we can't  access or use the class before declaration. 
+> But we get function output.

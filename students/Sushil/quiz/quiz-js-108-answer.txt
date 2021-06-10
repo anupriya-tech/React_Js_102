@@ -1,0 +1,15 @@
+printMe();
+function printMe()
+{
+console.log("hello from function")
+
+}
+var obj=new PrinMeToo();
+obj.printMe();
+class PrintMeToo{
+printMe()
+{
+console.log("hello from class")
+}
+}
+quiz-js-108_output:Uncaught ReferenceError: printMe is not defined

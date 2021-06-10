@@ -1,0 +1,108 @@
+1)
+  Which link will open "Google" and why?
+  
+    a) <a href = "https://www.google.com" onClick="console.log(link clicked);">Link One</a>
+	b) <a href = "https://www.google.com" onClick="console.log(link clicked); return false">Link One</a>
+	
+Answer: You use return false to prevent something from happening. So, here answer is "a" as there is "return false" in second option
+
+
+2) var student = {
+		name: "John",
+		getName: function(){console.log("student "+this.name);}
+   }
+   
+   var employee = {
+		name: "Top",
+		getName: function(){console.log("employee "+this.name);}
+   }
+   
+   var run= student.getName.bind(employee);
+   run();
+   
+Answer: student Top
+        The bind() method returns a new function, when invoked, has its this sets to a specific value.
+		
+		
+3) 
+  //What is the output and why?
+   x=10;
+   function foo(x){
+     x=20;
+	 delete x;
+	 return x;
+   }
+   
+   console.log(foo(5));
+   
+Answer: 20
+        delete operator only work in object not on variables or functions
+		Here x returns it local value that is 20
+		
+4) //What's output and why?
+    function foo(){
+	   var a;
+	   console.log(a);
+	   a=10;
+	}
+	foo();
+
+Answer: undefined
+        value of a is printed before it assigned
+		
+5) //what does a filter do?
+
+   function evenodd(n){
+      return n%2 !=0;
+   }
+   myarray = [1,2,3,4,5];
+   console.log(myarray.filter(evenodd));
+   
+Answer: [ 1, 3, 5 ]
+         Array filter returns all the values which are not divisible by 2
+		 
+6) what is the outpu and why?
+
+   var myArray = ['80', '90', 100];
+   
+   function compare(a,b){
+     return a-b;
+   }
+   
+   var a=myArray.sort();
+   var b=myArray.sort(compare);
+   console.log(a=b);
+   
+Answer: [ '80', '90', 100 ]
+         sort() method sorts an array alphabetically. For numeric values we use compare function with a-b.
+		 So, here sort function sorts in ascending order
+		 
+7) What will be output and why?
+   
+    myFruits = ['apple', 'banana', 'orange'];
+    const[a, ...b]=myFruits;
+    
+    console.log(a);
+    console.log(b);
+
+Answer:  a= apple and b=[ 'banana', 'orange' ]
+         The destructuring assignment syntax is a JavaScript expression that makes it possible to unpack values from arrays, or properties from objects, into distinct variables.
+		 
+		 
+8) What is output and why?
+   printMe();
+   
+   function printMe(){
+     console.log("Hello from function");
+   }
+   
+   var obj = new printMeToo();
+   obj.printMe();
+   
+   class printMeToo{
+     printMe(){
+	   console.log("Hello from class");
+	 }
+   }
+		 
+Answer: It will gives error as we can not create object of any class before it initialization

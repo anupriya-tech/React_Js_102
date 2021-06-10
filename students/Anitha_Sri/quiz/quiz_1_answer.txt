@@ -166,6 +166,7 @@ Sample 112
 
 Output:undefined
 Why: a is been called before initialisation.When calling the function b a would be already declared as undefined.In b function the console.log is before initialization so the output is undefined.
+<<<<<<< HEAD
 
 Sample 113
 ----------
@@ -240,5 +241,7 @@ Why:The function plastic is not directly accessable so we get undefined. basket.
 
 
 
+=======
+>>>>>>> 2ed94911026c4f5f694fc8beaec3a6a661f0f72c
 
 
