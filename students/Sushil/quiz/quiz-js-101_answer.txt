@@ -1,0 +1,6 @@
+<a href="https://www.google.com "onClick="console.log('Link clicked');
+>LinkOne</a>
+<a href="https://www.google.com "onClick="console.log('Link clicked');
+return false>LinkTwo</a>
+answer:The first link will open google.
+
