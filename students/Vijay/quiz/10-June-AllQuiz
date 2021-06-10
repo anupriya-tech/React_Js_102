@@ -1,0 +1,71 @@
+1)  function aaa(){
+    return{
+        test:1
+    };
+}
+
+alert (typeof aaa());
+
+Answer: "object"
+         here type of function aaa is object as it returns object 
+
+
+2) document.getElementById("title");
+
+   Or
+
+   $("#title");
+
+
+
+
+3) const int = 26;
+   const hex = 0x1A;
+   const octal = 0o32;
+   const binary = 0b11010;
+
+   (0b11010 | 0b00001) = 0b11011
+
+
+4) (10).toString()   //10
+    (10).toString(2)  //?
+
+Answer:  1010
+       above 2 give binary value for 10.
+       Which base to use for representing a numeric value. Must be an integer between 2 and 36.
+       2 - The number will show as a binary value
+       8 - The number will show as an octal value
+       16 - The number will show as an hexadecimal value
+
+
+5)  const times = ["Morning", "Afternoon", "Evening"];
+     times.map(t=>'Good ${t}!')
+           .forEach(s=>console.log(s));
+
+Answer: Good ${t}!
+        Good ${t}!
+        Good ${t}!
+    
+    The map() method creates a new array with the results of calling a function for every array element.
+    The map() method calls the provided function once for each element in an array, in order.
+
+
+6)  What's value and why?
+
+    const apple = 3;
+    const basket = {
+        apple: 2,
+        bag: {
+            apple: 1,
+            plastic: function(){
+                return this.apple;
+            }
+        }
+    }
+
+    const plastic = basket.bag.plastic;
+    console.log(plastic());
+    console.log(basket.bag.plastic());
+
+    Answer: undefined
+            1
