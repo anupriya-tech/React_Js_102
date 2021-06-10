@@ -69,8 +69,12 @@ const hex = 0x1A;       // The number 26, in hexadecimal (0x1a = 16^1 * 1 + 16^0
      (10).toString(2)
 
      Ans: The output will be,
-          (10).toString()  //10
-          (10).toString(2)  //1010 which will print the binary value of 10.
+          (10).toString()  //10 
+          The toString() method returns the string representation of the object.
+          By overriding the toString() method of the Object class, we can return values of the object, so we don't need to write much code.
+          (10).toString(2)  //1010  which will print the binary value of 10.
+          number.toString(radix) , radix is optional. Which base to use for representing a numeric value.
+          radix  must be an integer between 2 and 36.(if 2 - The number will show as a binary value, if 8 - The number will show as an octal value, if 16 - The number will show as an hexadecimal value)
 
 
 
