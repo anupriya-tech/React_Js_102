@@ -138,10 +138,9 @@ Output		:	undefined
 				
 Description	:	console.log(plastic()); will give output undefined because the const plastic is not a function.
 				
-				console.log(basket.bag.plastic()); will give output 1 as the scope of this or this refers to bag object and as the value os apple is 1.
+				console.log(basket.bag.plastic()); will give output 1 as the scope of this or this refers to bag object and as the value of apple is 1.
 				
 				The this keyword behaves differently in JavaScript compared to other languages. In JavaScript the value of this not refer to the function in which it is used or it’s scope but is determined mostly by the invocation context of function (context.function()) and where it is called.
-
 
 
 
