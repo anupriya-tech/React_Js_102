@@ -1,4 +1,34 @@
-1) Link question?
-answer : Output will be 4 becaouse of prevent default.
+1) 
+output : Link 1 will open
+Descrip: Returning false that are used to stop default browser behaviour but their functionalities and 
+         uses are little different.
+
+2)
+ output : 
+ Descrip:  
+
+3)
+ output : 20
+ Descrip:  Thus delete operator has no effect on a variable then its return x as a output.
+
+4)
+ output : UnboundLocalError 
+ Descrip:  due to X variale is not accessible
+
+5)
+ output : 1,3,5
+ Descrip: filter method gives another array based on function returning items holding true value.
+
+6)
+ output : 
+ Descrip:  
+
+7)
+ output : apple, ['banana', 'orange']
+ Descrip:  
+
+ 8)
+ output : 
+ Descrip:  
 
 
