@@ -84,19 +84,18 @@ Descryption:
 
 /* Quiz-5*/
 
-const times = ["Morning", "Afternoon","Evening"];
-
-times.map(t => 'Good ${t}!').forEach(s => console.log(s));
+const times = ["Morning", "Afternoon", "Evening"];
+times.map(t => `Good ${t}!`).forEach(s => console.log(s));
 
 /*
 Output: 
 
-Good ${t}!
-Good ${t}!
-Good ${t}!
+Good Morning!
+Good Afternoon!
+Good Evening!
 
 Descryption:
-I can not understand execution of code. 
+1. map() method creates a new array with the results of calling a function for every array element.
 **********************************************************************/
 
 /* Quiz-6*/
