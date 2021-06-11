@@ -1,0 +1,76 @@
+Sample 1
+----------
+function aaa(){
+            return {
+                test:1
+            }
+        }
+        alert(typeof(aaa))
+		
+		
+		
+Output:function
+why: aaa is a function
+----------------------------------------------------------------------------------------
+Sample 2
+-------------
+  document.getElementById("title")
+       
+        $("#title")
+		
+Ouput:Getting error $ not defined
+Why: Its because dolar sign is used mostly in jquery and jquery is not configured in my vs code
+
+----------------------------------------------------------------------------------------------
+Sample 3
+-----------
+const int=26;
+const hex=0x1A;
+const octal=0o32;
+const binary=0b11010;
+(0b11010 | 0b00001)===0b11011
+
+output:When trying to print in console only integer value is printed. The output is 26
+Why:Not sure
+----------------------------------------------------------------------------------------------
+Sample 4
+--------------
+console.log((10).toString())
+console.log(10).toString(2)
+
+output:1010
+why :first console It converts the number to string and second console coverts number the base of octal or decimal or hex
+---------------------------------------------------------------------------------------------
+Sample 5
+-----------
+const times=["Morning","Afternoon","Evening"];
+        times.map(t=>"Good ${t}!")
+        .forEach(s=>console.log(s))
+		
+output:Good ${t}!
+why: Its been given as a string
+----------------------------------------------------------------------------------------------
+
+Sample:6
+-----------------
+ const apple=3;
+        const basket={
+            apple:2,
+            bag:{
+                apple:1,
+                plastic:function(){
+                    return this.apple
+                }
+            }
+        }
+
+        
+        console.log(plastic())
+        console.log(basket.bag.plastic())
+		
+Output:undefined and 1. 
+Why:The function plastic is not directly accessable so we get undefined. basket.bag.plastic returns apple which is =1
+
+
+
+
