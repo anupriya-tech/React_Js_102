@@ -57,7 +57,6 @@ Consider ans of following truth table, ans is 11011
 ------
 11011
 
-Now, ((0b11010 | 0b00001) is 11011, its == 0b11011. Thats why Output: true.
 
 **********************************************************************/
 
