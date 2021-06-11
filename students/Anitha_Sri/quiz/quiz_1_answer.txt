@@ -1,16 +1,15 @@
-
-Sample101
-
+Sample1
+---------
 <a href="https://www.google.com" onClick="console.log('Link Clicked')">Link One</a><br/>
 <a href="https://www.google.com" onClick="console.log('Link Clicked'); return false">Link Two</a>
 
 Ouput:Both the links navigate to Google
 Why:The first link is a URL and once clicked it navigates to google page. The second link also a URL which navigate to Google Page
 
+----------------------------------------------------------------------------------------------------------------------------
 
 
-
-Sample102
+Sample2
 --------
 var student={
 name:"John",
@@ -27,8 +26,9 @@ var run=student.getName.bind(employee)
 
 Output: Will show SyntaxError: Unexpected token 'var'
 Why: The employee Object is given inside student Object
+----------------------------------------------------------------------------------------------------------------------------------------
 
-Sample103
+Sample3
 -------
  x=10;
         function foo(x){
@@ -40,8 +40,8 @@ Sample103
 		  
 Output:The x value returns 20;
 Why: In this function delete operator does not work in function or for variables as delete operator works only for Object.So the return value of x would be 20
-
-Sample104
+---------------------------------------------------------------------------------------------------------------------------------------------
+Sample4
 --------
 function foo(){
 var a;
@@ -51,194 +51,3 @@ a=10;
 }		  
 Output:undefined
 Why:Here a is called before initialization. So by default javascript would have mention a as undefined.So when we try to print the a before initialisation we get undefined.
-
-
-Sample105
--------
-What does the filter do?
-
-function evenodd(n){
-return n%2!==0;
-
-}
-myArray=[1,2,3,4,5]
-
-console.log(myArray.filter(evenodd))
-
-output:[1,3,5]
-Why: function return the n%2 not equal to zero and use filter function to filter the numbers in which the reminder is not equal to zero
-
-
-Sample106
----------
-  var myArray=['80','90',100]
-        function compare(a,b){
-            return a-b;
-        }
-        var a=myArray.sort();
-        console.log("a"+a)
-        var b=myArray.sort(compare)
-        console.log("b"+b)
-        console.log(a===b)
-		
-output:a=100,80,90 b=80,80,100
-Why: sort function sort based on the first digit of the numbers. Which ever is less will be the first. But compare function compares the whole number and sort it accordingly
-
-
-Sample107
- myFruit=['apple','banana','orange']
-        const [a,...b]=myFruit;
-
-        console.log(a)
-        console.log(b)
-		
-output:a="apple" b="banana"
-why:This is the concept of destructuring the array.In the place of a apple is called and in the place of b banana and orange is called as we use spead operator both values are called.
-
-Sample 108
-----------
- printMe();
-        function printMe(){
-            console.log("Hello I am from function")
-        }
-        var obj=new PrintMeToo();
-        obj.printMe()
-        class PrintMeToo{
-            printMe(){
-                console.log("Hello I am from class")
-            }
-        }
-		
-ouput:Hello I am from function
-Why: The concept here is hoisting the function will be hoisted and can be called before defining it.But Class cannot be hoisted so we cant call the method using object referernces before the class
-
-Sample109
----------
- const magic=42;
-        const theAnswer="magic"
-        const everything =new Set([magic,theAnswer])
-        console.log(everything.size)
-Output: The output is 2
-Why: A constant variable is reassigned as a string and using an object print the size of the array. So we get the size as 2
-
-Sample 110
------------
-   let x=10;
-    let y=x%4
-    let z=y/2
-    let c=x*z
-    alert(x)
-
-Ouput:10
-Why:alert function calls only x value
-
-
-
-Sample111
-----------
-function rectangle(w,h){
-            return w*h
-        }
-        const rectangle=function(w,h){
-            return w*h
-        }
-
-        const rectangle=(w,h)=>{
-            return w*h
-
-        }
-
-        const rectangle=(w,h)=>w*h;
-        console.log(rectangle)
-
-Output: Will give an error Uncaught SyntaxError: Identifier 'rectangle' has already been declared
-why: rectangle is duplicate variable name.
-
-Sample 112
-----------
-    var a=21;
-        var b=function(){
-            console.log(a)
-            var a=20
-        }
-        b()
-
-
-Output:undefined
-Why: a is been called before initialisation.When calling the function b a would be already declared as undefined.In b function the console.log is before initialization so the output is undefined.
-
-Sample 113
-----------
-function aaa(){
-            return {
-                test:1
-            }
-        }
-        alert(typeof(aaa))
-		
-		
-		
-Output:function
-why: aaa is a function
-
-Sample 114
--------------
-  document.getElementById("title")
-       
-        $("#title")
-		
-Ouput:Getting error $ not defined
-Why: Its because dolar sign is used mostly in jquery and jquery is not configured in my vs code
-
-
-Sample 115
------------
-const int=26;
-const hex=0x1A;
-const octal=0o32;
-const binary=0b11010;
-(0b11010 | 0b00001)===0b11011
-
-output:When trying to print in console only integer value is printed. The output is 26
-Why:Not sure
-
-Sample 116
-console.log((10).toString())
-console.log(10).toString(2)
-
-output:1010
-why :first console It converts the number to string and second console coverts number the base of octal or decimal or hex
-
-Sample 117
-const times=["Morning","Afternoon","Evening"];
-        times.map(t=>"Good ${t}!")
-        .forEach(s=>console.log(s))
-		
-output:Good ${t}!
-why: Its been given as a string
-
-
-Sample:118
-
- const apple=3;
-        const basket={
-            apple:2,
-            bag:{
-                apple:1,
-                plastic:function(){
-                    return this.apple
-                }
-            }
-        }
-
-        
-        console.log(plastic())
-        console.log(basket.bag.plastic())
-		
-Output:undefined and 1. 
-Why:The function plastic is not directly accessable so we get undefined. basket.bag.plastic returns apple which is =1
-
-
-
-
-
