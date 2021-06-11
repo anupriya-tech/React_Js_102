@@ -1,0 +1,116 @@
+
+
+  1. function aaa() {
+    return
+    {
+        test:1
+    };
+  }
+  alert(typeof aaa());
+
+   Answer: undefined;
+   Explanation:  function aaa is invoked and seems to return an object. But JS is sly and likes to help out by inserting semicolons where you may have missed them. (return;)
+   Which causes undefined to be alerted instead of object as you might initially think.
+
+   <!-------------------------------*******************************---------------------------------->
+
+2. document.getElementById("title");
+
+[or]
+
+$("#title");
+
+  Answer:
+Explanation:  document.getElementById("title");
+The Document method getElementById() returns an Element object representing the element whose id (title) property matches the specified string. Since element IDs are required to be unique if specified, they're a useful way to get access to a specific element quickly.
+
+$("#title");
+jQuery selects the id attribute, which is 'title'.
+
+   <!-------------------------------*******************************---------------------------------->
+
+ 3. const int = 20;
+
+   const hex = 0x1A;
+
+   const octal = 0o32;
+
+   const binary = 0b11010;
+
+   (0b11010 | 0b00001) === 0b11011
+   
+   Answer: true
+   Explanation: const hex = 0x1A; Which is 26
+                const octal = 0o32; which is also 26
+                const binary = 0b11010; which is also 26
+ so hex & octa values is equal to binary value.
+
+   <!-------------------------------*******************************---------------------------------->
+
+
+4. (10).toString()
+
+// "10"
+
+ (10).toString(2)
+ // ???
+
+ Answer: 1010
+ Explanation: number.toString(radix), Optional. Which base to use for representing a numeric value. Must be an integer between 2 and 36.
+          2 - The number will show as a binary value
+          8 - The number will show as an octal value
+          16 - The number will show as an hexadecimal value
+
+   <!-------------------------------*******************************---------------------------------->
+
+
+5. const times = ['Morning', 'Afternoon', 'Evening'];
+  
+   times.map(t => `Good ${t}!`)
+        .forEach(s => console.log(s));
+
+        //Have a great weekend!
+Answer: 
+Good Morning!
+Good Afternoon!
+Good Evening!
+
+Explanation:  The map() method creates a new array with the results of calling a function for every array element.
+The map() method calls the provided function once for each element in an array, in order.
+The forEach() method calls a function once for each element in an array, in order.
+
+Array.forEach “executes a provided function once per array element.”
+
+Array.map “creates a new array with the results of calling a provided function on every element in this array.”
+
+   <!-------------------------------*******************************---------------------------------->
+
+
+6. /*
+What's value ? why
+*/
+
+const apple = 3;
+
+const basket = { 
+    apple: 2,
+    bag: {
+        apple: 1,
+        plastic: function() {
+            return this.apple;
+        }
+    }
+}
+
+const plastic = basket.bag.plastic;
+
+console.log(plastic());
+console.log(basket.bag.plastic());
+
+Answer:  
+undefined
+1
+
+Explanation: Because when calling the function plastic() directly js cannot read property 'apple',so that a TypeError will occur.
+        When calling the function basket.bag.plastic() the value of apple is assigned as 1 ,so output will be 1.
+     

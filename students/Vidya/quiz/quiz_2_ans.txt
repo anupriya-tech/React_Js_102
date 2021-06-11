@@ -1,0 +1,220 @@
+/* Quiz-101 
+<------ Code Start-------> */
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>quiz_js_101</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <!-- Which link will open "Google" and why? -->
+  <a href="https://www.google.com" onClick="console.log('link clicked');"> Link One </a>
+  
+  <a href="https://www.google.com" onClick="console.log('link clicked'); return false"> Link Two </a>
+
+  <script src="script.js"></script>
+  </body>
+</html>
+
+//<------ Code End------->
+
+/*
+Output:  Link One Link Two
+
+Descryption :
+1. Link One will open "Google" page. when user will click on Link One at that time onClick() will get call, link clicked msg print by console.log(),  and href will direct/open given link that is "https://www.google.com"; 
+2. Link Two will not open "Google" page. when user will click on Link One at that time onClick() will get call , link clicked msg print by console.log() and href will direct/open given link that is "https://www.google.com" but onclick function will "return false", it prevent default. 
+3 Due to prevent default href will not direct/open given link that is "https://www.google.com".
+
+****************************************************************************************************/
+
+/* Quiz-102 
+<------ Code Start-------> */
+
+// What will output and why?
+var student = {
+    name: "John",
+    getName: function(){
+      console.log("student "+this.name);
+    }
+  }
+  
+  var employee = {
+    name: "Tom",
+    getName: function(){
+      console.log("employee "+this.name);
+    }
+  }
+  
+  var run = student.getName.bind(employee);
+  run();
+//<------ Code End------->
+
+
+  /*
+  Output: student Tom
+
+  Descryption :
+  
+  1. ".bind()" method returns a new function, where the value of “this” keyword will be bound to the owner object, which is provided as a parameter.
+  2. Here  "student.getName.bind(employee);" statement returns a new function that named as run(). It Binds the getName function to the employee{}
+  3. When run(); get call, execution will give output as - student Tom.
+  
+  ****************************************************************************************************/
+  
+  /* Quiz-103
+<------ Code Start-------> */
+  
+ x = 10;
+function foo(x){
+  x=20;
+  delete x;
+  return x;
+}
+console.log(foo(5));
+
+//<------ Code End------->
+
+/*
+Output: 20
+
+Descryption :
+  
+1. when foo() get call, foo() receives 5 as parameter to argument x. But as interpreter reaches next line, it will get initial value as x=20. 
+
+2. delete x :The delete operator removes a property from an object. It cannot remove a variable. So the answer to the question depends on how the global variable or property is defined.
+
+3.so the output will be 20.
+
+****************************************************************************************************/
+
+/* Quiz-104
+<------ Code Start-------> */  
+
+function foo(){
+  var a;
+  console.log(a);
+  a = 10;
+}
+foo();
+//<------ Code End------->
+
+/*
+Output: undefined
+
+Descryption :
+  
+1. when foo() get call, var a get declared and declaration has initial value undefined till variable has not get initial value or assign value to it.
+
+2. Here a get assigned value after console.log(a); thats why output will be undefined.
+
+****************************************************************************************************/
+
+/* Quiz-105
+<------ Code Start-------> */
+// what does filter do ?
+
+function evenodd(n){
+  return n%2 !=0;
+}
+
+myarray = [1,2,3,4,5];
+console.log(myarray.filter(evenodd));
+
+//<------ Code End------->
+
+/*
+Output: [ 1, 3, 5 ]
+
+Descryption :
+  
+1. The filter() method creates an array filled with all array elements that pass a test (provided as a function).
+2. In evenodd(), condition is  n%2 !=0; if it true then statement "console.log(myarray.filter(evenodd)); " will print value of array.
+3.filter() does not execute the function for array elements without values.
+4. filter() does not change the original array.
+
+****************************************************************************************************/
+
+/* Quiz-106
+<------ Code Start-------> */
+
+// What is output and why?
+
+var myArry = ['80', '90', 100];
+function compare(a, b)
+{
+return a-b;
+}
+var a = myArry.sort();
+var b = myArry.sort(compare);
+console.log(a==b);
+//<------ Code End------->
+
+
+/*
+Output: true
+
+Descryption :
+1. By default, the sort() function sorts values as strings.
+2. here we overcome this by providing a compare function:
+3. When the sort() function compares two values, it sends the values to the compare function, and sorts the values according to the returned (negative, zero, positive) value.
+If the result is negative a is sorted before b.
+If the result is positive b is sorted before a. 
+If the result is 0 no changes are done with the sort order of the two values.
+
+****************************************************************************************************/
+ 
+/* Quiz-107
+<------ Code Start-------> */ 
+
+// What will be output and why ?
+
+myFruits = ['apple', 'banana', 'orange'];
+const [a, ...b] = myFruits;
+console.log(a);
+console.log(b);
+//<------ Code End------->
+
+/*
+output:
+apple
+[ 'banana', 'orange' ]
+
+Descryption :
+
+1. spread operator that consists of three dots (...). The spread operator allows you to spread out elements of an iterable object such as an array,a  map, or a set. 
+2. Here a will be apple and remaining two array element will store in ...b, i.e. spread operator. 
+****************************************************************************************************/
+
+/* Quiz-108
+<------ Code Start-------> */ 
+// What is output and why?
+
+printMe();
+
+function printMe(){
+  console.log("hello from function.");
+}
+
+var obj = new PrintMeToo();
+obj.printMe;
+
+class PrintMeToo{
+  printMe(){
+    console.log("hello from class");
+  }
+}
+//<------ Code End------->
+
+
+/*
+Output: hello from function.
+
+Descryption :
+1. Because, before initialization we can not crete instance of class, so it will throw  ReferenceError: Cannot access 'PrintMeToo' before initialization.
+
+*****************************************************************************************************/
+
