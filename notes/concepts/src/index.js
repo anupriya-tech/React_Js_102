@@ -1,39 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-class Clock extends React.Component {
+//all list item in react should have key
+//Warning: Each child in a list should have a unique "key" prop.
 
-  constructor(props) {
-    super(props);
-    this.state = { date: new Date() };
-  }
-
-  componentDidMount(){
-    this.timerId = setInterval(
-      () => this.tick(),1000
-    );
-  }
-
-  tick() {
-    //this.state = new Date();
-    this.setState({ date: new Date() });
-  }
-
-  componentWillUnmount(){
-    clearInterval(this.timerId);
-  }
-
-  render() {
-    return (
-      <div>
-        <h1>Hello There</h1>
-        <h2> It is {this.state.date.toLocaleTimeString()}</h2>
-      </div>
-    );
-  }
-
-}
+const mylist = [1,2,3,4,5];
+const listelements = mylist.map( (i) =>
+<li>
+    {i}
+  </li>
+  /* <li key={i.toString()}>
+    {i}
+  </li> */
+);
 
 ReactDOM.render(
-  <Clock />
+  <ul>{listelements}</ul>
   ,document.getElementById("root") );
