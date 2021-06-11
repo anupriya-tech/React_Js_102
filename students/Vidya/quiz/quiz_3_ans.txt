@@ -125,8 +125,8 @@ undefined
 1
 
 Descryption:
-1. 
-2. 
+1. we should have to give refers all functions as plastic() is of bag() and bag() is of basket(). If we try to call plastic() only it will be undefined.
+2. In second statement refers all functions correctly, and as per scope chain plastic() will have value for apple var is 1. 
 **********************************************************************/
 
 
