@@ -1,0 +1,4 @@
+document.getElementById("title");
+[or]
+$("#title");
+answer:ReferenceError: or is not defined
