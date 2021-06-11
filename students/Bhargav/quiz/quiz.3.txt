@@ -1,0 +1,54 @@
+
+1Q).
+1)ans.    document.getElementById()  method returns the element that has  ID 
+         attribute with specified value.Here it gets the element with Id= title
+
+2)ans.   $ sign is to define or access a query
+#id selector uses Id attribute of 
+         HTML tag to find specific element.
+Here it fetches the element with ID=title
+
+
+3Q).     function aaa() {
+         
+  return
+
+           {
+              
+test: 1
+            
+};
+         
+}
+         
+alert(typeof aaa());
+
+3)ans.   undefined 
+         Reason: java script expects semicolon at the end of each line. So it inserts it after return 
+         making the function return nothing so the data type of invoked function is undefined 
+
+4Q).     (10).toString()
+         
+// "10"
+
+
+         (10).toString(2)
+          
+// ???
+
+4)ans.   To convert a number to a string with base 2, we will have to call the string () method by 
+         passing 2 as a parameter.
+The answer is 1010         
+
+5Q).     const times = ["Morning", "Afternoon", "Evening" ];
+
+         times.map(t => "Good ${t}!")
+
+             .forEach(s => console.log(s));
+         
+// Have a great weekend!
+5)ans.   Good Morning!
+         
+Good Afternoon!
+        
+ Good Evening!             
