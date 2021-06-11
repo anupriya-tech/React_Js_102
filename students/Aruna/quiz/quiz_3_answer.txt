@@ -4,7 +4,7 @@ document.getElementById("title");-------declared in javascript
 or
 $("#title"); -----declared in jquery
 ------------
-output: nothing
+
 
 -------------------------------------------------------------
 
@@ -19,7 +19,7 @@ function aaa(){
 alert(typeof aaa()); 
 ----------------
 output :undefined
-    will not pass any value in aaa object
+    
 ---------------------------------------------------
 
 
@@ -28,8 +28,8 @@ code :3
 (10).toString()
 (10).toString(2)
 --------------
-output: .tostring is not a function
-
+output: 1010
+because (2) means binary value so 10 binary value is 1010
 --------------------------------------------------
 
 code: 4
@@ -40,7 +40,8 @@ const octal=0o32;
 const binary=0b11010;
 (0b11010 | 0b00001)==0b11011
 -------------------
-output: will not get anything
+output: true
+    it perform OR operation between 11010 and 00001
 -------------------------------------------------
 
 
@@ -70,6 +71,6 @@ output: undefined
   times.map (t=>'Good ${t}!')
   .forEach(s =>console.log(s))  ;
 ------
-output: Good ${t}!
-        Good ${t}!
-        Good ${t}!
+output: Good Morning!
+        Good Afternoon!
+        Good Evening!
