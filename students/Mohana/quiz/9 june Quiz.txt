@@ -28,16 +28,16 @@ bind() method allows an object to borrow a method from another object without ma
 
 103)
 //What is output and why?
-X = 10;
+x = 10;
 function foo(x){
-X = 20;
+x = 20;
 delete x;
 return x;
 }
 console.log(foo(5));
 // contributed by awecodrweb
 
-ANS: 5
+ANS: 20
 DES: delete operator removes a property from an object. It cannot remove a variable. 
 So the answer to the question depends on how the global variable or property is defined.
 
@@ -78,13 +78,12 @@ var myArray =
 function compare(a, b) {
 return a - b;
 }
-var a = myArray.sort();
-var b = myArray.sort(compare);
-console.log(a=b);
+var a = myArray.sort();  // [ 100, '80', '90' ]
+var b = myArray.sort(compare);  //[ '80', '90', 100 ]
+console.log(a===b);
 //contributed by awecodrweb
 
-ANS:[ 100, '80', '90' ]
- true
+ANS:true
 DES: sort() function sorts values as strings.
 
 
@@ -98,7 +97,8 @@ console.log(b);
 
 ANS: apple
 [ 'banana', 'orange' ]
-DES: apple assigned to var a
+DES: apple assigned to var a others assigned to var b using spread operator that 
+consists of three dots (...)
 
 
 108)
@@ -118,4 +118,12 @@ console.log("hello from class.")
 
 ANS: ReferenceError: Cannot access 'PrintMeToo' before initialization
 hello from function.
-DES: 
+DES: Correct code:
+
+class PrintMeToo{
+printMe() {
+console.log("hello from class.")
+}
+}
+var obj = new PrintMeToo();
+obj.printMe();
