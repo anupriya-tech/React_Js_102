@@ -1,0 +1,148 @@
+
+
+
+
+
+
+Question 1	:
+					
+				function aaa(){
+					return {
+						test: 1
+					};
+				}
+				alert(typeof aaa());
+				
+			
+Output		:	object
+				
+Description	:	When typeof is applied to any object type other than Function, it simply returns “object”. 
+				When applied to a function, it returns a function object.
+
+
+
+
+
+
+Question 2	:
+				document.getElementById("title");
+				
+				[or]
+				
+				$('#title')
+				
+			
+Output		:	both are correct.
+				
+Description	:	document.getElementById("title"); //Javascript syntax
+				
+				$('#title') //Jquery syntax
+
+
+
+
+
+
+Question 3	:
+				const int = 26;
+				
+				const hex = 0x1A;
+				
+				const octal = 0o32;
+				
+				const binary = 0b11010;
+				
+				(0b11010 | 0b00001) === 0b11011
+				console.log((0b11010 | 0b00001) === 0b11011);
+				
+			
+Output		:	true
+				
+Description	:	--
+
+
+
+
+
+
+Question 4	:
+				(10).toString()
+				// "10"
+				
+				(10).toString(2)
+				// ???
+
+			
+Output		:	"1010"
+				
+Description	:	If base is 2 it will convert the number in to binary and then return it as string.
+
+				To convert a number to a string with base 2, we will have to call the toString() method by passing 2 as a parameter.
+				
+				
+				The toString() method in Javascript is used with a number and converts the number to a string. 
+				It is used to return a string representing the specified Number object.
+				
+				This method accepts a single optional parameter base. This parameter specifies the base in which the integer is represented in the string. It is an integer between 2 and 36 which is used to specify the base for representing numeric values.
+
+
+
+
+
+
+Question 5	:
+				const times = ["Morning", "Afternoon", "Evening"];
+				
+				times.map(t => `Good ${t}!`)
+					 .forEach(s => console.log(s));
+
+			
+Output		:	"Good Morning!"
+				"Good Afternoon!"
+				"Good Evening!"
+				
+Description	:	The map() method creates a new array populated with the results of calling a provided function on every element in the calling array.
+
+				For each element of the times array map method adds Good in the beginning and ! in the end and the the forEach method prints the individual elements.
+				
+				The forEach() method executes a provided function once for each array element.
+
+
+
+
+
+
+Question 6	:
+				// What is value? why?
+
+				const apple =3;
+				
+				const basket = {
+					apple: 2,
+					bag: {
+							apple: 1,
+							plastic: function() {
+								return this.apple;
+							}
+					}
+				}
+				
+				const plastic = basket.bag.plastic;
+				
+				console.log(plastic());
+				console.log(basket.bag.plastic());
+
+			
+Output		:	undefined
+				1
+				
+Description	:	console.log(plastic()); will give output undefined because the const plastic is not a function.
+				
+				console.log(basket.bag.plastic()); will give output 1 as the scope of this or this refers to bag object and as the value of apple is 1.
+				
+				The this keyword behaves differently in JavaScript compared to other languages. In JavaScript the value of this not refer to the function in which it is used or it’s scope but is determined mostly by the invocation context of function (context.function()) and where it is called.
+
+
+
+
+

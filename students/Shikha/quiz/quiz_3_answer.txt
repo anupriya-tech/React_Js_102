@@ -7,7 +7,11 @@ function aaa(){
 alert(typeof aaa()); 
 
 Answer : The output of it is OBJECT.
+<<<<<<< HEAD
 
+=======
+================================================================
+>>>>>>> 081efb8106d7d9d397f9611d7d4423e959287a7a
 Quiz 2 : 
 
 document.getElementById("title"); 
@@ -18,7 +22,11 @@ $("#title");
 
 Answer : document.getElementById("title"); when we are using javascript then we can call this methord.
  && in jquery we can call by this $("#title"); 
+<<<<<<< HEAD
 
+=======
+================================================================
+>>>>>>> 081efb8106d7d9d397f9611d7d4423e959287a7a
 
  Quiz 3 : 
 
@@ -34,7 +42,11 @@ const binary = 0b11010;
 
 
 Answer : Not able to understand this question.
+<<<<<<< HEAD
 
+=======
+=============================================
+>>>>>>> 081efb8106d7d9d397f9611d7d4423e959287a7a
 Quiz 4 : 
 
 (10).toString() // "10" 
@@ -47,7 +59,11 @@ Answer :
 (10).toString(2)  binary code for 10 is 1010.
 
 
+<<<<<<< HEAD
 
+=======
+================================================
+>>>>>>> 081efb8106d7d9d397f9611d7d4423e959287a7a
 Quiz 5 : 
 const times = ["Morning", "Afternoon", "Evening"];
 times.map(t => `Good ${t}!`).forEach(s => console.log(s));
@@ -56,7 +72,11 @@ Answer : Good Morning!
 	     Good Afternoon!
 		 Good Evening!
 Mapping function is used. 
+<<<<<<< HEAD
 
+=======
+=======================================
+>>>>>>> 081efb8106d7d9d397f9611d7d4423e959287a7a
 Quiz 6 :
 const apple = 3;
 
@@ -75,4 +95,8 @@ console.log(plastic());
 console.log(basket.bag.plastic());
 
 Answer : console.log(plastic()); :: undefined
+<<<<<<< HEAD
 console.log(basket.bag.plastic()); :: 1
+=======
+console.log(basket.bag.plastic()); :: 1
+>>>>>>> 081efb8106d7d9d397f9611d7d4423e959287a7a

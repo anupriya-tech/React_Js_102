@@ -1,0 +1,166 @@
+Quiz 101 :
+
+<a href="https://www.google.com" onClick="console.log('linked click');">Link one</a> <br>
+<a href="https://www.google.com" onClick="console.log('linked click'); return false">Link Two </a>
+
+        /* first Link will be open because adding return false stops the href from working 
+        when we use return false at that time href will be ignored, it also prevents navigate to
+        another page */
+****************************************************************************************************
+
+Quiz 102 :
+
+var student=
+{
+    name:"John",
+    getName : function()
+    {
+        console.log("student "+this.name)
+    }
+}
+var employee=
+{
+    name: "Tom",
+    getName : function()
+    {
+        console.log("employee***"+ this.name)
+    }
+}
+var run = student.getName.bind(student)
+run();    
+
+/*      output is student : Tom  because
+        bind() will take obj as first argument and creates new function .it is used to borrow 
+        a method of another object without creating copy of that method.
+        so here bind method takes an employee object as argument and createds new function, 
+        getName bounds with employee object so employee class name (Tom) will print*/
+
+*********************************************************************************************************
+
+  Quiz 103 :
+  x=10
+function foo(x)
+{
+    x = 20;
+    delete x;
+    return x;
+}
+console.log(x)
+console.log(foo(5));
+
+/*      output is 20 because 
+        delete operator deletes property of object. 
+        here x is declared without var , delete operator will delete the function parameter x 
+        and which is going to hide another local variable named x.
+        so delete operator will delete x varailbe (function parameter) so output becomse 20
+*/
+****************************************************************************************************
+
+Quiz 104 :
+
+function foo()
+{
+    var a;
+    console.log(a);
+    a=10;
+}
+foo();
+
+
+        /* output is udefined because
+        declaration of varaible is hoisted to the top not initialisation. code block knows a but
+        not its value until we defined.
+        we have initilised a variable 'a' after console.log() before that it's become
+        uninitilised so we are getting undefined output.
+        */
+
+*******************************************************************************************************
+
+105 :
+
+function evenodd(n)
+{
+    return n % 2 === 0;
+}
+myarray = [1,2,3,4,5];
+console.log(myarray.filter(evenodd));
+
+        /* output is 2,4 because 
+        filter function will take array element one by one and will pass for checking test
+        or condition to evenodd fuction.
+        condition which is speified in evenodd function accordingly it will return element.
+        The filter() method creates an array filled with all array elements that pass a test
+        (provided as a function) i.e it will return only those array elemets which pass test. 
+        */
+
+****************************************************************************************************
+
+Quiz 106 :
+
+var myArray = ['80','90',100];
+function compare(a,b)
+{
+    return a-b;
+}
+var a = myArray.sort();
+var b= myArray.sort(compare);
+console.log(a)
+console.log(b)
+console.log(a===b);
+
+        /* here ouput is true because 
+        sort function  will return sorted array which is pointing to a[80 90 100]
+        next line sort functon takes compare function ( callback function ) as argument 
+        in compare function we have written logic for cutomized sorting arrayc as follows
+        if value < 0 ---> a comes first
+            value == 0 ----> no changes
+            value > 0 ---> b comes first
+
+            eg. 80- 90  = -10 > 0 so [ 80, 90]
+                90-100 = -10 < 0 so [90,100]
+
+                so both arras are same so it will return true.
+                so o/p becomes [80,90,100]
+        */
+
+****************************************************************************************************
+Quiz 107 :
+
+myFruits = ['apple', 'banana', 'orange'];
+const [a,...b] = myFruits;
+console.log(a);
+console.log(b);
+
+
+            /* output is a => apple  b => banana orange because
+            here we have used rest operator so a will take arrays first argument and 
+            we have used spread operator before b so b will take remaining all values from array.
+            */
+
+****************************************************************************************************
+
+Quiz 108 :
+
+printMe();
+function printMe()
+{
+    console.log("hello from function")
+}
+var obj = new PrintMeToo();
+obj.printMe();
+class PrintMeToo
+{
+    printMe()
+    {
+        console.log("hello from class")
+    }
+}
+
+            /* output  uncaught reference Error because 
+            we can use  function, varible declaration hoisting but not initilisation 
+            class declarations and class expression are not hoisted.you first need to declare your 
+            class then access it 
+            */
+
+************************************************************************************************
+

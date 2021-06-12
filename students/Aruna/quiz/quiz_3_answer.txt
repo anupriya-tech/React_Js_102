@@ -1,0 +1,76 @@
+code:1
+----------------
+document.getElementById("title");-------declared in javascript
+or
+$("#title"); -----declared in jquery
+------------
+
+
+-------------------------------------------------------------
+
+code: 2
+-------------
+function aaa(){
+  return 
+  {
+    test:1
+  };
+}
+alert(typeof aaa()); 
+----------------
+output :undefined
+    
+---------------------------------------------------
+
+
+code :3 
+----------------
+(10).toString()
+(10).toString(2)
+--------------
+output: 1010
+because (2) means binary value so 10 binary value is 1010
+--------------------------------------------------
+
+code: 4
+-----------------
+const int=26;
+const hex=0x1A;
+const octal=0o32;
+const binary=0b11010;
+(0b11010 | 0b00001)==0b11011
+-------------------
+output: true
+    it perform OR operation between 11010 and 00001
+-------------------------------------------------
+
+
+code:5
+-----------
+const apple=3;
+const basket={
+  apple:2,
+  bag: {
+    apple:1,
+    plastic: function(){
+      return this.apple;
+    }
+  }
+}
+const plastic=basket.bag.plastic;
+console.log(plastic());
+console.log(basket.bag.plastic());
+-------------
+output: undefined
+        1
+    -----------------------------------
+
+  code:6
+  -----
+  const times=["Morning","Afternoon","Evening"];
+  times.map (t=>'Good ${t}!')
+  .forEach(s =>console.log(s))  ;
+------
+output: Good Morning!
+        Good Afternoon!
+        Good Evening!

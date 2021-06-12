@@ -1,0 +1,131 @@
+/* Quiz-1*/
+
+function aaa()
+{
+  return{
+    test: 1
+  };
+}
+alert(typeof aaa());
+
+/*
+Output: object
+
+Descryption:
+
+1. When we try to find out datatype of function  using typeof() operator it will return object. 
+2. Function is collection of data or we can say block of code.
+3. Object: Collections of related data. Unlike other data types, which can only contain a single thing, objects store collections of data.
+
+
+**********************************************************************/
+
+/* Quiz-2*/
+
+document.getElementById("title");
+[or]
+$("#title");
+
+
+/*
+Output: ReferenceError: or is not defined
+
+
+Descryption:
+
+1. document.getElementById("title"); - Get the element with the specified ID. It performed by DOM i.e Document Object Model
+2. $("#title"); The #ID selector selects the element with the specific id. It used in jquery. The id refers to the id attribute of an HTML element.
+**********************************************************************/
+
+/* Quiz-3*/
+
+const int = 26;
+const hex = 0x1aA;
+const octal = 0o32;
+const binary = 0b11010;
+console.log((0b11010 | 0b00001) == 0b11011)
+
+/*
+Output: true
+
+
+Descryption:
+
+Consider ans of following truth table, ans is 11011
+11010
+00001
+------
+11011
+
+
+**********************************************************************/
+
+/* Quiz-4*/
+
+ (10).toString(); 
+// "10"
+
+(10).toString(2);
+// ??? ans is: 1010 i.e binary value of 10
+
+/*
+Output: 10 
+From statement 1: 10
+From statement 2: 1010
+
+
+Descryption:
+1. toString(): The toString() method returns a string representing the specified Number object. Here  (10).toString() will return 10. 
+2. toString(radix): An integer in the range 2 through 36 specifying the base to use for representing numeric values. Here  (10).toString() will return 1010 i.e binary value of 10. 
+3. If toString() is given a radix less than 2 or greater than 36, a RangeError is thrown.
+
+**********************************************************************/
+
+/* Quiz-5*/
+
+const times = ["Morning", "Afternoon", "Evening"];
+times.map(t => `Good ${t}!`).forEach(s => console.log(s));
+
+/*
+Output: 
+
+Good Morning!
+Good Afternoon!
+Good Evening!
+
+Descryption:
+1. map() method creates a new array with the results of calling a function for every array element.
+**********************************************************************/
+
+/* Quiz-6*/
+
+/* What's value? Why? */
+
+const apple = 3;
+const basket = {
+  apple:2,
+  bag:{
+    apple:1,
+    plastic: function(){
+      return this.apple;
+    }
+  }
+}
+
+const plastic = basket.bag.plastic;
+
+console.log(plastic());
+console.log(basket.bag.plastic());
+
+/*
+Output: 
+undefined
+1
+
+Descryption:
+1. we should have to give refers all functions as plastic() is of bag() and bag() is of basket(). If we try to call plastic() only it will be undefined.
+2. In second statement refers all functions correctly, and as per scope chain plastic() will have value for apple var is 1. 
+**********************************************************************/
+
+
+

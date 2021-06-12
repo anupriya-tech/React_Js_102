@@ -1,0 +1,2 @@
+(10).toString(2)
+answer:

@@ -1,0 +1,90 @@
+Question 1:
+
+document.getElementById("title");
+[or]
+$("#title");
+
+Output: ReferenceError: or is not defined
+Description: 
+----------------------------------------------------------
+Question 2: 
+
+const apple=3;
+
+const basket={
+  apple:2,
+  bag: {
+    apple: 1,
+    plastic: function(){
+      //console.log(this.apple);
+      return this.apple;
+    }
+  }
+} 
+const plastic= basket.bag.plastic;
+console.log(plastic());
+console.log(basket.bag.plastic());
+
+Output: undefined & 1
+Description: In json object 'basket', there is a nested property plastic inside bag property of basket.
+ This plastic property is object function which cannot be used directly i.e console.log(plastic());
+thus giving output undefined. But same in next use i.e console.log(basket.bag.plastic());
+plastic of bag of basket is called thus it returns apple assigned as 1.
+
+-----------------------------------------------------------------------
+
+Question 3:
+
+console.log((10).toString());
+
+console.log((10).toString(2));
+
+Output: 10 & 1010 
+Description: first output is 10 as there is no radix argument to toString function.
+second output is 1010 as its binary representation of '10 to the base 2'. radix is 2 
+therefore base 2 is used. radix can be 2 to 36.
+----------------------------------------------------------------------
+Question 4:
+
+const times=["Morning", "Afternoon", "Evening"];
+times.map(t=>`Good ${t}!`).forEach(s=>console.log(s)); 
+
+Output: Good Morning!
+Good Afternoon!
+Good Evening!
+
+Description: Map has key value pair. Here constant object 'times' function map is called and each value is displayed.
+-------------------------------------------------------------------------
+Question 5:
+
+function aaa(){
+  return{
+    test:1
+  };
+}
+alert(typeof aaa());
+
+Output: object
+Description: In javascript, data type of function is an object as its mutable i.e stored
+in memory by reference. So its non-primitive category. when function is defined an object is created. 
+
+---------------------------------------------------------------------------
+Question 6:
+
+document.getElementById("title");
+[or]
+$("#title");
+
+Output: 
+Description:
+
+Question 6:
+const int =26;
+const hex= 0x1A;
+const octal=0o32;
+const binary=0b11010;
+
+console.log((0b11010|0b00001)===0b11011);
+
+Output: true
+Description: 

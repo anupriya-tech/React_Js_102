@@ -1,0 +1,105 @@
+Quiz 1.
+Code: 
+	function aaa(){
+	  return 
+	  {
+	    test:1
+	  };
+	}
+	alert(typeof aaa());
+	
+Answer : undefined
+	Description: As JavaScript is an interpreted language, whole code is interpreted line-by-line and putting semicolon(;) at the end of LoC is not madatory as the interpreted automatically consider a new line of code after a line break or semicolon.
+	so as in this code, there is a line break after return statement, so the interpreter will not consider the code block in next line it will interpret the return as blank return so will return to the call as undefined.
+	rather if we place the curly braces nect to return like (return {) then the interpreter will got to know that there is a code block ahead to be interpreted. in that case the output will be object as then the function aaa will return an object with test as it property.
+	 
+
+
+-------------------------------------------------------------------------------------------
+
+Quiz 102.
+code
+	document.getElementById("title");
+	[or]
+	$("#title");
+
+Answer: 
+	document.getElementById("title") is a JavaScript code where 'document' is a HTML DOM Object 'getElementById()' is a method of document object which returns an HTML DOM Object of the element that has the given id.
+
+	on the other hand, $("#title"); is a jQuery code where '$' defines jQuery, '("#title")' finds the html element with the given id.  
+
+-------------------------------------------------------------------------------------------
+
+Quiz 103.
+code: 
+	const int = 26;
+	const hex = 0x1A;
+	const octal = 0o32;
+	const binary = 0b11010;
+
+	(0b11010 | 0b00001) == 0b11011
+
+Answer: 
+	the result of the comparison statement in the last line is true because we are performimng bitwise OR operation on the operands, bitwise operators performs the operation on each bit. 
+	so here in out code we have 11010 & 00001 as operands for bitwise OR peration (i.e. any one of the bits is 1 then the result will be 1)
+	
+	11010 | 00001
+		
+		1 | 0	=>	1
+		1 | 0	=>	1
+		0 | 0	=>	0
+		1 | 0	=>	1
+		0 | 1	=>	1
+		
+	result 11011 which satisfies the comparison the will return true.
+	
+-------------------------------------------------------------------------------------------
+
+Quiz 104. 
+code: 
+	(10).toString()
+	(10).toString(2)
+
+Answer:
+	The First Statement (10).toString() will retur '10' as string
+	but he second statement (10).toString(2) will return '1010' as string because we are passing base as 2 in the toString menthod so it returns the binary value of the given number(i.e. 10) as string
+	
+-------------------------------------------------------------------------------------------
+
+Quiz 105. 
+code: 
+	const times = ["Morning", "Afternoon", "Evening"];
+	times.map(t => `Good ${t}!`).forEach(s => console.log(s));
+	
+Answer:
+	Output: Good Morning!
+		Good Afternoon!
+		Good Evening!
+	description: array.map prototype is used to traverse through the all elements of an array and perform simillar operations to them. it takes a callback function as argument which contains the operation to be performed. here as we are passing an arrow function which is replacing every value with 'Good {value}' (i.e. Good Morning Etc..) here one more thing is there we are using String litrals instead of string thats why ${t} it is replaced with the value or t. Rest forEach loop is used to print the values of new array returned by map function.
+	
+	
+-------------------------------------------------------------------------------------------
+
+Quiz 106.
+code:
+	const apple = 3;
+	const basket ={
+	  apple: 2,
+	  bag: {
+	    apple: 1,
+	    plastic: function(){
+		return this.apple;
+	    }
+	  }
+	}
+
+	const plastic = basket.bag.plastic;
+	console.log(plastic());
+	console.log(basket.bag.plastic());
+Answer:
+	Output: undefined 1
+	description: didn't understand
+	
+	
+-------------------------------------------------------------------------------------------
+

@@ -1,0 +1,65 @@
+1) Quiz 1
+Code:
+function aaa(){
+  return {
+    test: 1
+  };
+}
+alert(typeof aaa());
+Output: Object
+Description: typeof operator returns the type of the variable. Here funtion aaa() returns an object.
+
+2) Quiz 2
+Code:
+document.getElementById("title");
+[or]
+$("#title"); 
+Output: ReferenceError: $ is not defined
+Description:$("#title") this is used in JQuery a javascript library. 
+
+3) Quiz 3
+Code:
+const int = 26;
+const hex = 0x1A;
+const octal = 0o32;
+const binary = 0b11010;
+
+console.log((0b11010 | 0b00001) === 0b11011);
+Output: true
+Description: the above variables(int, hex, ocatl, binary) are represent the number 26 in according format.
+
+4) Quiz 4
+Code:
+(10).toString(); //10
+(10).toString(2);
+Output:1010
+Description:toString(2) returns the binary value of the number.
+
+5) Quiz 5
+Code:
+const times = ["Morning", "Afternoon", "Evening"];
+times.map(t => `Good ${t}!`)
+  .forEach(s => console.log(s));
+Output: Good Morning!
+        Good Afternoon!
+        Good Evening!
+Description: map() returns a new set of array from original array performing some function.
+
+6) Quiz 6
+Code:
+const apple = 3;
+const basket = {
+  apple: 2,
+  bag: {
+    apple: 1,
+    plastic: function(){
+      return this.apple;
+    }
+  }
+}
+const plastic = basket.bag.plastic;
+console.log(plastic());
+console.log(basket.bag.plastic());
+Output: Undefined
+        1
+Description: plastic() is defined inside the variable, it can't be call directly outside the function.
