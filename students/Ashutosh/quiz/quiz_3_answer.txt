@@ -1,0 +1,65 @@
+Q-1
+function aaa(){
+return {test:1};
+}
+
+alert(typeof aaa());
+Ans- object
+given function return a object type value.
+
+Q-2
+document.getElementById("title");
+[or]
+$('#title')
+
+In Javascript By first one  selecting an element with given id as title.
+In jQuery  By second one  selecting an element with given id as title.
+
+Q-3
+const int=26;
+const hex=0x1A;
+const octal=0o32;
+const binary=0b11010;
+(0b11010 | 0b00001 )===0b11011
+
+Ans-true
+(0b11010 | 0b00001 ) here both are binary type value and we performing betwise or operation which finally return binary type value so now comparing value and their type so its matches that's why return true.
+
+Q-4
+(10).toString()
+(10).toString(2);
+Ans-10
+   1010
+toString() function without parameter is used to represent in string form.
+toString(2) function is used to represent in binary form.
+Q-5
+const times=["Morning","Afternoon","Evening"];
+times.map(t=>`Good ${t}`).forEach(s=>console.log(s));
+Ans-Good Morning
+Good Afternoon
+Good Evening
+map function is used map each element of an array by providing callback function.after mapping each element of an array then finally we iterating each element.
+
+Q-6
+const apple=3;
+const basket={
+apple:2,
+bag:{
+apple:1,
+plastic:function(){
+return this.apple;
+}
+}
+}
+const plastic=basket.bag.plastic;
+console.log(plastic());
+console.log(basket.bag.plastic());
+Ans-undefined
+1
+plastic is not property of bag object it is a function so that's why it gives undefine.
+second line we calling plastic function of bag which returns the apple property value of bag object.
+
+
+
+
+
