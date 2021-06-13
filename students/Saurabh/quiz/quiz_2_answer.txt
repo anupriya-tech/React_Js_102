@@ -1,0 +1,119 @@
+ 101. Which link will open 'google' and why?
+
+   <a href="https://www.google.com/" onclick="console.log('clicked');">
+     Link One
+   </a>
+   <a href="https://www.google.com/" onclick="console.log('clicked'); return false">
+      Link two
+   </a> 
+
+   Answer: 
+    The first link will be open google website. second does not open google website, Because using return false in an onclick event stops the browser to processing href attribute.
+
+ <!--------------------**************************-------------------!>
+
+  102. var student = {
+     name: "John",
+     getName: function()
+     {
+         console.log("student " + this.name);
+     }
+   }
+   var employee = {
+     name: "Tom",
+     getName: function()
+     {
+         console.log("employee " + this.name);
+     }
+   }
+   var run = student.getName.bind(employee);
+   run();
+
+   Answer: The output will be 'student Tom'.Because here Call the bind() method of the student.getName method and pass in the employee object as the argument. so invoke the getName() function.This is known as function borrowing in JavaScript.
+
+ <!--------------------**************************-------------------!>
+
+
+  103.  x = 10;
+    function foo(x){
+      x = 20;
+      delete x;
+      return x;
+    }
+    console.log(foo(5));
+
+    Answer:  The output will be 'SyntaxError'.Because it deletes the value of x and return nothing;
+  
+ <!--------------------**************************-------------------!>
+
+  104. function foo(x){
+      var a;
+      console.log(a);
+      a = 10;
+    }
+    foo();
+
+     Answer: The output will be 'undefined' Because the function expression in javascript are not hoisted. 
+     You can't use function expressions before defining them.
+
+ <!--------------------**************************-------------------!>
+
+
+ 105.  What does a filter do?
+ function evenodd(n)
+    {
+      return n%2 !== 0 ;
+    }
+    myarray = [1,2,3,4,5];
+    console.log(myarray.filter(evenodd));
+
+    Answer: The output will be '[1, 3, 5]'.Because The filter() Array method creates a new array with elements according to the statements . The example above takes the numbers array and returns a new filtered array with odd values.
+
+ <!--------------------**************************-------------------!>
+
+ 106.  var myArray = ['80','90',100];
+    function compare(a, b)
+     {
+       return a - b;
+     } 
+    var a = myArray.sort();
+    var b = myArray.sort(compare);
+    console.log(a==b);
+
+ Answer: "True"
+   "myArray.sort()" function return the array in asscending order.
+ "myArray.sort(compare)" here we are passing a compare function to sort so it will return value as a-b, the result is -10 so 80 will considerd as small value than b
+   Both the array are same, so it will return true.
+
+ <!--------------------**************************-------------------!>
+
+
+ 107.  myFruits = ['apple', 'banana', 'orange'];
+    const [a, ...b] = myFruits;
+    console.log(a);
+    console.log(b);
+
+    Answer: The output will be 'apple  [ 'banana', 'orange' ]' ,Because it's array destructuring & we use spread operator(...) concept also.
+
+  <!--------------------**************************-------------------!>
+
+  108. printMe();
+   function printMe(){
+      console.log("hello from function");
+   }
+
+   var obj = new PrintMeToo();
+   obj.printMe();
+
+   class PrintMeToo{
+      printMe()
+       {
+         console.log("hello from class");
+       }   
+   }
+
+   
+   Answer: The output will be 'ReferenceError' Because,Cannot access 'PrintMeToo' before initialization.
+   
+<!--------------------**************************-------------------!>
+

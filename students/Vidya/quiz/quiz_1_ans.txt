@@ -1,0 +1,92 @@
+/* Quiz-1 
+<------ Code Start-------> */
+const magic = 42;
+const theAnswer = magic;
+const everything = new Set([magic,theAnswer]);
+console.log(everything.size);
+//<------ Code End------->
+
+/*
+Output: 1
+
+Descryption :
+ 1. The Set object store unique values of any type. 
+ 2. The value of .size is an integer representing how many entries the Set object has.
+3. So the output will be : 1 
+
+****************************************************************************************************/
+
+/* Quiz-2 
+<------ Code Start-------> */
+let x = 10;
+let y = x % 4;
+let z = y / 2;
+let c = x * z;
+alert(x);
+//<------ Code End------->
+
+/*
+Output: 10
+
+Descryption :
+ 1. Hoisting is a default behaviour of javascript where all the variable and function declarations are moved on top.
+ 2. here value of x is 10 , and the entire code x has not assigned another value. 
+3. So the output in alert box  will be : 10 
+
+****************************************************************************************************/
+/* Quiz-3 
+<------ Code Start-------> */
+var a = 21;
+
+var b = function(){
+console.log(a);
+ var a = 20;
+};
+b(); 
+//<------ Code End------->
+
+/*
+Output: undefined
+
+Descryption :
+1.'var a' has "globle scpoe", in this code. Compiler find re-initialization and declaration of 'a' with var. 
+2. So the output in alert box  will be : undefined 
+
+****************************************************************************************************/
+/* Quiz-4 
+<------ Code Start-------> */
+
+//Default function declaration
+function rectangle(w, h){
+  return w * h;
+}
+
+//Function Expression
+const rectangle = function (w,h){
+  return w * h;
+}
+
+//Function Arrow Expression
+const rectangle = (w, h) => {
+  return w * h;
+}
+
+//Shorthand Arrow Function
+ const rectangle = (w, h) =>  w * h;
+
+console.log(rectangle(10,10));
+
+ 
+//<------ Code End------->
+
+/*
+Output: SyntaxError: Identifier 'rectangle' has already been declared
+
+Descryption :
+1.The value of a constant can't be changed through reassignment, and it can't be redeclared.
+
+
+2. So the output in alert box  will be : Identifier 'rectangle' has already been declared
+
+****************************************************************************************************/
+

@@ -57,7 +57,6 @@ Consider ans of following truth table, ans is 11011
 ------
 11011
 
-Now, ((0b11010 | 0b00001) is 11011, its == 0b11011. Thats why Output: true.
 
 **********************************************************************/
 
@@ -84,19 +83,18 @@ Descryption:
 
 /* Quiz-5*/
 
-const times = ["Morning", "Afternoon","Evening"];
-
-times.map(t => 'Good ${t}!').forEach(s => console.log(s));
+const times = ["Morning", "Afternoon", "Evening"];
+times.map(t => `Good ${t}!`).forEach(s => console.log(s));
 
 /*
 Output: 
 
-Good ${t}!
-Good ${t}!
-Good ${t}!
+Good Morning!
+Good Afternoon!
+Good Evening!
 
 Descryption:
-I can not understand execution of code. 
+1. map() method creates a new array with the results of calling a function for every array element.
 **********************************************************************/
 
 /* Quiz-6*/
@@ -125,8 +123,8 @@ undefined
 1
 
 Descryption:
-1. 
-2. 
+1. we should have to give refers all functions as plastic() is of bag() and bag() is of basket(). If we try to call plastic() only it will be undefined.
+2. In second statement refers all functions correctly, and as per scope chain plastic() will have value for apple var is 1. 
 **********************************************************************/
 
 
