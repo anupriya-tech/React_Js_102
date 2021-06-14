@@ -1,0 +1,27 @@
+const imagesPath = {
+  image1: "https://unsplash.com/s/photos/small-flowers.jpg",
+  image2: "https://www.thespruce.com/plants-with-big-flowers-4138211.jpg"
+}
+
+class App extends React.Component {
+  state = {
+    open: true
+  }
+  toggleImage = () => {
+    this.setState(state => ({ open: !state.open }))
+  }
+
+  getImageName = () => this.state.open ? 'image1' : 'image2'
+
+  render() {
+    const imageName = this.getImageName();
+    return (
+      <div>
+        <img style={{maxWidth: '50px'}} src={imagesPath[imageName]} onClick={this.toggleImage} />
+      </div>
+    );
+  }
+}
+
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
