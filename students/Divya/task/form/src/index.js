@@ -7,7 +7,7 @@ class Form extends React.Component{
     this.state = {name:'',password:''};
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-  }
+  } 
   
   handleSubmit(event){
     const {name, password} = this.state;
