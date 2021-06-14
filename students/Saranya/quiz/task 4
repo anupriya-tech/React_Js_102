@@ -1,0 +1,27 @@
+const imagesPath = {
+  image1: "https://images.vexels.com/media/users/3/131484/isolated/preview/a432fa4062ed3d68771db7c1d65ee885-minus-inside-circle-icon-by-vexels.png",
+  image2: "https://cdn3.iconfinder.com/data/icons/glypho-generic-icons/64/plus-big-512.png"
+}
+
+class App extends React.Component {
+  state = {
+    open: true
+  }
+  toggleImage = () => {
+    this.setState(state => ({ open: !state.open }))
+  }
+
+  getImageName = () => this.state.open ? 'image1' : 'image2'
+
+  render() {
+    const imageName = this.getImageName();
+    return (
+      <div>
+        <img style={{maxWidth: '50px'}} src={imagesPath[imageName]} onClick={this.toggleImage} />
+      </div>
+    );
+  }
+}
+
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
