@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-//import App from './App';
-//import reportWebVitals from './reportWebVitals';
-/*
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
@@ -15,52 +15,53 @@ ReactDOM.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
-*/
-function imageOn(props){
+
+
+function ImageOn(props){
   return (
   <div>
-       <img src="https://static.dezeen.com/uploads/2016/01/light-bulb-dezeen.jpg" alt="bulbon" />
+       <img src="https://static.dezeen.com/uploads/2016/01/light-bulb-dezeen.jpg" alt="bulbon" height="200" width="200"/>
   </div>
   )
 } 
 
-function imageOff(props){
+function ImageOff(props){
   return (
   <div> 
-     <img src="https://toppng.com/uploads/preview/light-bulb-on-off-png-115539402943y50vxr5yi.png" alt="bulboff" />
+     <img src="https://toppng.com/uploads/preview/light-bulb-on-off-png-115539402943y50vxr5yi.png" alt="bulboff" height="200" width="200" />
   </div>
   )
 }
-function btnOn(props){
+function BtnOn(props){
   return (
-    <button onClick={props.onClick}>BulbOn</button>
+     <button onClick={props.onClick}>BulbOn</button>
   )
 }
 
-function btnOff(props){
-  return (
-    <button onClick={props.onClick}>BulbOFF</button>
+function BtnOff(props){
+  return (  
+      <button onClick={props.onClick}>BulbOFF</button>
   )
 }
 
-function imgOnoff(props){
+function ImgOnOff(props){
   const isTrue=props.isTrue;
   if(isTrue){
-      return <imageOn/>;
+      return <ImageOn/>;
   }
-  return <imageOff/>;
+  return <ImageOff/>;
 }
 
 class Bulbonoff extends React.Component{
   constructor(props){
     super(props);
-     this.state={isbtnOn: false};
+     this.state={isbtnOn: true};
      this.handlebulbOnClick=this.handlebulbOnClick.bind(this);
      this.handlebulbOffClick=this.handlebulbOffClick.bind(this);
     
   }
 
-  handlebulbOnClick(){
+  handlebulbOnClick(){ 
     this.setState({isbtnOn: true});
   }
   handlebulbOffClick(){
@@ -68,16 +69,16 @@ class Bulbonoff extends React.Component{
   }
 
   render(){
-    const isbtnOn=this.state.isbtnOn;
+    const isBtnOn=this.state.isbtnOn;
     let button;
-    if(isbtnOn){
-    button=<btnOn onClick={this.handlebulbOnClick}/>;
+    if(isBtnOn){
+    button=<BtnOff onClick={this.handlebulbOffClick}/>;
     }else{
-      button=<btnOff onClick={this.handlebulbOffClick}/>;
+      button=<BtnOn onClick={this.handlebulbOnClick}/>;
     }
     return(
       <div>
-        <imgOnoff isTrue={isbtnOn}/>
+        <ImgOnOff isTrue={isBtnOn}/>
         {button}
       </div>
     )
