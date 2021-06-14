@@ -1,10 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-class CountryForm extends React.Component{
+//forms always maintain state
+//by using controlled component
+//controlled vs uncontrolled component
+//cc - react handles data
+//ucc - DOM handles data
+
+class MyForm extends React.Component{
   constructor(props){
     super(props);
-    this.state = {value:'India'};
+    this.state = {value:''};
     this.handleChange = this.handleChange.bind(this);
     this.handlesubmit = this.handlesubmit.bind(this);
   }
@@ -14,7 +20,7 @@ class CountryForm extends React.Component{
   }
 
   handlesubmit(event){
-    alert('Are you sure you want to submit? ' + this.state.value);
+    alert('Are you sure you want to submit?' + this.state.value);
     event.preventDefault();
   }
 
@@ -22,13 +28,8 @@ class CountryForm extends React.Component{
     return(
       <form onSubmit={this.handlesubmit}>
         <label>
-          Please select one country out of list below: 
-          <select value={this.state.value} onChange={this.handleChange}>
-            <option value='USA'>USA</option>
-            <option value='INDIA'>INDIA</option>
-            <option value='UK'>UK</option>
-            <option value='BALI'>BALI</option>
-          </select>
+          Name:
+          <input type="text" value={this.state.value} onChange={this.handleChange} />
         </label>
         <input type="submit" value="Submit" />
       </form>
@@ -38,5 +39,5 @@ class CountryForm extends React.Component{
 }
 
 ReactDOM.render(
-  <CountryForm />
+  <MyForm />
   ,document.getElementById("root") );
