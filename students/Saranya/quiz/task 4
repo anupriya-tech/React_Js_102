@@ -1,6 +1,6 @@
 const imagesPath = {
   image1: "https://unsplash.com/s/photos/small-flowers.jpg",
-  image2: "https://cdn3.iconfinder.com/data/icons/glypho-generic-icons/64/plus-big-512.png"
+  image2: "https://www.thespruce.com/plants-with-big-flowers-4138211.jpg"
 }
 
 class App extends React.Component {
