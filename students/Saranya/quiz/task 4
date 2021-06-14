@@ -1,5 +1,5 @@
 const imagesPath = {
-  image1: "https://images.vexels.com/media/users/3/131484/isolated/preview/a432fa4062ed3d68771db7c1d65ee885-minus-inside-circle-icon-by-vexels.png",
+  image1: "https://unsplash.com/s/photos/small-flowers.jpg",
   image2: "https://cdn3.iconfinder.com/data/icons/glypho-generic-icons/64/plus-big-512.png"
 }
 
