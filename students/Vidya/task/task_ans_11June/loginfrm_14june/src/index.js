@@ -30,7 +30,7 @@ class MyForm extends React.Component{
     }
     else
     {
-      alert("Read Note and Try Again !");
+      alert("Read Note and Try Again !!");
       event.preventDefault();
     }
 
