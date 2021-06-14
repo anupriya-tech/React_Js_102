@@ -2,7 +2,7 @@ const apple = 3;
 const basket = {
     apple : 2 ,
     bag: {
-        apple :2 ,
+        apple :1 ,
         plastic: function (){
             return this.apple;
         }

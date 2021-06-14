@@ -4,4 +4,4 @@ var b = function (){
  var a = 20 ;
 };
 
-b();
+b()
