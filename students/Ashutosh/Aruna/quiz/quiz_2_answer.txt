@@ -1,0 +1,117 @@
+Quiz: 101
+-----------
+<a href = "https:// www.google.com" 
+onclick=" console.log('link clicked');">
+Link One </a>
+
+<a href = "https:// www.google.com" 
+onclick=" console.log('link clicked'); return false">
+Link Two </a>
+--------------
+Output:  " Link One Link two" 
+Reason: when click on linkone we goto google page, 
+         but when click on linktwo we didnt get anything because we return false
+
+---------------------------------------------------------------------------------------
+Quiz :102
+------------
+var student ={
+    name: "John",
+    getName: function(){console.log("student "+this.name);}
+}
+
+var employee ={
+    name: "Tom",
+    getName: function(){console.log("employee "+this.name);}
+}
+var run = student.getName.bind(employee);
+run();
+-------
+Output: SyntaxError invalid, name= "John"
+Reason: 
+--------------------------------------------------------------------------------
+
+Quiz : 103
+--------
+x=10;
+function foo(x){
+    x=20;
+    delete x;
+    return x;
+}
+console.log(foo(5));
+------------
+Output: 20
+Reason: 
+--------------------------------------------------------
+
+Quiz: 104
+----------
+function foo(){
+    var a;
+    console.log(a);
+    a=10;
+}
+foo();
+---------
+output: Undefined
+Reason: 
+----------------------------------------------------------
+
+Quiz: 105
+---------
+function evenodd(n){
+    return n%2 !=0;
+}
+myarray = [1,2,3,4,5];
+console.log(myarray.filter(evenodd));
+--------
+output: [1,3,5]
+Reason:
+------------------------------------------------------------------
+
+Quiz: 106
+--------
+var myarray=['80','90',100];
+function compare(a,b){
+    return a-b;
+}
+var a=myarray.sort();
+var b=myarray.sort(compare);
+console.log(a==b);
+------------
+output:true
+Reason:
+------------------------------------------------------
+
+Quiz :107
+---------
+myFruits=['apple','banana','orange'];
+const[a, ...b]=myFruits;
+
+console.log(a);
+console.log(b);
+-----------
+output:apple
+      ['banana','orange']
+ Reason: 
+ --------------------------------------------------------------     
+
+Quiz: 108
+---------
+printMe();
+ 
+ function printMe(){
+     console.log("hello from function.")
+ }
+ var obj=new PrintMeToo();
+ obj.printMe();
+
+ class PrintMeToo{
+     printMe(){
+         console.log("hello from class.")
+     }
+ }
+ --------
+ Output: hello from function.
+        referenceerror:cant access 'PrintMeToo'

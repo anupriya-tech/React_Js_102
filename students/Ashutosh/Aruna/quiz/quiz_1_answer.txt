@@ -1,0 +1,60 @@
+
+code 1 :-
+-----------
+var a=21;
+ var b= function(){
+     console.log(a);
+     var a=20;
+ }
+b();
+----------
+
+Output: Undefined
+  
+  1)   'a' is a global variable and again initiallized after console its not take value
+  2)  variable 'b' is initiallized but we are not assign any value for it,  thats why we got output "undefined"
+
+
+----code 2: ----
+let x=10;
+let y=x%4;
+let z=y/2;
+let c=x*z;
+alert(x);
+--------------
+
+Output: 10
+
+1) we assign initially'x' value as '10', but didnt re-assign  any value for 'x'
+2) so we get alert value is '10'
+
+
+----code 3-----
+const magic=42;
+const theanswer=magic;
+const everything=new Set([magic,theanswer]);
+console.log(everything.size);
+-----------------
+
+Output: 1
+
+1) .size is always an integer value
+2) and also Set can store any type of values
+
+
+-----code 4----
+function rectanglea(w,h){
+  return w*h; 
+}
+
+const rectangle=function(w,h){
+  return w*h; 
+}
+
+const rectangle=(w,h) ==> {
+  return w*h; 
+}
+
+const rectangle=(w,h) ==>  w*h; 
+---------
+output: SyntaxError: Identifier 'rectangle' has already been declared
