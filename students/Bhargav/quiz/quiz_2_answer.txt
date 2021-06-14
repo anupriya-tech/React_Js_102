@@ -1,0 +1,57 @@
+Q1.  Which link will open "Google" and why?					
+    <a href="https://www.google.com" onClick="console.log('link clicked');"> Link One </a>
+    <a href="https://www.google.com" onClick="console.log('link clicked'); return false"> Link Two </a> 
+				
+			
+ans. when on clicking the Link Two due to the return statement returns false and link One will open the link as onClick initiates navigation to its URL.
+     it prevents the link from opening.
+
+
+Q2   var student = {
+     name: 'John',
+     getName: function () {
+     console.log('student ' + this.name);
+     },
+     };
+
+     var employee = {
+     name: 'Tom',
+     getName: function () {
+     console.log('employee ' + this.name);
+     },
+     };
+
+     var run = student.getName.bind(employee);
+				run();
+				
+			
+ans. when called The bind() method creates a new function that, this has  its this keyword set to the provided value, 
+     with a given sequence of arguments preceding any provided when the new function is called.
+
+Q3. //What is output and why?
+     x = 10;
+     function foo(x){
+     x=20;
+     delete x;
+     return x;
+     }
+     console.log(foo(5));
+							
+ans.  delete operator removes a property from an object and x is a variable; 
+      Inside the function foo value of x is 20 and outside the function its 10 
+
+Q4.
+     function foo() {
+     var a;
+     console.log(a);
+     a = 10;
+     }
+     foo();
+ans. variable a inside the function scope is used before the value is assigned to it that is 
+     why the value of a is undefined.
+
+
+
+
+
+
