@@ -1,0 +1,53 @@
+Sample1
+---------
+<a href="https://www.google.com" onClick="console.log('Link Clicked')">Link One</a><br/>
+<a href="https://www.google.com" onClick="console.log('Link Clicked'); return false">Link Two</a>
+
+Ouput:Both the links navigate to Google
+Why:The first link is a URL and once clicked it navigates to google page. The second link also a URL which navigate to Google Page
+
+----------------------------------------------------------------------------------------------------------------------------
+
+
+Sample2
+--------
+var student={
+name:"John",
+getName:function(){
+console.log(this.name)
+}
+var employee={
+name:"Tom",
+getName:function(){
+console.log("employee"+this.name)
+}
+
+var run=student.getName.bind(employee)
+
+Output: Will show SyntaxError: Unexpected token 'var'
+Why: The employee Object is given inside student Object
+----------------------------------------------------------------------------------------------------------------------------------------
+
+Sample3
+-------
+ x=10;
+        function foo(x){
+            x=20;
+            delete x;
+            return x;
+        }
+          console.log(foo(5))
+		  
+Output:The x value returns 20;
+Why: In this function delete operator does not work in function or for variables as delete operator works only for Object.So the return value of x would be 20
+---------------------------------------------------------------------------------------------------------------------------------------------
+Sample4
+--------
+function foo(){
+var a;
+console.log(a)
+a=10;
+
+}		  
+Output:undefined
+Why:Here a is called before initialization. So by default javascript would have mention a as undefined.So when we try to print the a before initialisation we get undefined.
