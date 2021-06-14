@@ -16,17 +16,24 @@ console.log(basket.bag.plastic());
 
 ANS:undefined
     1
+DES: will give output undefined because the const plastic is not a function.
+				
+console.log(basket.bag.plastic()); 
+will give output 1 as the scope of this or this refers to bag object and as the value of apple is 1.
 
-2)  const times =
- [ "Morning", "Afternoon", "Evening"];
- times.map(t => `Good ${t}!`)
- .forEach(s => console.log(s));
+2)  const times = [ "Morning", "Afternoon", "Evening"];
+ times.map(t => `Good ${t}!`).forEach(s => console.log(s));
 
 // Have a great weekend!
 
 ANS: Good Morning!
 Good Afternoon!
 Good Evening!
+
+DES:map() method calls the provided function once for each element in an array.
+Template literals are enclosed by the backtick (` `)
+Template literals can contain placeholders. These are indicated by the dollar sign and curly braces (${expression}).
+The expressions in the placeholders and the text between the backticks (` `) get passed to a function.
 
 3)
  console.log((10).toString());
@@ -35,7 +42,7 @@ Good Evening!
 // ???
 
 ANS:10
-1010
+1010 // binary value of number 10
 
 4) const int = 26;
 const hex = 0x1A;
@@ -44,6 +51,8 @@ const binary = 0b11010;
 console.log((0b11010 | 0b00001) === 0b11011)
 
 ANS: true
+DES: |	Bitwise OR Operator 
+
 
 // Javascript quiz 5
 document.getElementById("title");
@@ -63,3 +72,5 @@ test: 1
 alert(typeof aaa());
 
 ANS: undefined
+DES : Javascript expects a semicolon at the end of every line, it inserts one after return, making the function return nothing. 
+So the data type of the invoked function is undefined
