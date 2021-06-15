@@ -2,65 +2,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-function ImageOne(props){
-  return <img src="https://images.unsplash.com/photo-1612151855475-877969f4a6cc?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aGQlMjBpbWFnZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80" alt="image-1" />;
-}
-
-function ImageTwo(props){
-  return <img src="http://images4.fanpop.com/image/photos/21800000/Beautiful-Sunset-beautiful-nature-21887707-1000-565.jpg" alt="image-2" />;
-}
-
-function ChangeImageOne(props){
-  return(
-    <button onClick={props.onClick}>Change</button>
-  );
-}
-
-function ChangeImageTwo(props){
-  return(
-    <button onClick={props.onClick}>Change</button>
-  );
-}
-
-function ChangeImage(props){
-  const isTrue = props.isTrue;
-
-  if(isTrue){
-    return <ImageOne />;
-  }
-  return <ImageTwo />;
-}
-
-class ToggleImage extends React.Component{
+class LoginForm extends React.Component{
   constructor(props){
     super(props);
-    this.state = {imageOne: false};
-    this.imageOneClick = this.imageOneClick.bind(this);
-    this.imageTwoClick = this.imageTwoClick.bind(this);
-  }
-
-  imageOneClick(){
-    this.setState({imageOne: true});
-  }
-
-  imageTwoClick(){
-    this.setState({imageOne :false});
+    this.state = {loginForm: false};
+    this.username = this.username.bind(this);
+    this.password = this.password.bind(this);
   }
 
   render(){
-    const imageToggle = this.state.imageOne;
-    let button;
-
-    {imageToggle ?
-      button = <ChangeImageTwo onClick={this.imageTwoClick} />
-      :
-      button = <ChangeImageOne onClick={this.imageOneClick} />
-    }
-
     return (
       <div>
-        <ChangeImage isTrue={imageToggle} />
-        {button}
+        <label>
+          Username:
+          <input type="text" value="this.username.state" onChange="this.username.state" />
+        </label>
+        <label>
+          Password:
+          <input type="text" value="this.password.state" onChange="this.password.state" />
+        </label>
+        <input type="submit" value="Login" />
       </div>
     );
   }
@@ -68,5 +29,5 @@ class ToggleImage extends React.Component{
 }
 
 ReactDOM.render(
-  <ToggleImage />
+  <LoginForm />
   ,document.getElementById("root") );
