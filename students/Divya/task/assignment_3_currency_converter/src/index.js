@@ -32,7 +32,7 @@ class CurrencyConverter extends React.Component
         <select value={this.props.currency} onChange={this.handleChangeCurrency}>
           <option value="inr">RUPEESE</option>
           <option value="usd">DOLLAR</option>
-          <option value="euro">EURO (&euroo;)</option>
+          <option value="euro">EURO</option>
           <option value="dinar">DINAR</option>
         </select>
       </div>
