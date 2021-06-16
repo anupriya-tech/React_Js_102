@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import './App.css';
-
 class App extends Component
 
 {
@@ -52,6 +51,7 @@ render(){
     
 return (
 <div>
+  <Anu/>
 { this.state.loggedin?
 <div>
   <h1>Hello {this.state.username}. Glad to have you back</h1>
