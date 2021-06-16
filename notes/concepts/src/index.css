@@ -11,3 +11,29 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.MyBorder{
+  padding: 10px 10px;
+  border: 10px solid;
+  }
+  
+  .MyBorder-green{
+  border-color: green;
+  }
+  .MyBorder-blue{
+  border-color: blue;
+  }
+  .MyBorder-red{
+  border-color: red;
+  }
+  
+  
+  
+  .MyDialog-title{
+  margin: 0;
+  font-family: sans-serif;
+  }
+  
+  .MyDialog-message{
+  font-size: larger;
+  }

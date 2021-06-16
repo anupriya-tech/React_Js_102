@@ -8,13 +8,8 @@ function MyComponentWithHook(){
   //this.state
   const[user,setUser]  = useState({name:'Raj',age:20});
 
-  const handleUpdateUser = (event) => {
-    //console.log(event.target.value);
-    const {name,value} = event.target;
-
-    console.log({[name]:value});
-    //setUser({name:"Rajesh",age:25});
-    setUser({ ...user, [name]:value});
+  const updateUser = () => {
+    setUser({name:"Rajesh",age:25});
   }
 
   return(
@@ -23,11 +18,11 @@ function MyComponentWithHook(){
     <p>and my age is {user.age} years.</p>
     <label>
           Name:
-          <input type="text" name="name" value={user.name} onChange={handleUpdateUser} />
+          <input type="text" value={user.name} onChange={updateUser} />
     </label>
     <label>
           Age:
-          <input type="text" name="age" value={user.age} onChange={handleUpdateUser} />
+          <input type="text" value={user.age} onChange={updateUser} />
     </label>
     </div>
   );
