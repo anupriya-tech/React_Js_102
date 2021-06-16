@@ -56,6 +56,8 @@ class CurrencyInput extends React.Component{
   }
 }
 
+
+
 class Calculator extends React.Component{
   constructor(props){
     super(props);
