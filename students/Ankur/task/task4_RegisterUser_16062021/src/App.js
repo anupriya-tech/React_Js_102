@@ -39,11 +39,11 @@ class UserRegisteration extends React.Component{
 
   handleFormChange(e){
     let {name,value} = e.target;
-    console.log(typeof name, value);
+
     if(name.indexOf('userAddress_') !== -1){
     // this.setState({[this.state.userAddress.addLineOne]:"sss"})
       name = name.split("_")[1]
-      console.log(typeof name);
+
       // this.state.userAddress.{name] = value;   
         this.setState({userAddress: {...this.state.userAddress, [name]:value}})
       return;
