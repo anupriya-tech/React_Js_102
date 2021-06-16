@@ -1,1 +1,6 @@
-sample
+task 15 june: 
+
+task: write a react application for currency change calculator with 4 currency option with dropdown.
+
+I tried to solve the currency calculator with drop down options but i have few difficulties hence my code is not run.
+run.

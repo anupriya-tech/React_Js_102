@@ -5,10 +5,12 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import MyForm from './Component/LoginForm'
 
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
     <MyForm/>
+    
   </React.StrictMode>,
   document.getElementById('root')
 );
