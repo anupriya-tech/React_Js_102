@@ -1,46 +1,106 @@
-import React, { Component } from 'react';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import RaisedButton from 'material-ui/RaisedButton';
-import Login from './Login';
-import Register from './Register';
-class Loginscreen extends Component {
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+class CountryForm extends React.Component{
+function CurrencyMessage(props){
+  if(props.rupees >= 1000){
+    return <p>This is too much money.</p>
+  }
+  return <p>No this is not too much money.</p>
+}
+
+const unitName = {
+  r: 'rupees',
+  d: 'dollar'
+};
+
+function toRupees(dollar){
+  return (dollar*75);
+}
+
+function toDollar(rupees){
+  return (rupees/75);
+}
+
+class CurrencyInput extends React.Component{
   constructor(props){
     super(props);
-    this.state={
-      username:'',
-      password:'',
-      loginscreen:[],
-      loginmessage:'',
-      buttonLabel:'Register',
-      isLogin:true
-    }
+    this.state = {value:'India'};
+    //this.state = {currency :''}; not good idea because not sharable
+    this.handleChange = this.handleChange.bind(this);
+    this.handlesubmit = this.handlesubmit.bind(this);
   }
-  componentWillMount(){
-    var loginscreen=[];
-    loginscreen.push(<Login parentContext={this} appContext={this.props.parentContext}/>);
-    var loginmessage = "Not registered yet, Register Now";
-    this.setState({
-                  loginscreen:loginscreen,
-                  loginmessage:loginmessage
-                    })
+
+  handleChange(event){
+    this.setState({value: event.target.value});
+    //this.setState({currency : event.target.value});
+    this.props.onCurrencyChange(event.target.value);
   }
-  render() {
-    return (
-      <div className="loginscreen">
-        {this.state.loginscreen}
-        <div>
-          {this.state.loginmessage}
-          <MuiThemeProvider>
-            <div>
-               <RaisedButton label={this.state.buttonLabel} primary={true} style={style} onClick={(event) => this.handleClick(event)}/>
-           </div>
-          </MuiThemeProvider>
-        </div>
-      </div>
+
+  render(){
+    //const currency = this.state.currency;
+    const currency = this.props.currency;
+    const unit = this.props.unit;
+
+    return(
+      <fieldset>
+        <legend>Enter your currency in {unitName[unit]}: </legend>
+        <input value={currency} onChange={this.handleChange}></input>
+        <CurrencyMessage rupees={currency} />
+      </fieldset>
     );
   }
 }
-const style = {
-  margin: 15,
-};
-export default Loginscreen;
+
+class Calculator extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = {currency :'',unit: 'r'};
+    this.handleDollarChange = this.handleDollarChange.bind(this);
+    this.handleRupeeChange = this.handleRupeeChange.bind(this);
+  }
+
+  handleRupeeChange(currency){
+    this.setState({'unit' :'r',currency})
+  }
+
+  handlesubmit(event){
+    alert('Are you sure you want to submit? ' + this.state.value);
+    event.preventDefault();
+  handleDollarChange(currency){
+    this.setState({'unit' :'d',currency})
+  }
+
+
+  render(){
+    const currency = this.state.currency;
+    const unit = this.state.unit;
+    const rupees = unit === 'd' ? toRupees(currency): currency;
+    const dollar = unit === 'r' ? toDollar(currency) :currency;
+
+    return(
+      <form onSubmit={this.handlesubmit}>
+        <label>
+          Please select one country out of list below: 
+          <select value={this.state.value} onChange={this.handleChange}>
+            <option value='USA'>USA</option>
+            <option value='INDIA'>INDIA</option>
+            <option value='UK'>UK</option>
+            <option value='BALI'>BALI</option>
+          </select>
+        </label>
+        <input type="submit" value="Submit" />
+      </form>
+      <div>
+        <CurrencyInput unit='r' currency={rupees} onCurrencyChange={this.handleRupeeChange}/>
+        <CurrencyInput unit='d' currency={dollar} onCurrencyChange={this.handleDollarChange}/>
+      </div>
+    );
+  }
+
+}
+
+ReactDOM.render(
+  <CountryForm />
+  <Calculator />
+  ,document.getElementById("root") );
