@@ -71,9 +71,6 @@ class Calculator extends React.Component {
     this.setState({ 'unit': 'd', currency })
   }
 
-
-
-
   render() {
     const currency = this.state.currency;
     console.log("currency is " + currency);
