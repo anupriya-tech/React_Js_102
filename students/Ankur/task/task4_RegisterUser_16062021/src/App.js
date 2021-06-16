@@ -3,7 +3,7 @@ import reactDom from 'react-dom';
 import React from 'react';
 
 
-/* Class Based Component For 1 set of options i.e. 1 Imput Box for Currency Amount and 1 Select box for Currency */
+/* Declaring the initial or empty state of user registeration component */
 
 const initState = {
   userName: "",
@@ -20,7 +20,7 @@ const initState = {
   reviewflag: false
 };
 
-/* Class Based object for implementing the currency converter  */
+/* Class Based object for implementing the user Registeration   */
 
 class UserRegisteration extends React.Component{
 
@@ -35,7 +35,7 @@ class UserRegisteration extends React.Component{
 
   } 
   
-  /* Handleing the changes if ouccered in the first CurrencyRow Componenent */
+  /* Handleing the changes ouccered on any element of form */
 
   handleFormChange(e){
     let {name,value} = e.target;
@@ -50,10 +50,13 @@ class UserRegisteration extends React.Component{
     }
     this.setState({...this.state, [name]:value})
   }
+  
+  /* handle registeration form submission and enable preview */
 
   handleFormSubmit(){
     this.setState({reviewflag: true})
   }
+  
   
   handleEditButton(){
     this.setState({reviewflag: false})
@@ -63,6 +66,7 @@ class UserRegisteration extends React.Component{
     alert("You are registered successfully!!")
     this.setState(initState);
   }
+
 
   /* Rendering the final component */
   render(){
