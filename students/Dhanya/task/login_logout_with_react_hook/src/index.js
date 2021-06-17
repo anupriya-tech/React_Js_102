@@ -2,14 +2,13 @@ import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 
 function LoginLogoutWithHook(){
-  const[username, setUsername] = useState('');
-  const[password, setPassword] = useState('');
-  const[submit, submitDetails] = useState(0);
+  const[username, setUsername] = useState("");
+  const[password, setPassword] = useState("");
 
   return(<div>
-    Enter username:<input type="text" id="username"></input>
-    Enter password:<input type="password" id="password"></input>
-    <button onClick={() => submitDetails(alert("Username:"+username+" Password:"+password))}>Submit</button>
+    Enter username:<input type="text" id="username" value={username} onChange={(e) => setUsername(e.target.value)}></input>
+    Enter password:<input type="password" id="password" value={password} onChange={(f) => setPassword(f.target.value)}></input>
+    <button onClick={() => alert("Username:"+username+" Password:"+password)}>Submit</button>
   </div>);
 }
 
