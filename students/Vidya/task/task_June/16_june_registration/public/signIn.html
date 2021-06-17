@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<!-- End Bootstrap CSS -->
+    <link href="myStyle.css" rel="stylesheet" type="text/css" />
+    <title>Sign In</title>
+  
+  </head>
+  <body class="page_margin">
+<form method="POST" id="signInForm">
+    <h3>Sign In</h3>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+			  <label for="inputUserId">User Id <b class="mandetory">*</b></label>
+			  <input type="email" value="" name="inputUserId" id="inputUserId" class="form-control box_to_line" required pattern="^[_a-zA-Z0-9-]+(\.[_a-zA-Z0-9-]+)*@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.(([0-9]{1,3})|([a-zA-Z]{2,4})|(aero|coop|info|museum|name))$" title="Please Enter Valid User Id">
+			</div>
+      <div class="form-group col-md-6">
+        <label for="inputPassword">Password <b class="mandetory">*</b></label>
+        <input type="password" value="" name="inputPassword" id="inputPassword" class="form-control box_to_line" required title="Please Enter Valid Password">
+      </div>
+    </div>
+    <div class="form-row centerAlign">
+      <div class="form-group col-md-12">
+        <button type="button" name="signInbtn" id="signInbtn" class="btn btn-success">Sign In</button>
+      </div>
+    </div>
+    <div class="form-row centerAlign">
+      <div class="form-group col-md-6">
+        <a href="resetPassword.html">Forgot Password</a>
+      </div>
+      <div class="form-group col-md-6">
+        <a href="signUp.html">Sign Up for New Account</a>
+      </div>
+    </div>
+    </form>
+    </body>
+    </html>
