@@ -1,107 +1,46 @@
-import React from 'react';
+
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
+import './index.css';
+import reportWebVitals from './reportWebVitals';
 
-function CurrencyMsg(props){
-  if(props.rupees>=100)
-  return <p>Its more</p>
-  else return <p>Its less</p>
-}
-
-const UnitName={
-  'r':'rupees',
-  'd':'dollar',
-  'dh':'dhiram',
-  'eu':'euro'
-}
-
-function toRupee(dollar){
-  return dollar*75;  
-}
-
-function toDollar(rupee){
-  return rupee/75;
-}
-
-function toDhiram(rupee){
-  return rupee*34;
-}
-
-function toEuro(rupee){
-  return rupee*88;
-}
-
-
-class CurrencyInp extends React.Component{
-  constructor(props){
-    super(props);
-    this.handlevent=this.handlevent.bind(this);
-  }
+function Login(){
+  const[user,setUser]=useState({name:'',password:'',status:true});
   
-  handlevent(event){
-    this.props.currencyhandler(event.target.value);
-  } 
-  render(){
-    const currency=this.props.currency;
-    const unit=this.props.unit;
-    return(
-      <fieldset>
-        <legend>Enter the currency in {UnitName[unit]}: </legend>
-        <input value={currency} onChange={this.handlevent}></input>
-        {/* <CurrencyMsg rupees={currency}/> */}
-      </fieldset>
-    );
+  const handleEvent=(event)=>{
+    const{name,value}=event.target; 
+   console.log({[name]:value}); 
+    setUser({...user,[name]:value});
   }
+    const handleEvent1=(event)=>{ 
+      setUser({status:false});
+      console.log(user.name);
+      alert(`Welcome ${user.name} you are successfully loggedin!! Press Ok to Logout`); 
+      event.preventDefault();
+      if({status:false}){
+        setUser({name:'',password:'',status:true});
+      }
+
+    }
+  return(
+    <div>
+    <form onSubmit={handleEvent1}>  
+    <label>Enter Username: </label>
+    <input type="text" name="name" value={user.name} onChange={handleEvent} ></input>
+    <label>Enter Password: </label>
+    <input type="password" name="password" value={user.password} onChange={handleEvent}></input>
+    <button>{user.status?'Login':'Logout'}</button>
+    </form>
+    </div>  
+  )
 }
-
-class Calculator extends React.Component {
-  constructor(props){
-    super(props);
-    this.state={currency:'',unit:'r'};
-    this.handleDollarChange=this.handleDollarChange.bind(this);
-    this.handleRupeeChange=this.handleRupeeChange.bind(this);  
-    this.handleDhiramChange=this.handleDhiramChange.bind(this);
-    this.handleEuroChange=this.handleEuroChange.bind(this);
-  }
-  handleRupeeChange(currency){
-    this.setState({'unit':'r',currency});
-  }
-
-  handleDollarChange(currency){
-    this.setState({'unit':'d',currency});
-  }
-
-  handleDhiramChange(currency){
-    this.setState({'unit':'dh',currency});
-  }
-
-  handleEuroChange(currency){
-    this.setState({'unit':'eu',currency});
-  }  
-
-  render() { 
-    const currency=this.state.currency;
-    const unit=this.state.unit;
-    const rupees=unit==='d'?toRupee(currency):currency;
-    const dollar=unit==='r'?toDollar(currency):currency;
-    const dhiram=unit==='r'?toDhiram(currency):currency;
-    const euro=unit==='r'?toEuro(currency):currency;
-
-    return (  
-        <div>
-        <CurrencyInp unit='r' currency={rupees} currencyhandler={this.handleRupeeChange}/>
-        <CurrencyInp unit='d' currency={dollar} currencyhandler={this.handleDollarChange}/>
-        <CurrencyInp unit='dh' currency={dhiram} currencyhandler={this.handleDhiramChange}/>
-        <CurrencyInp unit='eu' currency={euro} currencyhandler={this.handleEuroChange}/>
-        </div>
-    );
-  }
-}
- 
 
 ReactDOM.render(
-  <Calculator/>,document.getElementById("root"));
+  <Login/>
+  ,document.getElementById('root')
+);
 
-
-  
-  
-  
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
