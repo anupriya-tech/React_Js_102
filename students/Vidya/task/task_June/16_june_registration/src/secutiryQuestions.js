@@ -1,0 +1,2 @@
+const SQ = ['What Is your favorite book?', 'Where did you meet your spouse?', 'What is your name of mother?','Where did you go to high school/college?', 'What is the name of the road you grew up on?', 'What was the first company that you worked for?', 'What was the name of your first/current/favorite pet?'];
+export default SQ;
