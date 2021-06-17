@@ -1,6 +1,6 @@
 import React from 'react'
 
-//
+//CurrencyConverter
 const unitname={
     r:"rupee",
     d:"dollar"
