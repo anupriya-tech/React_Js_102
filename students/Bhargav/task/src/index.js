@@ -1,106 +1,36 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-class CountryForm extends React.Component{
-function CurrencyMessage(props){
-  if(props.rupees >= 1000){
-    return <p>This is too much money.</p>
+
+const imagesPath = {
+    on: "https://lh3.googleusercontent.com/-DaL3Gvfj63A/YMXlLjyj_fI/AAAAAAAABcs/Bz2TKhnaQ38SkhV-zULlZlZ6iZNLaU72wCLcBGAsYHQ/s512/bulb%2Bon.png",
+    off: "https://lh3.googleusercontent.com/fife/AAWUweVTie8Fc0fPCuGeIk14EeI02pWAL1pwwM8eI_1eLA5EiwcqcyX4sqZ_ekcP57Ytmtv4pWFCehl3rEe69nXtfYWBWTnTXIzmXgE3TNIJuDD7Hus0fRoOK9Ue5iBqxTrYTPBgzIpyhPFSKVAeJjNsv4Rl_I-SyiqmNqSIPvnwutrxf4hodoUWSVSHSthQUn7kb9-OEelyDVnwYSkWBJ67ryh3QlVcc2wj7ZSgjDSb7gFDXO166bn3CIJwMppCncI_cqmTBIEOmjJ3t_FbuU9NYIPv7Q3l4ka6cBbb7jq1TXCHrXAcu0ovXPWY3hes7kW1-QGc6QpvSL9ujb0SsEdtkA_RRDJiRrxdTSpyVD2ldmJWZ13BcQYiIVrr5x7ZISS9ZxDRv4ZhKAPb3wz14yHzQEdN9erTCldorQTV1vjD8xPCECL2NmuuYur7M14i4u-4ulH2GrgVid_pS2vQmGn9G57MeWJFAqUmgR1kblogNKE7hUDG0IrYIIagrqCdqhDXaWJyzlab6KWkFmPFYQeEs7hyjPjI-fF5tz-zStzHw2wYtpSgiOQ4coICwhSnt13R4iq3Nf16bZqUKwfL4ryf3g0SqF7svPzhYBM2lDg8HmjaBKrTlKAtmu2VvL8EGqcWzIh0ZnAs-NushzmTxc8Cbg_LMXyCeIsnapj-BEBSVCJCRsCdJPSyWICEfaAt60GWdpn5fS1SaFOfFzA8YU7yU3YRhkx4ylafMyS5=w264-h260?authuser=0"
   }
-  return <p>No this is not too much money.</p>
-}
-
-const unitName = {
-  r: 'rupees',
-  d: 'dollar'
-};
-
-function toRupees(dollar){
-  return (dollar*75);
-}
-
-function toDollar(rupees){
-  return (rupees/75);
-}
-
-class CurrencyInput extends React.Component{
-  constructor(props){
-    super(props);
-    this.state = {value:'India'};
-    //this.state = {currency :''}; not good idea because not sharable
-    this.handleChange = this.handleChange.bind(this);
-    this.handlesubmit = this.handlesubmit.bind(this);
+  
+  class Mytoggle extends React.Component {  //  Declaring class
+    state = {                                  
+      open: true                              //  Declaring state and assigning the boolean value true to open
+    }
+    toggleImage = () => {
+      this.setState(state => ({ open: !state.open }))  // Setting the state using setState
+    }
+  
+    getImageName = () => this.state.open ? 'on' : 'off'  /* Getting the image based on state 
+    If on it will give show one and off the other */
+  
+    render() {
+      const imageName = this.getImageName();
+      return (
+        <div>
+          <img style={{maxWidth: '250px'}} src={imagesPath[imageName]} onClick={this.toggleImage} /> 
+          yes state is getting changed  
+        </div>   //  In render we will render that image based on style defined and on click action of toggle
+      );
+    }
   }
-
-  handleChange(event){
-    this.setState({value: event.target.value});
-    //this.setState({currency : event.target.value});
-    this.props.onCurrencyChange(event.target.value);
-  }
-
-  render(){
-    //const currency = this.state.currency;
-    const currency = this.props.currency;
-    const unit = this.props.unit;
-
-    return(
-      <fieldset>
-        <legend>Enter your currency in {unitName[unit]}: </legend>
-        <input value={currency} onChange={this.handleChange}></input>
-        <CurrencyMessage rupees={currency} />
-      </fieldset>
-    );
-  }
-}
-
-class Calculator extends React.Component{
-  constructor(props){
-    super(props);
-    this.state = {currency :'',unit: 'r'};
-    this.handleDollarChange = this.handleDollarChange.bind(this);
-    this.handleRupeeChange = this.handleRupeeChange.bind(this);
-  }
-
-  handleRupeeChange(currency){
-    this.setState({'unit' :'r',currency})
-  }
-
-  handlesubmit(event){
-    alert('Are you sure you want to submit? ' + this.state.value);
-    event.preventDefault();
-  handleDollarChange(currency){
-    this.setState({'unit' :'d',currency})
-  }
+  
+  const rootElement = document.getElementById("root");
+  ReactDOM.render(<Mytoggle />, rootElement);
 
 
-  render(){
-    const currency = this.state.currency;
-    const unit = this.state.unit;
-    const rupees = unit === 'd' ? toRupees(currency): currency;
-    const dollar = unit === 'r' ? toDollar(currency) :currency;
 
-    return(
-      <form onSubmit={this.handlesubmit}>
-        <label>
-          Please select one country out of list below: 
-          <select value={this.state.value} onChange={this.handleChange}>
-            <option value='USA'>USA</option>
-            <option value='INDIA'>INDIA</option>
-            <option value='UK'>UK</option>
-            <option value='BALI'>BALI</option>
-          </select>
-        </label>
-        <input type="submit" value="Submit" />
-      </form>
-      <div>
-        <CurrencyInput unit='r' currency={rupees} onCurrencyChange={this.handleRupeeChange}/>
-        <CurrencyInput unit='d' currency={dollar} onCurrencyChange={this.handleDollarChange}/>
-      </div>
-    );
-  }
-
-}
-
-ReactDOM.render(
-  <CountryForm />
-  <Calculator />
-  ,document.getElementById("root") );
