@@ -1,159 +1,67 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
 
-class SignupForm extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      user_name: "",
-      email: "",
-      password: "",
-      address: {
-        city: "",
-        statee: "",
-        country: "",
-      },
-      flag: true,
-    };
+function LoginLogoutHooks() {
+  const [userDetails, setUserDetails] = useState({
+    user_name: "",
+    password: "",
+    flag: true,
+  });
 
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
+  const handleUpdateDetails = (event) => {
+    const { name, value } = event.target;
+    setUserDetails({ ...userDetails, [name]: value });
+  };
 
-  handleChange(event) {
-    if (event.target.name === "user_name") {
-      this.setState((state) => ({
-        user_name: event.target.value,
-        // email: event.target.value,
-        // password: event.target.value,
-        // //city=address.city,
-        // city: event.target.value,
-        // statee: event.target.value,
-        // country: event.target.value,
-      }));
-    }
-    if (event.target.name === "email") {
-      this.setState((state) => ({
-        email: event.target.value,
-      }));
-    }
-    if (event.target.name === "password") {
-      this.setState((state) => ({
-        password: event.target.value,
-      }));
-    }
-
-    if (event.target.name === "city") {
-      this.setState((state) => ({
-        address: {
-          city: event.target.value,
-        },
-      }));
-      console.log(event.target.value);
-    }
-
-    if (event.target.name === "statee") {
-      this.setState((state) => ({
-        address: {
-          statee: event.target.value,
-        },
-      }));
-      console.log(event.target.value);
-    }
-
-    if (event.target.name === "country") {
-      this.setState((state) => ({
-        address: {
-          country: event.target.value,
-        },
-      }));
-      console.log(event.target.value);
-    }
-  }
-
-  handleSubmit(event) {
-    alert("You have successfully created your account");
-    this.setState((state) => ({
-      user_name: "",
-      email: "",
-      password: "",
-      address: { city: "" },
-      address: { statee: "" },
-      address: { country: "" },
-      flag: true,
-    }));
+  const handleSubmit = (event) => {
+    alert("You are logged in with User Name : " + userDetails.user_name);
+    setUserDetails({ flag: false, user_name: userDetails.user_name });
     event.preventDefault();
-  }
+  };
 
-  render() {
-    // if(this.state.flag){
+  const handleLogout = (event) => {
+    alert("You are successfully logged out " + userDetails.user_name);
+    setUserDetails({ flag: true });
+    event.preventDefault();
+  };
+
+  // let button;
+  // userDetails.flag ? (button = "Login") : (button = "Logout");
+
+  if (userDetails.flag === true) {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <div>
         <label>
-          {/* User Name: */}
+          Name:
           <input
             type="text"
             name="user_name"
-            value={this.state.user_name}
-            onChange={this.handleChange}
             placeholder="Name"
-            required
+            value={userDetails.user_name}
+            onChange={handleUpdateDetails}
           />
-          <br></br>
-          <input
-            type="email"
-            name="email"
-            value={this.state.email}
-            onChange={this.handleChange}
-            placeholder="email"
-            required
-          />
-          <br></br>
+        </label>
+        <label>
+          Password:
           <input
             type="password"
             name="password"
-            value={this.state.password}
-            onChange={this.handleChange}
-            placeholder="password"
-            required
-          />
-          <br></br>
-          <input
-            type="text"
-            name="city"
-            value={this.state.address.city}
-            onChange={this.handleChange}
-            placeholder="City"
-            required
-          />
-          <input
-            type="text"
-            name="statee"
-            value={this.state.address.statee}
-            onChange={this.handleChange}
-            placeholder="State"
-            required
-          />
-          <input
-            type="text"
-            name="country"
-            value={this.state.address.country}
-            onChange={this.handleChange}
-            placeholder="Country"
-            required
+            placeholder="Password"
+            value={userDetails.pass}
+            onChange={handleUpdateDetails}
           />
         </label>
-        <br></br>
-        <input type="submit" value="Submit" />
-      </form>
+        <input type="submit" value="LogIn" onClick={handleSubmit}></input>
+      </div>
+    );
+  } else {
+    return (
+      <div>
+        <input type="submit" value="Logout" onClick={handleLogout}></input>
+        {/* <input type="submit" value={button} onClick={handleLogout}></input> */}
+      </div>
     );
   }
 }
 
-ReactDOM.render(
-  <React.StrictMode>
-    <SignupForm />
-  </React.StrictMode>,
-  document.getElementById("root")
-);
+ReactDOM.render(<LoginLogoutHooks />, document.getElementById("root"));

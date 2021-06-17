@@ -1,5 +1,5 @@
 {
-  "name": "signup",
+  "name": "login-logout-hooks",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
