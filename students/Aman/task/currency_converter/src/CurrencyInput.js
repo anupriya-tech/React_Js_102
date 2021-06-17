@@ -8,24 +8,31 @@ class CurrencyInput extends React.Component{
       this.handleChange = this.handleChange.bind(this);
     }
   
+
+    sendData=()=>
+    {
+this.props.myDataGet(this.state.currency);
+    }
+
     handleChange(event){
       this.setState({currency : event.target.value});
+      this.sendData();
     }
   
     render(){
       const currency = this.state.currency;
       const unit = this.props.unit;
-      const unitName = {
+     /* const unitName = {
         r: 'rupees',
         d: 'dollar',
 
-      };
+      };*/
   
       return(
         <fieldset>
-          <legend>Enter your currency in {unitName[unit]}: </legend>
+          <legend>Enter your currency in {unit}: </legend>
           <input type="number" value={currency} onChange={this.handleChange}></input>
-          <CurrencyMessage rupees={currency} />
+          <CurrencyMessage rupees={currency} readOnly={this.props.visible} />
         </fieldset>
       );
     }
