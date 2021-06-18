@@ -1,0 +1,41 @@
+let Student_marks=[91, 95, 96, 89, 58, 59];
+ 
+let max_marks = Student_marks.length * 100;
+ 
+let total = 0;
+ 
+        let grade = 'F';
+   
+        for (let i = 0; i < Student_marks.length; i++) {
+            total += Student_marks[i];
+        }
+   
+        let percentage
+            = ((total) / max_marks) * 100;
+   
+        if (percentage >= 90 && percentage <= 100) {
+            grade = 'A';
+        }
+        else {
+            if (percentage >= 80 && percentage <= 90) {
+                grade = 'B';
+            }
+            else {
+                if (percentage >= 70 && percentage <= 80) {
+                    grade = 'C';
+                }
+                else {
+                    if (percentage >= 33 && percentage <= 70) {
+                        grade = 'Failure';
+                    }
+                    else {
+                        grade = 'Failure';
+                    }
+                }
+            }
+        }
+   
+        document.write(grade);
+ 
+
+Output : B
