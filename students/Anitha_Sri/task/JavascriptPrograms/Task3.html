@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+WAP to validate password and email in signup form(HTML,CSS and Javascript)
+	a. password ca not be less than 6 character and at least one capital letter.
+	b. email should include valid domain (eg: @gmail.com).
+*/
+ function emailValidation(){
+    let mail=document.getElementById('mail').value
+var regExp=/^([\w-\.]+@(?!gmail.com)(?!yahoo.com)(?!hotmail.com)([\w-]+\.)+[\w-]{2,4})?$/
+if(mail.match(regExp)){
+    alert("Its Nice email")
+    return true
+}else{
+    alert("Its not an email")
+    return false
+}
+
+ }
+
+ function passwordValidation(){
+
+    var password=document.getElementById('pwd').value
+   console.log(password)
+    if(password.length <=6){
+        alert("Enter not more than 6 characters")
+    }else if(!password.charAt(0).toUpperCase()){
+          alert("First character should be caps")
+    }
+
+ }
+
+
+    </script>
+
+    <div style="border:1px solid blue;width:30%;margin-left:100px;margin-top:50px;">
+    <h2>SignUP</h2>
+   <form>
+ <input type="text" placeholder="Username"></br>
+ <input type="email" required id="mail"  placeholder="Email" onChange="emailValidation()" style="margin-top:15px ;">
+
+</br>
+ 
+ <input type="password" id="pwd" onblur="passwordValidation()" required  placeholder="Password" style="margin-top:15px ;"></br>
+<input type="submit" value=Submit style="margin-top:15px ;">
+</form> 
+</div>
+
+
+</body>
+</html>
