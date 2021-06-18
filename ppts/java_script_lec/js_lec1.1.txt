@@ -1,0 +1,148 @@
+//ECMAScript2015 or ES6
+
+5.1,6,7,8
+5.1  ---> 6 huge difference
+
+//ES5 vs ES6
+declaring variables
+x = 10;
+y = {}
+z = []
+p = function foo(){}
+t = ""
+
+//let, var and const
+1. Redeclaration only with var
+2. Reassignment is possible with let
+//var x = 10;
+let y; //declaring y
+let y =10; //assigning y
+
+console.log(y);
+y = 20;
+console.log(y);
+
+2.//var is function scope not global not block
+
+var i=5;
+
+{
+  i =20;
+  console.log("from block function ",i);
+}
+
+function printMe(){
+  i = 10;
+  console.log("from function ",i);
+}
+
+console.log("outside function ",i);
+
+printMe()
+
+//let is block scope not function
+
+//let i1=5;
+
+{
+ 	let i2 =20;
+  console.log("from block function ",i2);
+}
+
+function printMe(){
+  i2 = 10;
+  console.log("from function ",i2);
+}
+
+console.log("outside function ",i2);
+
+printMe()
+
+//const is block scope
+
+
+//ES5 syntax
+
+//function declration
+
+function add1(x,y){
+  return x+y;
+}
+
+//console.log(add1(5,6));
+
+//function expression/renaming function
+
+var func = function add2(x,y){
+  					console.log(x+y);
+					}
+
+console.log(func);
+console.log(func(7,8));
+
+//function declration
+
+function add1(x,y){
+  return x+y;
+}
+
+//console.log(add1(5,6));
+
+//function expression/renaming function
+
+var func = function add2(x,y){
+  					console.log("from func this", this.x);
+  					console.log(x+y);
+					}
+
+console.log(func);
+console.log(func(7,8));
+
+//ES6 we got arrow function
+
+let result8  = (i,j) => {i+j}
+let result9  = (i) => {console.log("from func", this.x);}
+
+console.log(result9);
+
+what is arrow function?
+answer: special function which do not have their access to "this" because they donn't have their 		prototype, can not be used in constructor and should not be used as object method, returns.
+
+arr = [1,2,3,4,5]
+//console.log(arr.map((x) => x+1));
+
+function foo(x){
+  return x+1;
+}
+
+console.log(arr.map(foo));
+
+var join = new Date().toLocaleString();
+
+//ES5
+var joiningInfo1 = "rajesh joined on " + join;
+
+console.log(joiningInfo1);
+
+//ES6 introduced embedding expression in string literals
+
+var joiningInfo2 = `rajesh joined on ${join}`;
+
+console.log(joiningInfo2);
+
+
+//ES5 no multiline string
+var address1 = "first street"
+ 								+ "second street" 
+								+ "third street"
+
+console.log(address1);
+
+//ES6 syntax for multiline string
+var address2 = `first street
+ 								second street
+								third street`;
+
+console.log(address2);
+
+

@@ -1,0 +1,12 @@
+//ES5 vs ES6
+
+1. let was introduced in ES6.
+2. const was introduced in ES6.
+3. arrow function. () => {} //multiple parameters
+			() => 
+	special function which do not have their access to "this" because they donn't have their 		prototype, can not be used in constructor and should not be used as object method, returns.
+4. ES6 introduced embedding expression in string literals.
+5. multiline string
+
+
+
