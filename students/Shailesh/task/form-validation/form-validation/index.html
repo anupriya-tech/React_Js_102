@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Form Validation</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="form-container" >
+        <form action="#" autocomplete="off" onsubmit="formValidation()">
+            <div class="form-input">
+                <input type="text" id="username" placeholder="User Name">
+                <span id="userr"></span>
+            </div>
+            <div class="form-input">
+                <input type="text" id="password" placeholder="Enter password">
+                <span id="passworddd"></span>
+            </div>
+            <div class="form-input">
+                <input type="text" id="conpass" placeholder="Confirm Password">
+                <span id="conpassss"></span>
+            </div>
+            <div class="form-input">
+                <input type="text" id="email" placeholder="Email Address">
+                <span id="emailll"></span>
+            </div>
+            <div class="form-input">
+                <input type="text" id="mobile" placeholder="Mobile Number">
+                <span id="mobilele"></span>
+            </div>
+            <div class="form-input">
+                <input type="submit" id="" value="Signup">
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function formValidation(){
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            var conpass = document.getElementById('conpass').value;
+            var email = document.getElementById('email').value;
+            var mobile = document.getElementById('mobile').value;
+            if(username == ""){
+                document.getElementById('userr').innerHTML = "**please write user name in the box";
+                return false;
+            } 
+            if(username.length <  2){
+                document.getElementById('userr').innerHTML = "**please write atleast two character in the box";
+                return false;
+            }
+            if(!isNaN(username)){
+                document.getElementById('userr').innerHTML = "**please write alfhbate charater in the box";
+                return false;
+            } 
+            else{
+                document.getElementById('userr').innerHTML = "";
+                
+            }
+            if(password == ""){
+                document.getElementById('passworddd').innerHTML = "**please enter password in the box";
+                return false;
+            }
+            if(password.length < 6 ){
+                document.getElementById('passworddd').innerHTML = "**please enter atleast six charater password in the box";
+                return false;
+            }
+            if(password.search(/[A-Z]/) == -1){
+                document.getElementById('passworddd').innerHTML = "**please enter atleast one uppercase letter in the box";
+                return false;
+            }
+            else{
+                document.getElementById('passworddd').innerHTML = "";   
+            }
+            if(conpass != password){
+                document.getElementById('conpassss').innerHTML = "**password not match";
+               
+            }
+            else{
+                document.getElementById('conpassss').innerHTML = "";   
+            }
+            if(email == ""){
+                document.getElementById('emailll').innerHTML = "**please write email address in the box";
+                return false;
+            }
+            if(email.indexOf('@')<=0){
+                document.getElementById('emailll').innerHTML = "**invalid position of @";
+                return false;
+            }
+            if(email.charAt(email.length-4) != "."  &&  email.charAt(email.length-3) != "."){
+                document.getElementById('emailll').innerHTML = "**invalid position of dot '.'";
+                return false;
+            }
+            else{
+                document.getElementById('emailll').innerHTML = "";   
+            }
+            if(mobile == ""){
+                document.getElementById('mobilele').innerHTML = "**please write mobile number in the box";
+                return false;
+            }
+            if(isNaN(mobile)){
+                document.getElementById('mobilele').innerHTML = "**please write number only in the box";
+                return false;
+            }
+            if(mobile.length < 10){
+                document.getElementById('mobilele').innerHTML = "**please write 10 digit mobile number in the box";
+                return false;
+            }
+            if(mobile.length > 10){
+                document.getElementById('mobilele').innerHTML = "**please write 10 digit mobile number only in the box";
+                return false;
+            }
+            else{
+                document.getElementById('mobilele').innerHTML = "";
+            }
+        }
+    </script>
+</body>
+</html>

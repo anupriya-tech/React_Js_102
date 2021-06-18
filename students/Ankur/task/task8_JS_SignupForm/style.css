@@ -1,0 +1,70 @@
+body{
+    background-color: darkgray;
+}
+
+div.container {
+    background: ghostwhite;
+    width: 50%;
+    height: fit-content;;
+    position: absolute;
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	
+	margin: auto;
+    padding: 2em 1em;
+}
+
+.row {
+    display: block;
+    width: auto;
+    padding: 0.5em;
+}
+
+.twoCol{
+    display: table;
+    width: 100%;
+}
+.twoCol > div {
+    width: 48% !important;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.twoCol > div > p{
+    display: table;
+    width: 100%;
+    margin: 0;
+}
+
+.twoCol > div > p > span,
+.twoCol > div > p > input{
+    display: table-cell;
+    vertical-align: middle;
+    /* width: 50%; */
+}
+
+h1{
+    text-align: center;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 95%;
+    font-size: 1em;
+    line-height: 25px;
+    padding: 0 5px;
+    float: right;
+}
+
+.btn-container {
+    text-align: center;
+    margin: 2em;
+}
+
+.btn-container input[type="submit"] {
+    padding: 0.5em 1em;
+    font-size: 1em;
+}
+
