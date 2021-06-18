@@ -1,24 +1,27 @@
 function sorting() {
-    var collection = [{ id: 101, name: 'raj' },
-    { id: 121, name: 'rajesh' },
-    { id: 130, name: 'suraj' },
-    { id: 114, name: 'tom' }];
-    var soreted = [];
-    var temp=0;
-    var done = false;
-    while (!done) {
-        done = true;
-        for (var i = 1; i <= 3; i++) {
-            if (collection[i - 1].id > collection[i].id) {
-                done = false;
-                soreted.push({ id: collection[i - 1].id, name: collection[i - 1].name });
-                tmp = collection[i - 1].id ;
-                collection[i - 1].id = collection[i].id;
-                collection[i].id = tmp;
-            }
-        }
+  var collection = [
+    { id: 101, name: "raj" },
+    { id: 121, name: "rajesh" },
+    { id: 130, name: "suraj" },
+    { id: 114, name: "tom" },
+  ];
+
+  function compare_id(a, b) {
+    // a should come before b in the sorted order
+    if (a.id < b.id) {
+      return -1;
+      // a should come after b in the sorted order
+    } else if (a.id > b.id) {
+      return 1;
+      // a and b are the same
+    } else {
+      return 0;
     }
-    console.log(soreted);
-    return soreted; 
+  }
+
+  console.log("Object to be sorted");
+  console.log(collection);
+  console.log("Sorting based on the ID property");
+  console.log(collection.sort(compare_id));
 }
 sorting();
