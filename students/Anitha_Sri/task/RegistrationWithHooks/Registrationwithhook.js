@@ -4,7 +4,7 @@ import React,{useState} from 'react';
 function LoginWithHook(){
     const[user, setUser] = useState({username:'', password:''})
   
-    //
+  
     const handleLogin=(login)=>{ login.preventDefault();
       alert("Successfully loggedIn")
      }
