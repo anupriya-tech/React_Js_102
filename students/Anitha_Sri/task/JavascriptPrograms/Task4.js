@@ -1,21 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <script>
-        /*
+ /*
 WAP to perform sorting of below data based on id and name
 	{id:101,name:raj}
 	{id:121,name:rajesh}
 	{id:130,name:suraj}
 	{id:114,name:tom}*/
 
-const data=[{id:101,name:"raj"},
+    const data=[{id:101,name:"raj"},
 	{id:121,name:"rajesh"},
 	{id:130,name:"suraj"},
 	{id:114,name:"tom"},
@@ -46,6 +36,3 @@ function compareName(a,b){
   
 console.log(data.sort(CompareId))
 console.log(data.sort(compareName))
-    </script>
-</body>
-</html>

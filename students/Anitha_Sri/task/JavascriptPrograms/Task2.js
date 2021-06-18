@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <script>
-        /*
-WAP to calculate maximum % scored student report from below data.
+/*WAP to calculate maximum % scored student report from below data.
 	{id:101,name:raj,cmarks:45,pmarks:55,mmarks:67}
 	{id:102,name:rajesh,cmarks:65,pmarks:85,mmarks:77}
 	{id:103,name:suraj,cmarks:43,pmarks:55,mmarks:60}
@@ -40,12 +29,3 @@ function CalcPercintile(){
 
 }
 CalcPercintile()
-
-   
-</script>
-
-
-
-</body>
-
-</html>
