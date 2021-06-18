@@ -1,0 +1,23 @@
+1) function Sort(array) {
+  var done = false;
+  while (!done) {
+    done = true;
+    for (var i = 1; i < array.length; i += 1) {
+      if (array[i - 1] > array[i]) {
+        done = false;
+        var tmp = array[i - 1];
+        array[i - 1] = array[i];
+        array[i] = tmp;
+      }
+    }
+  }
+
+  return array;
+}
+
+var student = ["id:101 name:raj", "id:121 name:rajesh", "id:130 name:suraj", "id:114 name:tom"];
+Sort(student);
+document.write(student);
+
+
+Output : id:101 name:raj,id:114 name:tom,id:121 name:rajesh,id:130 name:suraj
