@@ -10,7 +10,7 @@ constructor(props){
     this.handleLogin=this.handleLogin.bind(this)
     this.handlePassword=this.handlePassword.bind(this)
 }
-//
+
 handleUsername(event){
 this.setState({value:event.target.value})
 
