@@ -1,0 +1,123 @@
+<!--
+1. WAP to calculate student grade based on below rules
+	a. 90 to 100 -> Grade A
+	b. 80 to 90 -> Grade B
+	c. 70 to 80 -> Grade C
+	d. Failure.
+-->
+
+Code:
+<html>
+    <head>
+        <title>Grade System</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            function add(){
+                var m1 = parseInt(document.getElementById("s1").value);
+                var m2 = parseInt(document.getElementById("s2").value);
+                var m3 = parseInt(document.getElementById("s3").value);
+                return(m1+m2+m3); 
+            }
+
+            function result(){
+                var res = add();
+                if(res<100 && res>=90){
+                    alert("Grade A");
+                }else if(res<90 && res>=80){
+                    alert("Grade B");
+                }else if(res<80 && res>=70){
+                    alert("Grade C");
+                }else{
+                    alert("Failed");
+                }
+            }
+        </script>
+        <form>
+            Enter the marks in Subject1(out of 100):<input type="text" id="s1"></input><br/>
+            Enter the marks in Subject2(out of 100):<input type="text" id="s2"></input><br/>
+            Enter the marks in Subject3(out of 100):<input type="text" id="s3"></input><br/>
+            <button onClick="result()">Add</button>
+        </form>
+    </body>
+</html>
+
+/*
+2. WAP to calculate maximum % scored student report from below data.
+	{id:101,name:raj,cmarks:45,pmarks:55,mmarks:67}
+	{id:102,name:rajesh,cmarks:65,pmarks:85,mmarks:77}
+	{id:103,name:suraj,cmarks:43,pmarks:55,mmarks:60}
+	{id:104,name:tom,cmarks:71,pmarks:65,mmarks:70}
+*/
+
+Code:
+function max(){
+
+	var students = [[101, 'raj', 45, 55, 67], [102, 'rajesh', 65, 85, 77], [103, 'suraj', 43, 55, 60], [104, 'tom', 71, 65, 70]];
+	var percentStuds = Array();
+	var percent = 0;
+	var sum = 0;
+	for(var i=0;i<students.length;i++){
+		for(var j=2, k=1;j<students.length;j++){
+			sum += students[i][j];
+		}
+		percent = (sum/300) * 100;
+		percentStuds[i][i] = students[i][k];
+		percentStuds[i][k] = percent;
+	}
+	console.log(percentStuds);
+}
+max();
+
+3) 3. WAP to validate password and email in signup form(HTML,CSS and Javascript)
+	a. password ca not be less than 6 character and at least one capital letter.
+	b. email should include valid domain (eg: @gmail.com).
+	
+Code:
+<script>
+/*
+3. WAP to validate password and email in signup form(HTML,CSS and Javascript)
+	a. password ca not be less than 6 character and at least one capital letter.
+	b. email should include valid domain (eg: @gmail.com).
+*/
+function unameValidate(){
+    var uname = document.getElementById("email").value;
+    if(!uname.match('/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/')) alert("Email isn't proper!");
+}
+function passValidate(){
+    var pass = document.getElementById("password").value;
+    if(pass.length < 6) alert("Password is short!");
+}
+</script>
+<form>
+    Enter username:<input type="text" id="email" onchange="unameValidate()"></input><br/>
+    Enter password:<input type="password" id="password" onchange="passValidate()"></input><br/>
+    <button>Submit</button>
+</form>
+
+4)
+/*
+4. WAP to perform sorting of below data based on id and name
+	{id:101,name:raj}
+	{id:121,name:rajesh}
+	{id:130,name:suraj}
+	{id:114,name:tom}
+*/
+
+Code:
+function sortNumberAlphabets(){
+    var students =[[101, 'raj'], [121, 'rajesh'], [130, 'suraj'], [114, 'tom']];
+    var ids = Array();
+    var names = Array();
+    for(var i=0;i<students.length;i++){
+        ids[i] = students[i][0];
+        names[i] = students[i][1];
+    }
+    console.log(ids.sort((a, b) => {return a - b}));
+    console.log(names.sort((a, b) => {
+        if(a < b) return -1;
+        else if(a > b) return 1;
+        else return 0;
+    }));
+}
+sortNumberAlphabets();

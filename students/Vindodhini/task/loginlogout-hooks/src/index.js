@@ -1,76 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
+//import React from 'react';
 
 
-class MyForm extends React.Component{
-  constructor(props){
-    super(props);
-    this.state = {
-      city: '',
-      statename: '',
-      country: ''
-    };
-    this.handleChangecity = this.handleChangecity.bind(this);
-    this.handleChangestatename = this.handleChangestatename.bind(this);
-    this.handleChangecountry = this.handleChangecountry.bind(this);
-    this.handlesubmit = this.handlesubmit.bind(this);
-  }
+function RegistrationForm(props) {
+    const [state , setState] = useState({
+        email : "",
+        password : ""
+    })
+    const handleChange = (e) => {
+        const {id , value} = e.target   
+        setState(prevState => ({
+            ...prevState,
+            [id] : value
+        }))
+    }
+   
+    const handleSubmit = (evt) => {
+        evt.preventDefault();
+        alert(`Successfully Logged in` + state.email)
+    }
 
-  // handleChange(event){
-  //   this.setState({value: event.target.value});
-  // }
-  handleChangecity(stateName, event) {
-    this.setState({ city: event.target.value });
-}
-handleChangestatename(stateName, event) {
-  this.setState({ state: event.target.value });
-}
-handleChangecountry(stateName, event) {
-  this.setState({ country: event.target.value });
-}
-  handlesubmit(e){
-    alert('Successfully Registered' + this.state.city);
-    e.preventDefault();
-  }
-
-  render(){
     return(
-      <form onSubmit={this.handlesubmit}>
-        <label>
-          City:
-         
-          <select value={this.state.city} name="city" onChange={(e)=>this.handleChangecity}>
-            <option value="Madurai">Madurai</option>
-            <option value="Trichy">Trichy</option>
-            <option value="Villupuram">Villupuram</option>
-            <option value="Chennai">Chennai</option>
-          </select>
-        </label>
-        <label>
-         State:
-          <select value={this.state.statename} name="statename" onChange={(e)=>this.handleChangestatename}>
-            <option value="Tamilnadu">Tamilnadu</option>
-            <option value="Bangalore">Bangalore</option>
-            <option value="Hydrabed">Hydrabed</option>
-            <option value="Delhi">Delhi</option>
-          </select>
-        </label>
-        <label>
-          Country:
-          <select value={this.state.country} name="country" onChange={(e)=>this.handleChangecountry}>
-            <option value="India">India</option>
-            <option value="Australia">Australia</option>
-            <option value="Africa">Africa</option>
-            
-          </select>
-        </label>
-        <input type="submit" value="Submit" />
-      </form>
-    );
-  }
+      <div>
+      <form onSubmit={handleSubmit}>
+      <input type="email" id="email" placeholder="Enter email" value={state.email} onChange={ handleChange} />
+   
+      <input type="password"  id="password" placeholder="Password" value={state.password} onChange={handleChange}  />
 
-}
-
-ReactDOM.render(
-  <MyForm />
-  ,document.getElementById("root") );
+        <button type="submit" value="Submit" >Login</button>
+        <button type="submit" value="Submit" >logout</button>
+        </form>
+     </div>
+    );}
+    ReactDOM.render(
+        <RegistrationForm />
+        ,document.getElementById("root") );
