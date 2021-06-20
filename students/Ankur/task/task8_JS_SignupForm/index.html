@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Signup Validation</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div class="container">
+    <h1>Signup Form</h1>
+    <form method="post" id="SignupForm">
+      <div class="row">
+        <div class="twoCol">
+          <div>
+            <p>
+              Enter Your E-mail ID:
+            </p>
+          </div>
+          <div>
+            <input type="text" name="email" value="" placeholder="Enter your email here..." />
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="twoCol">
+          <div>
+            <p>
+              Enter Password:<br/><small>Must be atleast 6 character long and contain atleast 1 numeric 1 uppercase and 1 lowercase letter</small>
+            </p>
+          </div>
+          <div>
+            <input type="password" name="password" value="" placeholder="Enter your pasword here..." />
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="twoCol">
+          <div>
+            <p>
+              Confirm Password:
+            </p>
+          </div>
+          <div>
+            <input type="password" name="confPassword" value="" placeholder="Re-enter your pasword..." />
+          </div>
+        </div>
+      </div>
+      <div class="btn-container">
+        <input type="submit" value="Submit" />
+      </div>
+    </form>
+  </div>
+
+
+
+  <script src="script.js"></script>
+</body>
+
+</html>

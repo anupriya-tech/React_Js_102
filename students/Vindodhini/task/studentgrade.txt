@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <label>Student Name</label>
+     <input type="text" id="studentname" >
+     <label>Maths Mark</label>
+     <input type="text" id="maths">
+         <input type="button" name="" value="grade" onclick="calcgrade()">
+    <script src="script.js"></script>
+  </body>
+</html>
+
+function calcgrade(){
+
+
+  var studentname = document.getElementById('studentname').value;
+  var maths = document.getElementById('maths').value;
+  var grades = '';
+
+  if(maths <= 100  && maths >= 80){
+   console.log( grades = 'A');
+  }else if(maths <= 79  && maths >= 60){
+      console.log( grades = 'B');
+  }else if(maths <= 59  && maths >= 40){
+     console.log( grades = 'C');
+  }else{
+      console.log( grades = 'F');
+  }
+
+document.write("Student Name : " + studentname + '</br>');
+document.write("Grade : " + grades);
+}calcgrade;

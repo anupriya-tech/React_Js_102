@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+
+
+
+</head>
+
+<body>
+
+
+<script>
+
+function f1()
+{
+	
+var marks=document.getElementById("getmarks").value;
+
+if(marks > 90 && marks <=100)
+{
+	document.getElementById("result").innerHTML="Garde A";
+}
+
+else if(marks > 80 && marks <=90)
+{	document.getElementById("result").innerHTML="Garde B";}
+
+else if(marks > 70 && marks <=80)
+{document.getElementById("result").innerHTML="Garde C";}
+
+else{
+document.getElementById("result").innerHTML="failure";
+}
+}
+
+
+
+
+function checkMax(){
+		var newarr;
+
+var array= {data:[{id:101,name:"raj",cmarks:45,pmarks:55,mmarks:67},
+	{id:102,name:"rajesh",cmarks:65,pmarks:85,mmarks:77},
+	{id:103,name:"suraj",cmarks:43,pmarks:55,mmarks:60},
+	{id:104,name:"tom",cmarks:71,pmarks:65,mmarks:70}
+]}
+
+var tem=0;
+var max=0;
+var index=0;
+for(var i=0;i<array.data.length;i++)
+{
+	
+temp=array.data[i].cmarks+array.data[i].pmarks+array.data[i].mmarks;
+if(temp>max)
+{
+	max=temp;
+	index=i;
+}}
+
+
+var percentage=(max*100)/300;
+
+document.getElementById("topper").innerHTML=
+"<h1>"+array.data[index].name+"</h1><br>"+
+"<h3>Student id: "+array.data[index].id+"</h3><br>"+
+"<h4>Marks Obtained in Chemistry: "+array.data[index].cmarks+"</h4><br>"+
+"<h4>Marks Obtained in Physics: "+array.data[index].pmarks+"</h4><br>"+
+"<h4>Marks Obtained in Maths: "+array.data[index].mmarks+"</h4><br>"+
+"<h4>Total Marks"+max+"</h4><br>"+
+"<h4>Percentage Scored: "+percentage+"</h4><br>";
+
+
+
+
+
+
+
+
+}
+
+
+function onSubmit()
+{
+var em=document.getElementById("email").value;
+var pa=document.getElementById("password").value;
+
+var pacheck=passcheck(pa);
+var emcheck=emailCheck(em);
+
+if(pacheck && emcheck)
+{
+	alert("login Successfull");
+
+}
+else{
+	alert("try again");
+}
+
+
+	
+}
+
+
+function passcheck(pass){
+  
+   var pwd=new RegExp("[a-zA-Z0-9]{6}");
+  var validation = new RegExp("[A-Z]+");
+  if(validation.test(pass)&& pwd.test(pass))
+    return true;
+  else 
+    return false;
+  
+}
+
+function emailCheck(emvalue){
+  var validation=new RegExp("[a-zA-Z][a-zA-Z0-9-.]*@[a-zA-Z0-9]+([.][a-zA-Z]+)+");
+  if(validation.test(emvalue))
+    return true;
+  else
+    return false;
+}
+
+
+
+
+</script>
+
+
+<h4>Answer1</h4>
+<input type="number" id="getmarks" placeholder="Enter your marks" onchange="f1()" required>
+<span id="result"></span>
+<hr>
+
+
+<code>
+[{id:101,name:raj,cmarks:45,pmarks:55,mmarks:67}
+	{id:102,name:rajesh,cmarks:65,pmarks:85,mmarks:77}
+	{id:103,name:suraj,cmarks:43,pmarks:55,mmarks:60}
+	{id:104,name:tom,cmarks:71,pmarks:65,mmarks:70}
+	]
+
+</code>
+
+<button onclick="checkMax()">Get Maximum scored student</button>
+
+<br>
+<span id="topper"></span>
+
+
+
+<hr>
+<input type="text" placeholder="Email" id="email" onchange="emailCheck()" required>
+<input type="text" placeholder="Password" id="password" onchange="passcheck()"  required>
+<button onclick="onSubmit()">Submit</button> 
+
+</body>
+
+
+
+
+</html>
