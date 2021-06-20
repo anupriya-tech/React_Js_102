@@ -1,0 +1,33 @@
+.form-container {
+    width: 500px;
+    margin: auto;
+    /* text-align: center; */
+    margin-top: 40px;
+}
+.form-input span{
+  color: red;
+  font-size: 14px;
+}
+.form-input {
+    margin: 10px auto;
+}
+
+input#username {
+    width: 100%;
+}
+
+input#password {
+    width: 100%;
+}
+
+input#conpass {
+    width: 100%;
+}
+
+input#email {
+    width: 100%;
+}
+
+input#mobile {
+    width: 100%;
+}
