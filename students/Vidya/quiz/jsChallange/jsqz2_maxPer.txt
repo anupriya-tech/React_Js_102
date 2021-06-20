@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Display Record of Student Having Maximum Percentage.</h2>
+
+<script>
+var i,per,tempId,tempName;
+var tempPer = 0;
+var stdTempArray = [];
+
+
+var stdArray = '{"std":[' + 
+'{"id":101,"name":"raj","cmarks":45,"pmarks":55,"mmarks":67},' +
+'{"id":102,"name":"rajesh","cmarks":65,"pmarks":85,"mmarks":77},' +
+'{"id":103,"name":"suraj","cmarks":43,"pmarks":55,"mmarks":60},' +
+'{"id":104,"name":"tom","cmarks":71,"pmarks":65,"mmarks":70}]}';
+
+
+
+objStd = JSON.parse(stdArray);
+
+for(i in objStd.std)
+{
+  per = ((objStd.std[i].cmarks + objStd.std[i].pmarks + objStd.std[i].mmarks) / 300 )*100 ;
+  if(tempPer <= per)
+  {
+    tempPer = per;
+    tempId = objStd.std[i].id;  
+    tempName = objStd.std[i].name;
+  }
+  
+  document.write("<br>Id: " + objStd.std[i].id + "<br>Name:  " + objStd.std[i].name + "<br> Percentage: " + per +"<br>");
+}
+
+document.write("<br> <b>Record Of Maximum Percentage:</b> " + "<br> Id: " + tempId + "<br>Name: " + tempName + "<br> Percentage: " + tempPer);
+	
+</script>
+
+</body>
+</html>
