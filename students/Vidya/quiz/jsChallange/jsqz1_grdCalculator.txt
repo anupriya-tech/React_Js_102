@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MarkSheet</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+<style>
+    .bs-example{
+        margin: 20px;        
+    }
+</style>
+</head>
+<body>
+<div class="bs-example">
+    <form method="post">
+	<b>NOTE: Mark should be out of 100</b>
+        <div class="form-group">
+		    <label for="inputStdName">Name</label>
+            <input type="text" class="form-control col-3" id="inputStdName" required>
+            <label for="inputSub1">sub1</label>
+            <input type="text" class="form-control col-3" id="inputSub1" required>
+            <label for="inputSub2">sub2</label>
+            <input type="text" class="form-control col-3" id="inputSub2" required>
+			<label for="inputSub3">sub3</label>
+            <input type="text" class="form-control col-3" id="inputSub3" required>
+			<label for="inputSub4">sub4</label>
+            <input type="text" class="form-control col-3" id="inputSub4" required>
+        </div>
+        <button type="submit" class="btn btn-primary" onclick="calculate();" >Result</button>
+    </form>
+</div>
+</body>
+</html>
+
+<script lang="Javascript">
+function calculate()
+{
+	var stdName = document.getElementById("inputStdName").value
+	var sub1 = parseInt(document.getElementById("inputSub1").value);
+	var sub2 = parseInt(document.getElementById("inputSub2").value);
+	var sub3 = parseInt(document.getElementById("inputSub3").value);
+	var sub4 = parseInt(document.getElementById("inputSub4").value);
+
+	var totalMarks = sub1 + sub2 + sub3 + sub4;
+	
+
+	var per = (totalMarks / 400) * 100 ;
+
+	if(per >= 90)
+	{
+	 document.write("Name: " + stdName + "<br> Total : "+ totalMarks + "/400 <br> Perecentage : "+ per +" <br> You are Passed with Grade A");
+	}
+	else if(per >= 80 && per < 90)
+	{
+	 document.write("Name: " + stdName + "<br> Total : "+ totalMarks + "/400 <br> Perecentage : "+ per +" <br> You are Passed with Grade B");
+	}
+	else if(per >= 70 && per <= 80)
+	{
+	 document.write("Name: " + stdName + "<br> Total : "+ totalMarks + "/400 <br> Perecentage : "+ per +" <br> You are Passed with Grade C");
+	}
+	else
+	{
+	 document.write("Name: " + stdName + "<br> Total : "+ totalMarks + "/400 <br> Perecentage : "+ per +" <br> You are Fail");
+	}
+
+}
+</script>
