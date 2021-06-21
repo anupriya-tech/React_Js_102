@@ -1,0 +1,41 @@
+1*Virtual DOM
+That’s where the concept of virtual DOM comes in and performs significantly better than the real DOM. The virtual DOM is only a virtual representation of the DOM. Everytime the state of our application changes, the virtual DOM gets updated instead of the real DOM.
+2*You would change the prop in the parent component, as that is what holds the value of the prop itself. This would force a re-render of any child components that use the specific prop being changed. If you want to intercept the props as they're sent, you can use the lifecycle method componentWillReceiveProps .
+3*Arrays a kind of data structure that can store a fixed-size sequential collection of elements of the same type. An array is used to store a collection of data, but it is often more useful to think of an array as a collection of variables of the same type
+4*
+5*What are React Components?
+React components are independent and reusable code. They are the building blocks of any React application. Components serve the same purpose as JavaScript functions, but work individually to return JSX code as elements for our UI. Components usually come in two types, functional components and class components, but today we will also be talking about pure components and higher-order components.
+Types of React Components Discussed
+Functional Components
+Class Components
+Pure Components
+Higher-Order Components
+6*A CSS pseudo-element is a keyword added to a selector that lets you style a specific part of the selected element(s). For example, ::first-line can be used to change the font of the first line of a paragraph.
+7*New Elements in HTML5
+Below is a list of the new HTML5 elements, and a description of what they are used for.
+
+New Semantic/Structural Elements
+HTML5 offers new elements for better document structure:
+
+Tag	Description
+<article>	Defines an article in a document
+<aside>	Defines content aside from the page content
+<bdi>	Isolates a part of text that might be formatted in a different direction from other text outside it
+<details>	Defines additional details that the user can view or hide
+<dialog>	Defines a dialog box or window
+<figcaption>	Defines a caption for a <figure> element
+<figure>	Defines self-contained content
+<footer>	Defines a footer for a document or section
+<header>	Defines a header for a document or section
+<main>	Defines the main content of a document
+<mark>	Defines marked/highlighted text
+<meter>	Defines a scalar measurement within a known range (a gauge)
+<nav>	Defines navigation links
+<progress>	Represents the progress of a task
+<rp>	Defines what to show in browsers that do not support ruby annotations
+<rt>	Defines an explanation/pronunciation of characters (for East Asian typography)
+<ruby>	Defines a ruby annotation (for East Asian typography)
+<section>	Defines a section in a document
+<summary>	Defines a visible heading for a <details> element
+<time>	Defines a date/time
+<wbr>	Defines a possible line-break
