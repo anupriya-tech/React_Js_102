@@ -122,6 +122,47 @@ function emailCheck(emvalue){
 }
 
 
+function sorting(){
+
+var array= {data:[{id:101,name:"raj"},
+	{id:121,name:"rajesh"},
+	{id:130,name:"suraj"},
+{id:114,name:"tom"}]}
+
+/*var sortBy = [{
+  prop:'id',
+  direction: -1
+},{
+  prop:'name',
+  direction: 1
+}];
+
+console.log(array.data[0]);
+
+var res=array.data.sort(function(a,b){
+  let i = 0, result = 0;
+  while(i < sortBy.length && result === 0) {
+    result = sortBy[i].direction*(a[ sortBy[i].prop ].toString() < b[ sortBy[i].prop ].toString() ? -1 : (a[ sortBy[i].prop ].toString() > b[ sortBy[i].prop ].toString() ? 1 : 0));
+    i++;
+  }
+  return result;
+})*/
+
+
+let sortBy = ['id','name'];
+
+var res=array.data.sort(function(a,b){
+  let i = 0, result = 0;
+  while(i < sortBy.length && result === 0) {
+    result = a[ sortBy[i] ].toString() < b[ sortBy[i] ].toString() ? -1 : (a[ sortBy[i] ].toString() > b[ sortBy[i] ].toString() ? 1 : 0);
+    i++;
+  }
+  return result;
+})
+const myJSON = JSON.stringify(res);
+
+document.getElementById("sorted").innerHTML=myJSON;
+}
 
 
 </script>
@@ -153,6 +194,21 @@ function emailCheck(emvalue){
 <input type="text" placeholder="Email" id="email" onchange="emailCheck()" required>
 <input type="text" placeholder="Password" id="password" onchange="passcheck()"  required>
 <button onclick="onSubmit()">Submit</button> 
+
+<hr>
+<code>
+{id:101,name:"raj"},
+	{id:121,name:"rajesh"},
+	{id:130,name:"suraj"},
+	{id:114,name:"tom"}
+</code>
+<br>
+<input type="button" value="click to sort" onclick={sorting()}>
+<br>
+<span id="sorted"></span>
+
+
+
 
 </body>
 
