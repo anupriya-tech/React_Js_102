@@ -1,0 +1,34 @@
+4. WAP to perform sorting of below data based on id and name
+	{id:101,name:raj}
+	{id:121,name:rajesh}
+	{id:130,name:suraj}
+	{id:114,name:tom}
+
+var st = [ 
+  {id:101, name:'ram'},
+	{id:121, name:'rajesh'},
+	{id:130, name:'suraj'},
+	{id:114, name:'tom'}
+  ];
+
+st.sort(function (a, b) {
+  return a.id - b.id;
+});
+console.log(st);
+document.write("sorted by ID:<br>",JSON.stringify(st));
+
+var x = st.sort(function(a, b) {
+  var nA = a.name;
+  var nB = b.name;
+  if (nA < nB) {
+    return -1;
+  }
+  if (nA > nB) {
+    return 1;
+  }
+
+  // names must be equal
+  return 0;
+});
+console.log(x);
+document.write("<br>sorted by name:<br>",JSON.stringify(x));
