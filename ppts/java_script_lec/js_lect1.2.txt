@@ -7,6 +7,13 @@
 	special function which do not have their access to "this" because they donn't have their 		prototype, can not be used in constructor and should not be used as object method, returns.
 4. ES6 introduced embedding expression in string literals.
 5. multiline string
+6. Destructuring objects
+7. Rest/Spread operators
+8. Array Iteration - for...of loop
+9. No function keyword in methods
+10. Default parameters in functions
+11. constructor function in ES6, but prototype based contructor in ES5
+
 
 
 

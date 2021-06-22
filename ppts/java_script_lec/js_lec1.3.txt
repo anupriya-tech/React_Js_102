@@ -1,0 +1,132 @@
+//ECMAScript2015 or ES6
+
+question
+var x=4, y =3 ,z=2
+
+var xyz ={x:2,x:1,z:0}
+
+var {z:y,x:z,y=2,z=3} = xyz
+
+console.log(""+x+y+z)
+explaination
+var x=4, y =3 ,z=2
+
+console.log(""+x+y+z)
+
+var xyz ={x:2,x:1,z:0}
+
+console.log(""+xyz.x+xyz.y+xyz.z)
+
+//var {z:y,x:z,y=2,z=3} = xyz
+
+var {x:y,x:z,y=2,z=3} = xyz
+
+
+console.log(""+x+y+z)
+
+
+//Destructuring objects
+//var obj = {}
+
+//ES5
+
+var obj = {id:101,name:"rajesh"}
+
+console.log(obj)
+
+var id1 = obj.id
+var id2 = obj['id']
+
+console.log(id1)
+console.log(id2)
+
+obj['subject'] = "all subject"
+
+console.log(obj)
+
+//ES6
+var obj = {id3:101,name3:"rajesh"}
+
+console.log(obj)
+
+let {id3,name3} = obj
+
+console.log(id3)
+
+//spread/rest
+
+var obj = {id3:101,name3:"rajesh"}
+
+var copyobj = {...obj} //... spread operator, shallow copy of obj
+
+console.log(copyobj)
+
+var [a,b] = [10,20];
+
+console.log(b)
+
+var [a,b,...rest] = [10,20,30,40,50] //rest of the items in array
+
+console.log(rest)
+
+//shallow copy vs deep copy of obj
+
+myarr = ['a','b','c']
+
+//ES5
+for(var i=0; i <myarr.length; i++){
+  console.log(myarr[i])
+}
+
+//ES6
+for(let i of myarr){ 
+  console.log(i)
+}
+
+//ES5 
+var obj = {id:101,
+           name:"rajesh",
+           printMe: function printMe(){
+             console.log("hello from obj")            
+           }
+          }
+
+console.log(obj.printMe())
+
+//ES6
+var obj = {id:101,
+           name:"rajesh",
+          	printMe(){
+             console.log("hello from obj")            
+           }
+          }
+
+console.log(obj.printMe())
+
+//ES5 
+var func = function add(a,b){
+  console.log(a+b)
+}
+
+console.log(func(10,20))
+console.log(func(10))
+
+//ES5 default
+var func = function add(a,b){
+  b = b === undefined ? 5 :0
+  console.log(a+b)
+}
+
+console.log(func(10,20))
+console.log(func(10))
+
+//ES6
+var func = function add(a,b=8){
+  console.log(a+b)
+}
+
+console.log(func(10,20))
+console.log(func(10))
+
+
+
