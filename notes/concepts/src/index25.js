@@ -108,12 +108,6 @@ class ToggleComponent extends React.Component{
     const isLogged = this.state.isLoggedIn;
     let button;
 
-    /* if(isLogged){
-      button = <LogoutButton onClick={this.handleLogoutClick} />;
-    }else{
-      button = <LoginButton onClick={this.handleLoginClick} />;
-    } */
-
     {isLogged ?
       button = <AnotherButton onClick={this.handleLogoutClick} />
       :
