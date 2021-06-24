@@ -18,7 +18,7 @@ module.exports = {
             title:'my webpack title',           
             
             inject: true,
-            template:path.resolve(__dirname,'./src/template.ejs'), 
+            template:path.resolve(__dirname,'./src/template.html'), 
             filename:'index.html'
         }),
 
