@@ -1,0 +1,66 @@
+Webpack 
+
+1. module bundler
+2. compiles(js with babel, ts) into cross-browser compatible app and static content
+3. provides devlopment server
+4. create-react-app uses webpack internally
+
+5. Set up
+5.1 mkdir webpack-demo
+5.2 cd webpack-demo
+5.3 npm init -y
+5.4 npm i -D webpack webpack-cli
+
+6 created index.js and config file
+const path = require('path')
+
+module.exports = {
+    entry:{
+        main: path.resolve(__dirname,'./src/index.js'),
+    },
+    output:{
+        path: path.resolve(__dirname,'./dist'),
+        filename: '[name].bundle.js',
+
+    },
+}
+
+7. add script and run
+	"scripts": {
+    "build":"webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+  
+ 8. npm run build
+ 9. Adding plugins
+ npm i -D html-webpack-plugin
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+Misc
+diff b/n reuire and ES6 import/export
+1.require is built in function , use it anywhere and conditionaly
