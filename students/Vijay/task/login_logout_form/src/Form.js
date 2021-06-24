@@ -1,70 +1,153 @@
-import React, { Component } from 'react'
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
 
-class Form extends Component {
-	constructor(props) {
-		super(props)
+class SignupForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      user_name: "",
+      email: "",
+      password: "",
+      address: {
+        city: "",
+        statee: "",
+        country: "",
+      },
+      flag: true,
+    };
 
-		this.state = {
-			username: '',
-			comments: '',
-			topic: 'react'
-		}
-	}
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
 
-	handleUsernameChange = event => {
-		this.setState({
-			username: event.target.value
-		})
-	}
+  handleChange(event) {
+    if (event.target.name === "user_name") {
+      this.setState((state) => ({
+        user_name: event.target.value,
+      }));
+    }
+    if (event.target.name === "email") {
+      this.setState((state) => ({
+        email: event.target.value,
+      }));
+    }
+    if (event.target.name === "password") {
+      this.setState((state) => ({
+        password: event.target.value,
+      }));
+    }
 
-	handleCommentsChange = event => {
-		this.setState({
-			comments: event.target.value
-		})
-	}
+    if (event.target.name === "city") {
+      this.setState((state) => ({
+        address: {
+          city: event.target.value,
+        },
+      }));
+      console.log(event.target.value);
+    }
 
-	handleTopicChange = event => {
-		this.setState({
-			topic: event.target.value
-		})
-	}
+    if (event.target.name === "statee") {
+      this.setState((state) => ({
+        address: {
+          statee: event.target.value,
+        },
+      }));
+      console.log(event.target.value);
+    }
 
-	handleSubmit = event => {
-		alert(`${this.state.username} ${this.state.comments} ${this.state.topic}`)
-		event.preventDefault()
-	}
+    if (event.target.name === "country") {
+      this.setState((state) => ({
+        address: {
+          country: event.target.value,
+        },
+      }));
+      console.log(event.target.value);
+    }
+  }
 
-	render() {
-		const { username, comments, topic } = this.state
-		return (
-			<form onSubmit={this.handleSubmit}>
-				<div>
-					<label>Username </label>
-					<input
-						type="text"
-						value={username}
-						onChange={this.handleUsernameChange}
-					/>
-				</div>
-				<div>
-					<label>Comments</label>
-					<textarea
-						value={comments}
-						onChange={this.handleCommentsChange}
-					/>
-				</div>
-				<div>
-					<label>Topic</label>
-					<select value={topic} onChange={this.handleTopicChange}>
-						<option value="react">React</option>
-						<option value="angular">Angular</option>
-						<option value="vue">Vue</option>
-					</select>
-				</div>
-				<button type="submit">Submit</button>
-			</form>
-		)
-	}
+  handleSubmit(event) {
+    alert("You have successfully created your account");
+    this.setState((state) => ({
+      user_name: "",
+      email: "",
+      password: "",
+      address: { city: "" },
+      address: { statee: "" },
+      address: { country: "" },
+      flag: true,
+    }));
+    event.preventDefault();
+  }
+
+  render() {
+    // if(this.state.flag){
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <label>
+          {/* User Name: */}
+          <input
+            type="text"
+            name="user_name"
+            value={this.state.user_name}
+            onChange={this.handleChange}
+            placeholder="Name"
+            required
+          />
+          <br></br>
+          <input
+            type="email"
+            name="email"
+            value={this.state.email}
+            onChange={this.handleChange}
+            placeholder="email"
+            required
+          />
+          <br></br>
+          <input
+            type="password"
+            name="password"
+            value={this.state.password}
+            onChange={this.handleChange}
+            placeholder="password"
+            required
+          />
+          <br></br>
+          <input
+            type="text"
+            name="city"
+            value={this.state.address.city}
+            onChange={this.handleChange}
+            placeholder="City"
+            required
+          />
+          <input
+            type="text"
+            name="statee"
+            value={this.state.address.statee}
+            onChange={this.handleChange}
+            placeholder="State"
+            required
+          />
+          <input
+            type="text"
+            name="country"
+            value={this.state.address.country}
+            onChange={this.handleChange}
+            placeholder="Country"
+            required
+          />
+        </label>
+        <br></br>
+        <input type="submit" value="Submit" />
+      </form>
+    );
+  }
 }
 
-export default Form
+ReactDOM.render(
+  <React.StrictMode>
+    <SignupForm />
+  </React.StrictMode>,
+  document.getElementById("root")
+);

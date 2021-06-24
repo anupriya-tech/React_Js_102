@@ -1,0 +1,142 @@
+1*
+var a;
+var b= null;
+var c =undefind;
+ var  =4;
+var e 'five';
+var f =a||b||c||d||e;
+console.log(f)
+Ans:Uncaught SyntaxError: Unexpected token '='
+2*
+var myVar =1;
+function someScopeFunc()
+{
+??? var myVar= 10;
+console.log(myVar)
+} ???
+someScopeFunc()
+console.log(myVar)
+Ans:VM237:4 Uncaught SyntaxError: Unexpected token '??'
+3*
+var myVar =10;
+if(true){
+var myVar =2;
+
+}
+console.log(myVar);
+let someVar=2;
+if{
+let someVar=10;
+}
+console.log(someVar);
+ans: 
+...........................................
+1*What are Semantic Elements?
+HTML was originally created as a markup language to describe documents on the early internet. As the internet grew and was adopted by more people, its needs changed.
+
+Where the internet was originally intended for sharing scientific documents, now people wanted to share other things as well. Very quickly, people started wanting to make the web look nicer.
+
+Because the web was not initially built to be designed, programmers used different hacks to get things laid out in different ways. Rather than using the <table></table> to describe information using a table, programmers would use them to position other elements on a page.
+
+As the use of visually designed layouts progressed, programmers started to use a generic “non-semantic” tag like <div>. They would often give these elements a class or id attribute to describe their purpose. For example, instead of <header> this was often written as <div class="header">.
+2*There are many differences between HTML and HTML5 which are discussed below:
+
+HTML	HTML5
+It didn’t support audio and video without the use of flash player support.	It supports audio and video controls with the use of <audio> and <video> tags.
+It uses cookies to store temporary data.	It uses SQL databases and application cache to store offline data.
+Does not allow JavaScript to run in browser.	Allows JavaScript to run in background. This is possible due to JS Web worker API in HTML5.
+Vector graphics is possible in HTML with the help of various technologies such as VML, Silver-light, Flash, etc.	Vector graphics is additionally an integral a part of HTML5 like SVG and canvas.
+It does not allow drag and drop effects.	It allows drag and drop effects.
+Not possible to draw shapes like circle, rectangle, triangle etc.	HTML5 allows to draw shapes like circle, rectangle, triangle etc.
+It works with all old browsers.	It supported by all new browser like Firefox, Mozilla, Chrome, Safari, etc.
+Older version of HTML are less mobile-friendly.	HTML5 language is more mobile-friendly.
+3*CSS preprocessors are scripting languages that extend the default capabilities of CSS. They enable us to use logic in our CSS code, such as variables, nesting, inheritance, mixins, functions, and mathematical operations. CSS preprocessors make it easy to automate repetitive tasks, reduce the number of errors and code bloat, create reusable code snippets, and ensure backward compatibility.
+4*promise:A Promise is a proxy for a value not necessarily known when the promise is created. It allows you to associate handlers with an asynchronous action's eventual success value or failure reason. This lets asynchronous methods return values like synchronous methods: instead of immediately returning the final value, the asynchronous method returns a promise to supply the value at some point in the future.
+
+A Promise is in one of these states:
+
+pending: initial state, neither fulfilled nor rejected.
+fulfilled: meaning that the operation was completed successfully.
+rejected: meaning that the operation failed.
+
+5* Array destructuring
+Destructuring means to break down a complex structure into simpler parts. With the syntax of destructuring, you can extract smaller fragments from objects and arrays. It can be used for assignments and declaration of a variable.
+
+Destructuring is an efficient way to extract multiple values from data that is stored in arrays or objects. When destructuring an array, we use their positions (or index) in an assignment.
+
+Let us try to understand the array destructuring by using some illustrations:
+
+Example
+var arr = ["Hello", "World"]  
+  
+// destructuring assignment  
+var [first, second] = arr;  
+  
+console.log(first); // Hello  
+console.log(second); // World  
+6*Both of the property is quite useful in CSS. The visibility: “hidden”; property is used to specify whether an element is visible or not in a web document but the hidden elements take up space in the web document. The visibility is a property in CSS that specifies the visibility behavior of an element and display: “none” property is used to specify whether an element is exist or not on the website.
+
+Syntax:
+
+Visibility property:
+visibility: visible| hidden | collapse | initial | inherit;
+Display property:
+display: none |  inline | block | inline-block;
+So, the difference between display: “none”; and visibility: “hidden”;, right from the name itself we can tell the difference as display: “none”;, completely gets rids of the tag, as it had never exists in the HTML page whereas visibility: “hidden”;, just makes the tag invisible it will still be on the HTML page occupying space it’s just invisible.
+
+Example:
+
+
+<!DOCTYPE html>
+<html>
+  
+<head>
+    <title>
+        Difference between display:"none";
+        and visibility: "hidden";
+    </title>
+</head>
+  
+<body>
+    <center>
+        <h1 style="color:green;">
+            GeeksforGeeks
+        </h1>
+          
+        <h3>
+            display:"none"; and
+            visibility: "hidden";
+        </h3>
+          
+        <div class="display">
+            <b>
+                display:
+                <span style="display:none">
+                    display:none
+                </span> "none";
+            </b>
+        </div>
+        <br>
+      
+        <div class="visibility">
+            <b>
+                visibility:
+                <span style="visibility:hidden">
+                    visibility:hidden
+                </span> "hidden";
+            </b>
+        </div>
+      
+        <p>
+            You can see that the display: "none";
+            don't have any blank space and
+            visibility: "hidden": has the
+            blank space.
+        </p>
+    </cenetr>
+</body>
+  
+</html>
+Output:
+
+
