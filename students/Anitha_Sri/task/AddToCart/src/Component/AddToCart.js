@@ -1,6 +1,6 @@
 import React from 'react'
 
-//
+
 
 
 class AddToCart extends React.Component{
