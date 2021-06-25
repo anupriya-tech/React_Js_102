@@ -7,36 +7,38 @@ class ShopCart extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      products: [
-        {id:'p01',
-        name:'Formal_Shirt1',
-        price:500,
-        qty:50},
-        {id:'p02',
-        name:'Formal_Shirt2',
-        price:300,
-        qty:30},
-        {id:'p03',
-        name:'Formal_Shirt3',
-        price:700,
-        qty:25}            
+      products:[
+      {id:'p01',
+      name:'Formal_Shirt1',
+      price:500,
+      qty:50},
+      {id:'p02',
+      name:'Formal_Shirt2',
+      price:300,
+      qty:30},
+      {id:'p03',
+      name:'Formal_Shirt3',
+      price:700,
+      qty:25}            
       ],
-      qty:0
+      qty:0,
+      total:0
     }
+    this.addItem = this.addItem.bind(this);
+    this.delItem = this.delItem.bind(this);
   }
 
-  addItem(){
-    //alert("add item clicked");
-    this.setState(
-      {qty: this.state.qty + 1}
-    );
+  addItem(price){
+    this.setState({ 
+      qty: this.state.qty + 1,
+      total: this.state.total + price
+    });
   }
 
   delItem(){
-    //alert("delete item clicked");
-    this.setState(
-      {qty: this.state.qty - 1}
-    );    
+    this.setState({ 
+      qty: this.state.qty - 1 
+    })
   }
 
   render(){
@@ -54,22 +56,26 @@ class ShopCart extends React.Component{
         </thead>
         <tbody>          
             {
-              this.state.products.map(function(item) {
-                return (<tr key={item.id}>
-              <td>{item.id}</td>
-              <td>{item.name}</td>
-              <td>{item.price}</td>
-              <td>{item.qty}</td>
-              <td><button onClick={this.addItem}>Add</button></td>
-              <td><button onClick={this.delItem}>Delete</button></td>
-            </tr>
-                );
-              })
-            }   
-        </tbody>
+              this.state.products.map((item) => (
+                <tr key={item.id}>
+                  <td>{item.id}</td>
+                  <td>{item.name}</td>
+                  <td>{item.price}</td>
+                  <td>{item.qty}</td>
+                  <td><button onClick={this.addItem}>Add</button></td>
+                  <td><button onClick={this.delItem}>Delete</button></td>
+                </tr>
+              ))
+            }
+          </tbody>
         </table>
         <table>
-            <tr><td>{this.state.qty}</td></tr>
+          <tbody>
+            <tr>
+              <td>Quantity: {this.state.qty}</td>
+              <td>Total Price: {this.state.total}</td>
+            </tr>
+          </tbody>
         </table>
       </div>
     )
