@@ -1,0 +1,36 @@
+1. WAP to calculate student grade based on below rules
+	a. 90 to 100 -> Grade A
+	b. 80 to 90 -> Grade B
+	c. 70 to 80 -> Grade C
+	d. Failure.
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <form method="post">
+<input type="text" id="percent" placeholder="percentage">
+<input type="button"value="submit" onclick="calGrade();">
+    </form>
+    <script src="scrip.js"></script>
+  </body>
+</html>
+
+function calGrade(){
+  var perc = document.getElementById('percent').value;
+if(perc >=90  && perc <=100){
+    alert('A');
+  }
+  else if(perc >80  && perc < 90){
+     alert('B');
+  }else if(perc >=70  && perc <=80){
+    alert('C');
+  }else{
+     alert('FAIL');
+  }
+}  

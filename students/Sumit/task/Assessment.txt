@@ -1,0 +1,158 @@
+1. virtual DOM as React’s local and simplified copy of the HTML DOM. It allows React to do its computations within this abstract world and skip the “real” DOM operations, often slow and browser-specific.
+
+There’s no big difference between the regular DOM and the virtual DOM. This is why the JSX parts of the React code can look almost like pure HTML:
+
+var CommentBox = React.createClass({
+  render: function() {
+    return (
+      <div className="commentBox">
+        Hello, world! I am a CommentBox.
+      </div>
+    );
+  }
+});
+
+2.#1 It facilitates the overall process of writing components. ...
+#2 It boosts productivity and facilitates further maintenance. ...
+#3 It ensures faster rendering. ...
+#4 It guarantees stable code. ...
+#5 It is SEO friendly. ...
+#6 It comes with a helpful developer toolset.
+
+3.
+Difference between ES5 and ES6
+Based on	ES5	ES6
+Definition	ES5 is the fifth edition of the ECMAScript (a trademarked scripting language specification defined by ECMA International)	ES6 is the sixth edition of the ECMAScript (a trademarked scripting language specification defined by ECMA International).
+Data-types	ES5 supports primitive data types that are string, number, boolean, null, and undefined.	In ES6, there are some additions to JavaScript data types. It introduced a new primitive data type 'symbol' for supporting unique values.
+Defining Variables	In ES5, we could only define the variables by using the var keyword.	In ES6, there are two new ways to define variables that are let and const.
+Performance	As ES5 is prior to ES6, there is a non-presence of some features, so it has a lower performance than ES6.	Because of new features and the shorthand storage implementation ES6 has a higher performance than ES5.
+Support	A wide range of communities supports it.	It also has a lot of community support, but it is lesser than ES5.
+Object Manipulation	ES5 is time-consuming than ES6.	Due to destructuring and speed operators, object manipulation can be processed more smoothly in ES6.
+Arrow Functions	In ES5, both function and return keywords are used to define a function.	An arrow function is a new feature introduced in ES6 by which we don't require the function keyword to define the function.
+Loops	In ES5, there is a use of for loop to iterate over elements.	ES6 introduced the concept of for...of loop to perform an iteration over the values of the iterable objects
+
+4.
+A callback is a function passed as an argument to another function. This technique allows a function to call another function. A callback function can run after another function has finished.
+5.Here, useState is a Hook . We call it inside a function component to add some local state to it. React will preserve this state between re-renders. useState returns a pair: the current state value and a function that lets you update it. You can call this function from an event handler or somewhere else. It’s similar to this.setState in a class, except it doesn’t merge the old and new state together. (We’ll show an example comparing useState to this.state in Using the State Hook.)
+import React, { useState } from 'react';
+
+function Example() {
+  // Declare a new state variable, which we'll call "count"
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
+    </div>
+  );
+}
+6.
+Arrow functions were introduced in ES6.
+
+Arrow functions allow us to write shorter function syntax:
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Arrow Function</h2>
+
+<p>This example shows the syntax of an Arrow Function, and how to use it.</p>
+
+<p id="demo"></p>
+
+<script>
+var hello;
+
+hello = () => {
+  return "Hello World!";
+}
+
+document.getElementById("demo").innerHTML = hello();
+</script>
+
+</body>
+</html>
+It gets shorter! If the function has only one statement, and the statement returns a value, you can remove the brackets and the return keyword:
+
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Arrow Function</h2>
+
+<p>This example shows an Arrow Function without the brackets or the return keyword.</p>
+
+<p id="demo"></p>
+
+<script>
+var hello;
+
+hello = () => "Hello World!";
+
+document.getElementById("demo").innerHTML = hello();
+</script>
+
+</body>
+</html>
+This example shows an Arrow Function without the brackets or the return keyword.
+
+Hello World!
+7.
+React uses virtual DOM to enhance its performance. It uses the observable to detect state and prop changes. React uses an efficient diff algorithm to compare the versions of virtual DOM. It then makes sure that batched updates are sent to the real DOM for repainting or re-rendering of the UI.
+8.
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Functions</h2>
+<p>This example calls the fullName method of person, using it on person1:
+</p>
+
+<p id="demo"></p>
+
+<script>
+const person = {
+  fullName: function() {
+    return this.firstName + " " + this.lastName;
+  }
+}
+const person1 = {
+  firstName:"John",
+  lastName: "Doe"
+}
+const person2 = {
+  firstName:"Mary",
+  lastName: "Doe"
+}
+document.getElementById("demo").innerHTML = person.fullName.call(person1); 
+</script>
+
+</body>
+</html>
+
+
+This example calls the fullName method of person, using it on person1:
+9.
+A closure is the combination of a function bundled together  with references to its surrounding state (the lexical environment. In other words, a closure gives you access to an outer function’s scope from an inner function. In JavaScript, closures are created every time a function is created, at function creation time.
+10
+ without JS framework to display a simple list of countries. Then we will should make classics actions like add, edit or delete a country without reload the page as a Single Page Application.
+11.
+Props are used to pass data, whereas state is for managing data. Data from props is read-only, and cannot be modified by a component that is receiving it from outside. State data can be modified by its own component, but is private cannot be accessed from outside.
+
+12.
+Props are never to be updated. We are to use them as is.  But React has its reasons behind this rule and convinced by their reasoning. The only caveat is, though, that there are situations where we might need to initiate the update of a prop. And we will soon know how.
+
+Consider the following line of code from a parent component:
+
+<MyChild childName={this.state.parentName} />
+
+This is a simple line which every React dev is probably familiar with. You are calling child component. While you are doing that, you are also passing the state of the parent (parentName) to the child. In the child component, this state will be accessed as this.props.childName. Fair enough.
+
+Now if there is any change of name required, parentName will be changed in the parent and that change will automatically be communicated to the child as is the case with the React mechanism. This setup works in most of the scenarios.
+
+
