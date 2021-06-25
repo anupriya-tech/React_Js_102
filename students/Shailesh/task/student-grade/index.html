@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+    .databox{
+        margin: 10px auto;
+    }
+</style>    
+</head>
+<body>
+<div class="mainbox">
+        <div class="databox">
+            <input type="text" placeholder="Math score" id="math">
+        </div>
+        <div class="databox">
+            <input type="text" placeholder="Physics score" id="phy">
+        </div>
+        <div class="databox">
+            <input type="text" placeholder="Chemistry score" id="chemis">
+        </div>
+        <div class="databox">
+            <input type="text" placeholder="Bio score" id="bio">
+        </div>
+        <button type="submit" value="Show Result" onclick="gradefunction()"> Show Result</button>  
+
+    <div class="resultbox">
+        <p id="showdata"></p>
+    </div>
+</div>
+
+<script>
+
+    function gradefunction(){
+        let math = document.getElementById('math').value;
+        let phy = document.getElementById('phy').value;
+        let chemis = document.getElementById('chemis').value;
+        let bio = document.getElementById('bio').value;
+
+        let total = parseFloat(math) + parseFloat(phy) + parseFloat(chemis) + parseFloat(bio)
+        let percentage = (total/400)*100;
+        console.log(total);
+        console.log(percentage);
+        let grade;
+        if(percentage <= 100 & percentage >=90  ){
+            grade = 'A';
+        }else if(percentage < 90 && percentage >=80 ){
+            grade = 'B';
+        }else if(percentage < 80 && percentage >=70 ){
+            grade = 'C';
+        }else{
+            grade= 'Fail'
+        }
+        document.getElementById('showdata').innerHTML = `total number : ${total} <br> Percentage : ${percentage}% <br> Grade : ${grade}`
+    }
+    
+</script>
+
+</body>
+</html>

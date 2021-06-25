@@ -1,31 +1,63 @@
-import React from 'react';
-import './App.css';
-import bulbOff from './img/bulb-off.png';
-import bulbOn from './img/bulb-on.png';
+import React, { Component } from 'react';
 
-class App extends React.Component {
-
-  constructor(props) {
-    super(props)
-   this.state = {
-    open: true
-  }
-}
-  toggleImage = (e) => {
+class App extends Component {
    
-    this.setState(state => ({ open: !this.state.open }))
-  }
+    constructor(props) {
+        super(props);
+        this.state={
+             username : '',
+             password : ''
+        }
+        this.handleFormUser = this.handleFormUser.bind(this);
+        this.handleFormPass = this.handleFormPass.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
 
-  render() {
-    // const imageName = this.getImageName();
-    return (
+     handleFormUser(event) {
+      this.setState({
+           username : event.target.value
+         
+      });
+      }
+      handleFormPass(event) {
+        this.setState({
+           
+             password : event.target.value
+        });
+        }
+      
+       handleSubmit(event) 
+      {
+          event.preventDefault();
+          alert(`Form submitted', Username: ${this.state.username}, & Password: ${this.state.password}`)
+      }
+    
+render() {
+
+
+  return (
+    <div className="wrapper">
+      <h1>Login Page</h1>
       <div>
-        <img style={{width: '20%'}} src={this.state.open ? bulbOn : bulbOff}  alt="toggle Images" /><br/>
-        <button style={{backgroundColor: 'red', padding: '2%', color: 'white'}} onClick={this.toggleImage}>Click</button>
+     <form onSubmit={this.handleSubmit}> 
+      <div>
+        Username<br />
+        <input type="text" value={this.state.username} onChange={this.handleFormUser} />
       </div>
-    );
-  }
+      <div>
+        Password<br />
+        <input type="password" value={this.state.password} onChange={this.handleFormPass} />
+      </div>
+     
+      <input type="submit" value="submit"/><br />
+      </form>
+    </div>
+    
+    </div>
+  );
 }
-// fvfvvv
+}
+
+export default App;
 
 export default App;

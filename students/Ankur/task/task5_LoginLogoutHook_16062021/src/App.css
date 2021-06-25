@@ -1,0 +1,63 @@
+.AppContainer {
+  position: fixed;
+  width: 30%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background: aqua;
+  border: 1px solid;
+  border-radius: 10px;
+  padding: 50px 25px;
+}
+
+.AppContainer h1{
+  text-align: center;
+}
+
+div.layout-oneCol, 
+div.layout-oneCol > div{
+  width: 100%;
+}
+
+div.layout-oneCol input,
+div.layout-oneCol select{
+  width: 95%;
+}
+
+div.layout-twoCol > div{
+  width: 50%;
+  display: inline-block;
+}
+div.layout-twoCol input,
+div.layout-twoCol select{
+  width: 90%;
+}
+
+
+label * {
+  display: block;
+  width: 97%;
+}
+
+div.AppContainer input,
+div.AppContainer select,
+div.AppContainer button{
+  padding: 0.7em;
+  font-size: 1em;
+  margin: 1em 0;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+.btn-container{
+  text-align: center;
+}
+
+.btn-container input,
+.btn-container button{
+  width: 20%;
+}

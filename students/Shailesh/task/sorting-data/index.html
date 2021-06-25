@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Data</title>
+</head>
+<body>
+    
+    <h1>Sorting Data By Id And Name</h1>
+    <h2>check the console</h2>
+    <p id="datbyname"></p>
+
+    <script>
+       const employeeListOne =  [
+           {id: 101, name: "Ram"},
+           {id: 105, name: "Shyam"},
+           {id: 104, name: "Gopal"},
+           {id: 103, name: "Bhole"},
+           {id: 102, name: "Bhrahma"}
+       ];
+     const log =  console.log;
+
+    //  log(employee.sort());
+     log('sorting by name');
+     log(employeeListOne.sort(byname));
+
+     function byname(a, b){
+         if (a.name > b.name){
+             return 1;
+         }
+         else if (a.name < b.name){
+             return -1;
+         }
+         else{
+             return 0;
+         }
+
+     };
+
+     const employeeListTwo =  [
+           {id: 101, name: "Ram"},
+           {id: 105, name: "Shyam"},
+           {id: 104, name: "Gopal"},
+           {id: 103, name: "Bhole"},
+           {id: 102, name: "Bhrahma"}
+       ];
+
+     log('sorting by id')
+     log(employeeListTwo.sort(byId));
+
+     function byId(a, b){
+         return parseInt(a.id) - parseInt(b.id);
+     }
+    </script>
+</body>
+</html>

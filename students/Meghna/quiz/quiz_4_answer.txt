@@ -1,0 +1,50 @@
+what is the difference between Spread Operator and Rest operator?
+
+Ans:
+Spread Operator: Spread Operator when used with object or array it will return copy of the object.
+it is also used to concate arrays and objects.
+ex:let arr1 = [10,20]
+let arr2 = [30,40]
+
+arr1 = [...arr1,arr2] 
+Here arr1 is appended with array 2 at the end.
+
+Rest Operator:Rest operator is used when destructuring,assigns all remaning elements to the variables.
+
+ex:let [a,b,...c] = [10,20,30,40]
+//here it will assign 30,40 as array to c
+
+let arr = [10,20,30]
+let [e,...g] = arr
+//here it will assign e = 10,all remaning to g
+
+
+Difference Between Shallow Copy and Deep Copy?
+
+A shallow copy means constructing a new collection object and 
+then populating it with references to the child objects found in the original. In essence, 
+a shallow copy is only one level deep. 
+The copying process does not recurse and therefore won’t create copies of the child objects themselves.
+
+A deep copy makes the copying process recursive. 
+It means first constructing a new collection object and then recursively populating it with copies of the child objects found in the original. 
+Copying an object this way walks the whole object tree to create a fully independent clone of the original object and all of its children.
+
+
+what is prototype?in es5 nd es6
+Prototypes are the mechanism by which JavaScript objects inherit features from one another. 
+
+All JavaScript objects inherit properties and methods from a prototype.
+
+function Person(first, last, age, eyecolor) {
+  this.firstName = first;
+  this.lastName = last;
+  this.age = age;
+  this.eyeColor = eyecolor;
+}
+
+const myFather = new Person("John", "Doe", 50, "blue");
+
+//Here myFather will inherit from person class prototype.
+
+prototype property also allows you to add new methods to objects constructors

@@ -1,0 +1,103 @@
+1*The Virtual DOM is an abstraction of the HTML DOM. ... It allows React to do its computations within this abstract world and skip the “real” DOM operations, often slow and browser-specific. 
+There's no big difference between the “regular” DOM and the virtual DOM.
+2*ADVANTAGES OF USING REACT.JS
+#1 It facilitates the overall process of writing components
+#2 It boosts productivity and facilitates further maintenance
+
+#3 It ensures faster rendering
+#4 It guarantees stable code
+
+#5 It is SEO friendly
+
+#6 It comes with a helpful developer toolset
+#7 There is React Native for mobile app development
+#8 It is focused and easy-to-learn
+
+#9 It is backed by a strong community
+*3Difference between ES5 and ES6 : 
+
+SR.NO.	ES5	ES6
+1.	ECMA script is a trademarked scripting language specification defined by Ecma international. The fifth edition of the  same is known as ES5	ECMA script is a trademarked scripting language specification defined by Ecma international. The sixth edition of the same is known as ES6 
+2.	It was introduced in 2009.	It was introduced in 2015.
+3.	It supports primitive data types that are string, number, boolean, null, and undefined. 	In ES6, there are some additions to JavaScript data types. It introduced a new primitive data type ‘symbol’ for supporting unique values.
+4.	There are only one way to define the variables by using the var keyword.	There are two new ways to define variables that are let and const.
+5.	It has a lower performance as compared to ES6.	It has a higher performance than ES5.
+6.	Object manipulation is time-consuming in ES5.	Object manipulation is less time-consuming in ES6.
+7.	In ES5, both function and return keywords are used to define a function.	An arrow function is a new feature introduced in ES6 by which we don’t require the function keyword to define the function.
+8.	It provides a larger range of community supports than that of ES6	It provides a less range of community supports than that of ES5
+
+5*Callback function
+A callback function is a function passed into another function as an argument, which is then invoked inside the outer function to complete some kind of routine or action.
+
+Here is a quick example:
+
+function greeting(name) {
+  alert('Hello ' + name);
+}
+
+function processUserInput(callback) {
+  var name = prompt('Please enter your name.');
+  callback(name);
+}
+
+processUserInput(greeting);
+6*Hooks are a new addition in React 16.8. They let you use state and other React features without writing a class.
+
+import React, { useState } from 'react';
+
+function Example() {
+  // Declare a new state variable, which we'll call "count"
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
+    </div>
+  );
+7*Arrow Functions — also called “fat arrow” functions, are relatively a new way of writing concise functions in JavaScript. They have been introduced by the ECMAScript 6 specifications and since then become the most popular ES6 feature. Arrow functions allow us to use the fat arrow => operator to quickly define JavaScript functions, with or without parameters. We are able to omit the curly braces and the function and return keywords when creating a new JavaScript function to write shorter function syntax. They are not only time savers but also produce clean and more readable functions.
+ex: const birthday= () =>"Happy Birthday!!!";
+console.log(birthday());
+8*The HTML DOM (Document Object Model)
+When a web page is loaded, the browser creates a Document Object Model of the page.
+
+The HTML DOM model is constructed as a tree of Objects:
+
+The HTML DOM Tree of Objects
+DOM HTML tree
+With the object model, JavaScript gets all the power it needs to create dynamic HTML:
+
+JavaScript can change all the HTML elements in the page
+JavaScript can change all the HTML attributes in the page
+JavaScript can change all the CSS styles in the page
+JavaScript can remove existing HTML elements and attributes
+JavaScript can add new HTML elements and attributes
+JavaScript can react to all existing HTML events in the page
+JavaScript can create new HTML events in the page
+.....................>This approach enables the declarative API of React: You tell React what state you want the UI to be in, and it makes sure the DOM matches that state. ... In React world, the term “virtual DOM” is usually associated with React elements since they are the objects representing the user interface.
+9*A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). In other words, a closure gives you access to an outer function’s scope from an inner function. In JavaScript, closures are created every time a function is created, at function creation time.
+Consider the following example code:
+
+function init() {
+  var name = 'Mozilla'; // name is a local variable created by init
+  function displayName() { // displayName() is the inner function, a closure
+    alert(name); // use variable declared in the parent function
+  }
+  displayName();
+}
+init();
+10*Any project, whether big or small, has the potential to be very complex. It’s much easier to break down all the necessary inclusions for a project plan by viewing your project in terms of phases. The Project Management Institute, within the Project Management Book of Knowledge (PMBOK), have identified the following 5 phases of a project:
+
+Initiation: The start of a project, in which goals and objectives are defined through a business case and the practicality of the project is determined by a feasibility study.
+Planning: During this stage, the scope of the project is defined by a work breakdown structure (WBS) and the project methodology to manage the project is decided on. Costs, quality and resources are estimated, and a schedule with milestones and task dependencies is identified. The main deliverable of this phase is your project plan.
+Execution: The project deliverables are completed during this phase. Usually, this phase begins with a kick-off meeting and is followed by regular team meetings and status reports while the project is being worked on.
+Monitoring & Controlling: This phase is performed in tandem with the project execution phase. Progress and performance metrics are measured to keep progress on the project aligned with the project plan.
+Closure: The project is completed when the stakeholder receives the final deliverable. Resources are released, contracts are signed off on and, ideally, there will be an evaluation of the successes and failures.
+11*In computer programming, Create, Read, Update, and Delete (CRUD) are the four basic operations of persistent storage.[1] CRUD is also sometimes used to describe user interface conventions that facilitate viewing, searching, and changing information using computer-based forms and reports. The term was likely first popularized by James Martin in his 1983 book Managing the Data-base environment.
+12*
+"props" (short for "properties") is an object of arbitrary inputs a React function component accepts as the first argument.
+"state" is data that changes over the lifetime of a specific instance of a React component.
+13*A React component should use state to store information that the component itself can change. A good example is already provided by Valéry. Props can change when a component's parent renders the component again with different properties.
+

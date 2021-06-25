@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Arrays</h2>
+
+<p id="demo"></p>
+
+
+
+<script>
+var cars = [{"id":"101", "name": "Raj", "cmarks":45, "pmarks":55, "mmarks": 67},
+{"id":"102", "name": "Rajesh", "cmarks":65, "pmarks":85, "mmarks": 77},
+{"id":"103","name":"suraj","cmarks":43,"pmarks":55,"mmarks":65},
+{"id":"104","name":"Tom","cmarks":71,"pmarks":65,"mmarks":70}];
+
+
+
+//alert(cars[1].cmarks);
+for(var i=0; i<=cars.length; i++){
+
+	var maxmarks = cars[i].cmarks+cars[i].pmarks+cars[i].mmarks;
+    var percentage = (maxmarks/300)*100;
+    alert(Math.max(percentage));
+
+
+}
+ 
+</script>
+
+</body>
+</html>
+

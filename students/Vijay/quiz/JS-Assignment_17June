@@ -1,0 +1,25 @@
+Javascript coding assignment-1
+
+1. WAP to calculate student grade based on below rules
+	a. 90 to 100 -> Grade A
+	b. 80 to 90 -> Grade B
+	c. 70 to 80 -> Grade C
+	d. Failure.
+	
+	
+Ans:- 
+
+var msg = 'Enter the percentage of student:';
+var a = prompt(msg);
+if(a>90)
+    {
+      document.write('Grade - A');}
+else if(a<=90 && a>80)
+    {
+      document.write('Grade - B');}
+else if(a>70 && a<=80)
+    {
+      document.write('Grade - C');}
+else 
+      document.write('Fail');}
+
