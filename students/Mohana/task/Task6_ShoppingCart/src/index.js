@@ -16,9 +16,7 @@ let products = [
    }
    render(){
      return(
-       <div>
-         
-       </div>
+      
      );
    }
  }
