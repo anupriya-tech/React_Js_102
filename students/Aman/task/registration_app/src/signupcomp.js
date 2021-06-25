@@ -1,13 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect} from 'react';
 import './App.css';
 
 
 
 const Signupcomp=()=>
-
 {
 
-const userRegistry=useState({firstname:"",lastname:"",password:"",});
+
+
+useEffect(() => {
+
+        var str=''; // variable to store the options
+var month = new Array("Haryana","Punjab","Maharastra","Uttar Pradesh","Delhi");
+for (var i=0; i < month.length;++i){
+str += '<option value="'+month[i]+'" />'; 
+
+var my_list=document.getElementById("state_list");
+my_list.innerHTML = str;
+
+}
+
+
+        
+      });
+
+    const userRegistry=useState({firstname:"",lastname:"",password:"",});
 
     const register=()=>
     {
@@ -73,13 +90,15 @@ const userRegistry=useState({firstname:"",lastname:"",password:"",});
     State:<input list="state_list" placeholder="--choose state--" name="state" id="state" autoComplete="off"/>
 
 <datalist id="state_list">
-  <option value="Haryana"/>
-  <option value="Punjab"/>
-  <option value="Delhi"/>
-  <option value="Maharastra"/>
-  <option value="Uttar Pradesh"/>
 </datalist>
 
+
+    </div>
+    <div className="col-3">
+    City:<input list="state_list" placeholder="--choose city--" name="city" id="city" autoComplete="off"/>
+
+<datalist id="state_list">
+</datalist>
 
     </div>
 
