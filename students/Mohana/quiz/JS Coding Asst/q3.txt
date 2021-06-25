@@ -1,0 +1,44 @@
+3. WAP to validate password and email in signup form(HTML,CSS and Javascript)
+	a. password ca not be less than 6 character and at least one capital letter.
+	b. email should include valid domain (eg: @gmail.com).
+
+
+<form method="post" >  
+Email: <input type="email" id="email"><br/> 
+Password: <input type="password" id="pass"><br/>  
+<input type="button" value="register" onclick=" validateform();">  
+</form>
+
+function validateform(){
+var mail=document.getElementById('email').value;  
+var p=document.getElementById('pass').value; 
+var atposition= mail.indexOf("@");  
+var dotposition= mail.lastIndexOf(".");
+var pa= new RegExp(/^(.*[A-Z].*)$/);
+if ( mail=="" ){  
+  alert("Mail can't be blank");  
+  return false;  
+}  
+if (atposition<1 || dotposition<atposition+2 || dotposition+2>=mail.length){  
+  alert("Please enter a valid e-mail address ");  
+  return false;  
+  }
+if ( p==""){  
+  alert("Password can't be blank");  
+  return false;  
+}
+if(p.length<6){  
+  alert("Password must be at least 6 characters long.") 
+  return false;  
+  }
+
+if(!(pa.test(p))) { 
+alert('Given Password not valid');
+return false;
+ }
+
+else{
+    alert("success");
+    return true;
+  }    
+}
