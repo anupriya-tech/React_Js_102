@@ -25,6 +25,8 @@ module.exports = {
     },
 }
 
+
+
 7. add script and run
 	"scripts": {
     "build":"webpack",
@@ -34,6 +36,24 @@ module.exports = {
  8. npm run build
  9. Adding plugins
  npm i -D html-webpack-plugin
+ 
+ 10. webpack server
+ npm install -D webpack-dev-server
+ 11. Set config
+ 
+ devServer:{
+        contentBase : path.join(__dirname,'dist'),
+        compress: true,
+        port: 8000,
+    },
+ 12 build and serve again
+ npm run build
+ npx webpack serve
+ http://localhost:8000/index.html
+ 
+ 13 Babel - js compiler tool used for backward compatibility from code written in ES6+ version in cross browser platform
+ JSX can not be consumed directly by browser --> JSX --> EXMAScript --> deploy
+ 
  
  
  

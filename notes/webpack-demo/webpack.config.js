@@ -1,4 +1,3 @@
-const WEBPACK = require('webpack');
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
@@ -23,4 +22,9 @@ module.exports = {
         }),
 
     ],
+    devServer:{
+        contentBase : path.join(__dirname,'dist'),
+        compress: true,
+        port: 8000,
+    },
 };

@@ -15,7 +15,7 @@
   \**********************/
 /***/ (() => {
 
-eval("console.log(\"hello from webpack demo.\")\n\n//# sourceURL=webpack://webpack-demo/./src/index.js?");
+eval("const heading = document.createElement('h1')\nheading.textContent = \"My webpack heading!\"\n\nconst app = document.querySelector(\"#root\")\napp.append(heading)\n\n//# sourceURL=webpack://webpack-demo/./src/index.js?");
 
 /***/ })
 
